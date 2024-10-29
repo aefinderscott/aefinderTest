@@ -11011,11 +11011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj",
+      "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
       "projectName": "AeIndexerTester",
-      "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj",
+      "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
       "packagesPath": "/Users/lianqingdong/.nuget/packages/",
-      "outputPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/obj/",
+      "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"

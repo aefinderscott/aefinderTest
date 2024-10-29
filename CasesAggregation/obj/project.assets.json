@@ -11027,11 +11027,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CasesAggregation/CasesAggregation.csproj",
+      "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CasesAggregation/CasesAggregation.csproj",
       "projectName": "CasesAggregation",
-      "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CasesAggregation/CasesAggregation.csproj",
+      "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CasesAggregation/CasesAggregation.csproj",
       "packagesPath": "/Users/lianqingdong/.nuget/packages/",
-      "outputPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CasesAggregation/obj/",
+      "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CasesAggregation/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
@@ -11048,8 +11048,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj": {
-              "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj"
+            "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
+              "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj"
             }
           }
         }

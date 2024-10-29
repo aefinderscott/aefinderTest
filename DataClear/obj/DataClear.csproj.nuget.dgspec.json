@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lianqingdong/RiderProjects/AeIndexerTester/DataClear/DataClear.csproj": {}
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/DataClear/DataClear.csproj": {}
   },
   "projects": {
-    "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj": {
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj",
+        "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
         "projectName": "AeIndexerTester",
-        "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj",
+        "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
         "packagesPath": "/Users/lianqingdong/.nuget/packages/",
-        "outputPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/obj/",
+        "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
@@ -114,14 +114,14 @@
         }
       }
     },
-    "/Users/lianqingdong/RiderProjects/AeIndexerTester/DataClear/DataClear.csproj": {
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/DataClear/DataClear.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lianqingdong/RiderProjects/AeIndexerTester/DataClear/DataClear.csproj",
+        "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/DataClear/DataClear.csproj",
         "projectName": "DataClear",
-        "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/DataClear/DataClear.csproj",
+        "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/DataClear/DataClear.csproj",
         "packagesPath": "/Users/lianqingdong/.nuget/packages/",
-        "outputPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/DataClear/obj/",
+        "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/DataClear/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
@@ -138,8 +138,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj": {
-                "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj"
+              "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
+                "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj"
               }
             }
           }

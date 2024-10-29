@@ -16023,11 +16023,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CaseOne.csproj",
+      "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/CaseOne.csproj",
       "projectName": "CaseOne",
-      "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CaseOne.csproj",
+      "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/CaseOne.csproj",
       "packagesPath": "/Users/lianqingdong/.nuget/packages/",
-      "outputPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/obj/",
+      "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
@@ -16044,8 +16044,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj": {
-              "projectPath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/AeIndexerTester/AeIndexerTester.csproj"
+            "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
+              "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj"
             }
           }
         }

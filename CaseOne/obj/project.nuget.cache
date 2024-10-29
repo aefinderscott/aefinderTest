@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZeJ2ZJdqtaQ=",
+  "dgSpecHash": "qySOshOnZNU=",
   "success": true,
-  "projectFilePath": "/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CaseOne.csproj",
+  "projectFilePath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/CaseOne.csproj",
   "expectedPackageFiles": [
     "/Users/lianqingdong/.nuget/packages/aefinder.domain/1.1.4-rc4/aefinder.domain.1.1.4-rc4.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/aefinder.domain.shared/1.1.4-rc4/aefinder.domain.shared.1.1.4-rc4.nupkg.sha512",

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+<!--        <IsPackable>false</IsPackable>-->
+<!--        <IsTestProject>true</IsTestProject>-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AeFinder.Sdk" Version="1.1.4-rc4" />
+        <PackageReference Include="AElf.Sdk.CSharp" Version="1.6.0" />
+    </ItemGroup>
+
+<!--    <ItemGroup>-->
+<!--        <Using Include="NUnit.Framework"/>-->
+<!--    </ItemGroup>-->
+    <ItemGroup>
+        <None Remove="SDKCases.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AeIndexerTester\AeIndexerTester.csproj" />
+    </ItemGroup>
+
+</Project>
