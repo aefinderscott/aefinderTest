@@ -35,9 +35,9 @@ public class GlobalExtentReport
         }
         else
         {
-            string methodName = name.Split(".")[name.Split(".").Length - 1];
-            Console.WriteLine("+++++++++___________" + methodName);
-            var method = GetType().GetMethod(methodName);
+            // string methodName = name.Split(".")[name.Split(".").Length - 1];
+            Console.WriteLine("+++++++++___________" + name);
+            var method = GetType().GetMethod(name);
 
             // 获取方法上的 Description 特性
             var descriptionAttribute = method?.GetCustomAttribute<DescriptionAttribute>();

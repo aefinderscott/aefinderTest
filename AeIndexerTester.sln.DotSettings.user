@@ -1,12 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7c842dfd_002Dc687_002D481f_002Da036_002D2411b8387d64/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;TestAncestor&gt;
-      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Tests&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CasesAggregation.CalculatorTests.resttestcase&lt;/TestId&gt;
-      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CasesOne.Test112&lt;/TestId&gt;
-    &lt;/TestAncestor&gt;
-    &lt;ProjectFile&gt;1AD9D502-738E-4AF0-9ED1-E2A6011F93A2/f:CalculatorTests.cs&lt;/ProjectFile&gt;
-    &lt;Project Location="/Users/lianqingdong/Desktop/autotest/aefinderTest/SDKCases" Presentation="&amp;lt;SDKCases&amp;gt;" /&gt;
-  &lt;/Or&gt;
+  &lt;ProjectFile&gt;1AD9D502-738E-4AF0-9ED1-E2A6011F93A2/f:TokenTests.cs&lt;/ProjectFile&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
