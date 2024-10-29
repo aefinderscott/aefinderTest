@@ -57,7 +57,9 @@ public class GlobalExtentReport
     public void GlobalSetup()
     {
         // 创建 ExtentHtmlReporter 并配置
-        string reportPath = "/Users/lianqingdong/Desktop/Code/report/NUnitTestReport.html";
+        // string reportPath = "/Users/lianqingdong/Desktop/Code/report/NUnitTestReport.html";
+        string reportPath = "report/NUnitTestReport.html";
+
         htmlReporter = new ExtentHtmlReporter(reportPath);
         htmlReporter.Config.DocumentTitle = "Test Execution Report";
         htmlReporter.Config.ReportName = "Extent Report for tests";
