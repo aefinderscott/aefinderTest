@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="6" result="Failed" total="6" passed="4" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="8" engine-version="3.18.3.0" clr-version="8.0.7" start-time="2024-10-29 08:57:13Z" end-time="2024-10-29 08:57:16Z" duration="2.597429">
+  <command-line><![CDATA[/Users/lianqingdong/Downloads/NUnit.Console-3.18.3/bin/net8.0/nunit3-console.dll /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/bin/Debug/net8.0/CaseOne.dll]]></command-line>
+  <test-suite type="Assembly" id="1-1009" name="CaseOne.dll" fullname="/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/bin/Debug/net8.0/CaseOne.dll" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2024-10-29T08:57:13.6933550Z" end-time="2024-10-29T08:57:16.2064170Z" duration="2.512916" total="6" passed="4" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="8">
+    <environment framework-version="3.14.0.0" clr-version="8.0.7" os-version="Darwin 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:46 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6020" platform="Unix" cwd="/Users/lianqingdong/RiderProjects/AeIndexerTester" machine-name="aelfdeMacBook-Pro" user="lianqingdong" user-domain="aelfdeMacBook-Pro" culture="zh-CN" uiculture="zh-CN" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="/Users/lianqingdong/RiderProjects/AeIndexerTester" />
+      <setting name="NumberOfTestWorkers" value="10" />
+    </settings>
+    <properties>
+      <property name="_PID" value="90903" />
+      <property name="_APPDOMAIN" value="nunit3-console" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="SetUpFixture" id="1-1004" name="CasesOne" fullname="CasesOne.GlobalExtentReport" classname="CasesOne.GlobalExtentReport" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2024-10-29T08:57:13.6963500Z" end-time="2024-10-29T08:57:16.2063900Z" duration="2.510043" total="6" passed="4" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="8">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1-1000" name="CalculatorTests" fullname="CasesOne.CalculatorTests" classname="CasesOne.CalculatorTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-10-29T08:57:13.7065790Z" end-time="2024-10-29T08:57:14.3381600Z" duration="0.631581" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="4">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1-1001" name="TestConnectToken" fullname="CasesOne.CalculatorTests.TestConnectToken" methodname="TestConnectToken" classname="CasesOne.CalculatorTests" runstate="Runnable" seed="1618040791" result="Passed" start-time="2024-10-29T08:57:13.7066830Z" end-time="2024-10-29T08:57:14.0434880Z" duration="0.336869" asserts="2">
+          <properties>
+            <property name="Description" value="测试获取token" />
+          </properties>
+          <output><![CDATA[+++++++++___________TestConnectToken
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMGQ4MjMzYzQtMzk1Zi00YTQ2LTg2YWItODYwNTQxYzZiZWM3Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODdmOWQwZmMtMGFhZC01Zjk3LWMyNWYtM2ExNWU5YWIyZjE2In0.IchsJ-6BermRk3hyahqMkh1j_rPAyXPmZpJf4ut7u6wDMstopuiEwzbbOnWBsmlsxFykv2TKcgaiXPktnH185qxsonj8qUMa1zQVdNNxmeFCLS8yEX7JOxmg4Fd4wMMBftPndiW2zoawCXhRgsEewvnv_fAkSdRqFL8092MKyJAwxsukWdMC2ZwMajRHTN1KpomNbj8v6POk41_S2MQ27YuYffOw_jfgeJ6fDPoMwcgd-mUcwkqtNSF_EV5c-9ddIIJh6tBE_XMWqdPd2UjqfD3sUu-JYiDpCccYaAPmKuk8uGdznw1RbuLZsXWlx70HH-GgLYDdRBY5dJR7Z5cVpg",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMGQ4MjMzYzQtMzk1Zi00YTQ2LTg2YWItODYwNTQxYzZiZWM3Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODdmOWQwZmMtMGFhZC01Zjk3LWMyNWYtM2ExNWU5YWIyZjE2In0.IchsJ-6BermRk3hyahqMkh1j_rPAyXPmZpJf4ut7u6wDMstopuiEwzbbOnWBsmlsxFykv2TKcgaiXPktnH185qxsonj8qUMa1zQVdNNxmeFCLS8yEX7JOxmg4Fd4wMMBftPndiW2zoawCXhRgsEewvnv_fAkSdRqFL8092MKyJAwxsukWdMC2ZwMajRHTN1KpomNbj8v6POk41_S2MQ27YuYffOw_jfgeJ6fDPoMwcgd-mUcwkqtNSF_EV5c-9ddIIJh6tBE_XMWqdPd2UjqfD3sUu-JYiDpCccYaAPmKuk8uGdznw1RbuLZsXWlx70HH-GgLYDdRBY5dJR7Z5cVpg
+token_type: Bearer
+expires_in: 3600
+]]></output>
+        </test-case>
+        <test-case id="1-1002" name="TestLogin001" fullname="CasesOne.CalculatorTests.TestLogin001" methodname="TestLogin001" classname="CasesOne.CalculatorTests" runstate="Runnable" seed="8280184" result="Failed" start-time="2024-10-29T08:57:14.0454170Z" end-time="2024-10-29T08:57:14.3368120Z" duration="0.291396" asserts="1">
+          <properties>
+            <property name="Description" value="测试登录-正向" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 121
+  But was:  12
+]]></message>
+            <stack-trace><![CDATA[   at CasesOne.CalculatorTests.TestLogin001() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CalculatorTests.cs:line 48
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[+++++++++___________TestLogin001
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMzI0YTQ4ZmYtMGJmMy00ZWFhLTgzNDgtNDYwODg1NzFjODI0Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZDA0M2UwYzYtYzIxNC02NzQ5LWUzMDEtM2ExNWU5YWIzMDMwIn0.Ia9HAkY-_B5PCLPwu748dNb4RJyjlVmvmMlx3MI8kiO4nj_oaVPyGe9HEeAqXHOc4eXJBeFqxsWdZzXIFHiY0OmKji7Xgf4Y3JuO12yDkwch3LZhb8gWUoXDqnNlVGg9Pva9Vbjk9IbwRm2xzz1XW8x1FQcdtBtVsziJX3PJZquyjKVpyZ64BziB_phuo-fQm8MJsyqQDCrHuYSVoBpA6WSpkIWVaabjEt80W40qkXmMi4Qm9bLn57byrkkCwJM77bGya7FtQ40qHpVP0NSc3Kkuzf2ocnArih5y22_xsnqw8nHca3WGI_ZzOfiexy8ACb5d5kQ6WzzHaC3pZbHnYg",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMzI0YTQ4ZmYtMGJmMy00ZWFhLTgzNDgtNDYwODg1NzFjODI0Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZDA0M2UwYzYtYzIxNC02NzQ5LWUzMDEtM2ExNWU5YWIzMDMwIn0.Ia9HAkY-_B5PCLPwu748dNb4RJyjlVmvmMlx3MI8kiO4nj_oaVPyGe9HEeAqXHOc4eXJBeFqxsWdZzXIFHiY0OmKji7Xgf4Y3JuO12yDkwch3LZhb8gWUoXDqnNlVGg9Pva9Vbjk9IbwRm2xzz1XW8x1FQcdtBtVsziJX3PJZquyjKVpyZ64BziB_phuo-fQm8MJsyqQDCrHuYSVoBpA6WSpkIWVaabjEt80W40qkXmMi4Qm9bLn57byrkkCwJM77bGya7FtQ40qHpVP0NSc3Kkuzf2ocnArih5y22_xsnqw8nHca3WGI_ZzOfiexy8ACb5d5kQ6WzzHaC3pZbHnYg
+token_type: Bearer
+expires_in: 3599
+]]></output>
+          <assertions>
+            <assertion result="Failed">
+              <message><![CDATA[  Expected: 121
+  But was:  12
+]]></message>
+              <stack-trace><![CDATA[   at CasesOne.CalculatorTests.TestLogin001() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CalculatorTests.cs:line 48
+]]></stack-trace>
+            </assertion>
+          </assertions>
+        </test-case>
+        <test-case id="1-1003" name="TestLogin002" fullname="CasesOne.CalculatorTests.TestLogin002" methodname="TestLogin002" classname="CasesOne.CalculatorTests" runstate="Runnable" seed="685238943" result="Passed" start-time="2024-10-29T08:57:14.3372140Z" end-time="2024-10-29T08:57:14.3376000Z" duration="0.000385" asserts="1">
+          <properties>
+            <property name="Description" value="测试登录-用户名异常" />
+          </properties>
+          <output><![CDATA[+++++++++___________TestLogin002
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1005" name="test112" fullname="CasesOne.test112" classname="CasesOne.test112" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-10-29T08:57:14.3388380Z" end-time="2024-10-29T08:57:14.7969940Z" duration="0.458156" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="4">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1-1006" name="TestConnectToken111" fullname="CasesOne.test112.TestConnectToken111" methodname="TestConnectToken111" classname="CasesOne.test112" runstate="Runnable" seed="705559408" result="Passed" start-time="2024-10-29T08:57:14.3389650Z" end-time="2024-10-29T08:57:14.5733860Z" duration="0.234421" asserts="2">
+          <properties>
+            <property name="Description" value="测试获取token" />
+          </properties>
+          <output><![CDATA[+++++++++___________TestConnectToken111
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODY5ZTliMDItYTNjMC00MzUyLWI0YzYtNDE5NGIwMThhNWFlIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNmMxMzRhMjYtYzA1My01NmM1LWQyNGQtM2ExNWU5YWIzMTVhIn0.cxA1FCcPvlB6fPYGj23pcAFRuLpgibyqu-N_kQzxG5AQvFQXqoZZqlsElclwJvI87-UTmhdlU3LdSPCGrbz7M4JNtvADq33ZXRnWSRz1u6KVe4NoVQEus4S4hX-KIJts4m-9NNWU4OpQeCzkFooIo4jDPx3VHpS9aMQdSHH072st_xFbt1eaiHtEZvpqCLXXm0vEIPnQ2v7_PIi2Mq2JgbG0JH0Mr0rOMZFNJ_NldEAVKcwD8tm6giLxbLoaUDBsHJwWZpBLhPpmecKd9rjWkSBEqf8NIdqlpj5jVLETdgjIKiTngqAER0x_vtjwm2cjrpelKgQh8VgzannVhLtVvw",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzQsImlhdCI6MTczMDE5MjIzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODY5ZTliMDItYTNjMC00MzUyLWI0YzYtNDE5NGIwMThhNWFlIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNmMxMzRhMjYtYzA1My01NmM1LWQyNGQtM2ExNWU5YWIzMTVhIn0.cxA1FCcPvlB6fPYGj23pcAFRuLpgibyqu-N_kQzxG5AQvFQXqoZZqlsElclwJvI87-UTmhdlU3LdSPCGrbz7M4JNtvADq33ZXRnWSRz1u6KVe4NoVQEus4S4hX-KIJts4m-9NNWU4OpQeCzkFooIo4jDPx3VHpS9aMQdSHH072st_xFbt1eaiHtEZvpqCLXXm0vEIPnQ2v7_PIi2Mq2JgbG0JH0Mr0rOMZFNJ_NldEAVKcwD8tm6giLxbLoaUDBsHJwWZpBLhPpmecKd9rjWkSBEqf8NIdqlpj5jVLETdgjIKiTngqAER0x_vtjwm2cjrpelKgQh8VgzannVhLtVvw
+token_type: Bearer
+expires_in: 3599
+]]></output>
+        </test-case>
+        <test-case id="1-1007" name="TestLogin001111" fullname="CasesOne.test112.TestLogin001111" methodname="TestLogin001111" classname="CasesOne.test112" runstate="Runnable" seed="547860009" result="Failed" start-time="2024-10-29T08:57:14.5734550Z" end-time="2024-10-29T08:57:14.7966580Z" duration="0.223205" asserts="1">
+          <properties>
+            <property name="Description" value="测试登录-正向" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: 121
+  But was:  12
+]]></message>
+            <stack-trace><![CDATA[   at CasesOne.test112.TestLogin001111() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/test112.cs:line 62
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[+++++++++___________TestLogin001111
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzUsImlhdCI6MTczMDE5MjIzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNDdjNmY0NGUtNzE0Ny00YzM3LTk5YWEtZjQwOTk0OTRmODI1Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDFiY2FhNTUtZmY0ZS0yNzBjLTA3NDctM2ExNWU5YWIzMjM3In0.vA2gOSOE_2owSTJ14DZDeEvH5P_KlZ6wkJ_k0s2ENdqFKZDrmfTSBnErxCmR-QM11yFhvgOIPDA4tM1puUAV1hGeLllo7uV6lb_CFRWusk9KasChEWtqAc0-0SrK3VQ3AP9CDJvdq1NUWp2CLDlBWnflO-YkKw1c7igXPGIdDPjRW97HeYm9dX1VV1DGCzPYsprX3GWhmaDRX4RoOIpgFitrw8xzZ1Q8uioIYyF_1C1hGp4oqUCVGHjUX07I6r5-mUJtE2j6_I0JXlOWO5lDzYHF4338egzy9cHXFlkrebG3NmRAgoc7a0cjmSE3ZK0JkRiLs6IkFbNIDmrpOAGdIA",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAxOTU4MzUsImlhdCI6MTczMDE5MjIzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNDdjNmY0NGUtNzE0Ny00YzM3LTk5YWEtZjQwOTk0OTRmODI1Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDFiY2FhNTUtZmY0ZS0yNzBjLTA3NDctM2ExNWU5YWIzMjM3In0.vA2gOSOE_2owSTJ14DZDeEvH5P_KlZ6wkJ_k0s2ENdqFKZDrmfTSBnErxCmR-QM11yFhvgOIPDA4tM1puUAV1hGeLllo7uV6lb_CFRWusk9KasChEWtqAc0-0SrK3VQ3AP9CDJvdq1NUWp2CLDlBWnflO-YkKw1c7igXPGIdDPjRW97HeYm9dX1VV1DGCzPYsprX3GWhmaDRX4RoOIpgFitrw8xzZ1Q8uioIYyF_1C1hGp4oqUCVGHjUX07I6r5-mUJtE2j6_I0JXlOWO5lDzYHF4338egzy9cHXFlkrebG3NmRAgoc7a0cjmSE3ZK0JkRiLs6IkFbNIDmrpOAGdIA
+token_type: Bearer
+expires_in: 3600
+]]></output>
+          <assertions>
+            <assertion result="Failed">
+              <message><![CDATA[  Expected: 121
+  But was:  12
+]]></message>
+              <stack-trace><![CDATA[   at CasesOne.test112.TestLogin001111() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/test112.cs:line 62
+]]></stack-trace>
+            </assertion>
+          </assertions>
+        </test-case>
+        <test-case id="1-1008" name="TestLogin002111" fullname="CasesOne.test112.TestLogin002111" methodname="TestLogin002111" classname="CasesOne.test112" runstate="Runnable" seed="203298968" result="Passed" start-time="2024-10-29T08:57:14.7967110Z" end-time="2024-10-29T08:57:14.7969450Z" duration="0.000234" asserts="1">
+          <properties>
+            <property name="Description" value="测试登录-用户名异常" />
+          </properties>
+          <output><![CDATA[+++++++++___________TestLogin002111
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

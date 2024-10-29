@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <ItemGroup>
+<!--        <PackageReference Include="coverlet.collector" Version="6.0.0" />-->
+<!--        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />-->
+<!--        <PackageReference Include="NUnit" Version="4.2.2" />-->
+<!--        <PackageReference Include="NUnit.Analyzers" Version="3.9.0" />-->
+<!--        <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />-->
+
+<!--        <PackageReference Include="NUnit" Version="4.2.2" />-->
+<!--        &lt;!&ndash; 引用 NUnit3TestAdapter，用于允许在 Visual Studio 中运行测试 &ndash;&gt;-->
+<!--        <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />-->
+<!--        &lt;!&ndash; 可选的，用于与 .NET CLI 配合运行测试 &ndash;&gt;-->
+<!--        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />-->
+
+<!--        <PackageReference Include="Flurl.Http" Version="3.3.0" />-->
+<!--        <PackageReference Include="RestSharp" Version="112.1.0" />-->
+
+<!--        <PackageReference Include="AeFinder.Sdk" Version="1.1.4-rc4" />-->
+<!--        <PackageReference Include="AElf.Sdk.CSharp" Version="1.6.0" />-->
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="NUnit.Framework" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AeIndexerTester\AeIndexerTester.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="4" result="Failed" total="4" passed="3" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="5" engine-version="3.18.3.0" clr-version="8.0.7" start-time="2024-10-27 16:18:03Z" end-time="2024-10-27 16:18:04Z" duration="0.737199">
+  <command-line><![CDATA[/Users/lianqingdong/Downloads/NUnit.Console-3.18.3/bin/net8.0/nunit3-console.dll /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/bin/Debug/net8.0/CaseOne.dll --result=TestResult.xml]]></command-line>
+  <test-suite type="Assembly" id="1-1006" name="CaseOne.dll" fullname="/Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/bin/Debug/net8.0/CaseOne.dll" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2024-10-27T16:18:03.6639630Z" end-time="2024-10-27T16:18:04.3163650Z" duration="0.652192" total="4" passed="3" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="5">
+    <environment framework-version="3.14.0.0" clr-version="8.0.7" os-version="Darwin 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:46 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6020" platform="Unix" cwd="/Users/lianqingdong/RiderProjects/AeIndexerTester/CasesAggregation" machine-name="aelfdeMacBook-Pro" user="lianqingdong" user-domain="aelfdeMacBook-Pro" culture="zh-CN" uiculture="zh-CN" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="/Users/lianqingdong/RiderProjects/AeIndexerTester/CasesAggregation" />
+      <setting name="NumberOfTestWorkers" value="10" />
+    </settings>
+    <properties>
+      <property name="_PID" value="51367" />
+      <property name="_APPDOMAIN" value="nunit3-console" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1-1007" name="CaseOne" fullname="CaseOne" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-10-27T16:18:03.6664580Z" end-time="2024-10-27T16:18:03.7057240Z" duration="0.039265" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1-1000" name="Tests" fullname="CaseOne.Tests" classname="CaseOne.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-10-27T16:18:03.6672130Z" end-time="2024-10-27T16:18:03.7055920Z" duration="0.038380" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <test-case id="1-1001" name="Test1" fullname="CaseOne.Tests.Test1" methodname="Test1" classname="CaseOne.Tests" runstate="Runnable" seed="1567977717" result="Passed" start-time="2024-10-27T16:18:03.6682070Z" end-time="2024-10-27T16:18:03.7035090Z" duration="0.035343" asserts="0" />
+      </test-suite>
+    </test-suite>
+    <test-suite type="TestSuite" id="1-1008" name="CasesAggregation" fullname="CasesAggregation" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-10-27T16:18:03.6666360Z" end-time="2024-10-27T16:18:04.3163610Z" duration="0.649721" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="5">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1-1002" name="CalculatorTests" fullname="CasesAggregation.CalculatorTests" classname="CasesAggregation.CalculatorTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-10-27T16:18:03.7061520Z" end-time="2024-10-27T16:18:04.3163530Z" duration="0.610197" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="5">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1-1004" name="Add_ShouldReturnSum_WhenGivenTwoIntegers" fullname="CasesAggregation.CalculatorTests.Add_ShouldReturnSum_WhenGivenTwoIntegers" methodname="Add_ShouldReturnSum_WhenGivenTwoIntegers" classname="CasesAggregation.CalculatorTests" runstate="Runnable" seed="1015573162" result="Passed" start-time="2024-10-27T16:18:03.7061940Z" end-time="2024-10-27T16:18:04.0526390Z" duration="0.346443" asserts="1">
+          <output><![CDATA[Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAwNDk0ODQsImlhdCI6MTczMDA0NTg4NCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOWM2Mjk3NDMtNzJmOS00NWFlLWI1M2QtMTlkZmExZWY1M2M0Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODg2OThkZTgtODQwZi03YjI2LWRkM2EtM2ExNWUwZjIwZjU0In0.FJOwc_fnUXfKcW0HZjKB2OuZaAETE3JS0WV4aFxHUzfJz2qovp3summxBed2jnPBmZ2Q6tvhOsR51_LUvO_P5KX84a4rlJqO-_Z89KjUZ5U79YcC7nkaAlAHr3X-quAScCgb0HWGWCMdHxp6T9TihbyIowE3YFMoDSxxo6RZ2Z8yZylDcuSCssp0dlA5vISy4GaiOW9JkVPHBhhK1GuHg4WXByf7z5FECX4NO9iX3Ysv4SpITTQ9-GbfTqKL4VWtgMIwMrWRUf_HfmGbVTWFeJwhqikQUck_rcA9Or8X4kJYn87B2EgfqiymZ78iPCMMaRAxT8fSLiQHLWUS3qyK2w",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAwNDk0ODQsImlhdCI6MTczMDA0NTg4NCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOWM2Mjk3NDMtNzJmOS00NWFlLWI1M2QtMTlkZmExZWY1M2M0Iiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODg2OThkZTgtODQwZi03YjI2LWRkM2EtM2ExNWUwZjIwZjU0In0.FJOwc_fnUXfKcW0HZjKB2OuZaAETE3JS0WV4aFxHUzfJz2qovp3summxBed2jnPBmZ2Q6tvhOsR51_LUvO_P5KX84a4rlJqO-_Z89KjUZ5U79YcC7nkaAlAHr3X-quAScCgb0HWGWCMdHxp6T9TihbyIowE3YFMoDSxxo6RZ2Z8yZylDcuSCssp0dlA5vISy4GaiOW9JkVPHBhhK1GuHg4WXByf7z5FECX4NO9iX3Ysv4SpITTQ9-GbfTqKL4VWtgMIwMrWRUf_HfmGbVTWFeJwhqikQUck_rcA9Or8X4kJYn87B2EgfqiymZ78iPCMMaRAxT8fSLiQHLWUS3qyK2w
+token_type: Bearer
+expires_in: 3600
+]]></output>
+        </test-case>
+        <test-case id="1-1003" name="resttestcase" fullname="CasesAggregation.CalculatorTests.resttestcase" methodname="resttestcase" classname="CasesAggregation.CalculatorTests" runstate="Runnable" seed="1496264349" result="Failed" start-time="2024-10-27T16:18:04.0527410Z" end-time="2024-10-27T16:18:04.3154450Z" duration="0.262702" asserts="3">
+          <failure>
+            <message><![CDATA[  The actual value did not match the expected value.
+  Expected string length 5 but was 4. Strings differ at index 4.
+  Expected: "35991"
+  But was:  "3599"
+  ---------------^
+]]></message>
+            <stack-trace><![CDATA[   at CasesAggregation.CalculatorTests.resttestcase() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CalculatorTests.cs:line 34
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAwNDk0ODQsImlhdCI6MTczMDA0NTg4NCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNGU2ZWI5NzItYmE0Ny00NDhjLWEyNDgtOGQ1ZjM3ZTNlMGRmIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNTIwNTQxMjktYjVjMS0yM2Y5LWViYTktM2ExNWUwZjIxMDczIn0.q7cysmzB6Q81uU7Du0LDvUIlVR4Yf6mjSFmC-xxCw9ez-yVTXC-4abv5pn3evnNx6WojKg7cUaagumENdwHEFN-rwHPjEMUzp2Y3Bn-RFRrYz6L01ZOfftQ9qjN1kWatyaUU_I3tZdjz-ugRxgy91kR91Q9fcthErLtU6Dg-hmJHpeRksxgwAMWoYVZSuBx1KdhVz317ppckzhszsTVlh2p74i8KqP59h533JHNZ8Z1na8LIOS2RsJcPK_QyJZUSedrbgLjAJkd5WTkwMWnFIL-mHqHJINDRmGmvcS1awCEWTFPTjMj8M_57RdgvkfsrsvgJMHoXlwNBFldPca2N1Q",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjRDOTczRTEzRDdENjk3NzYzMjMyM0Q0NjlBQjM2MTkyN0VGMUY3MzEiLCJ4NXQiOiJUSmMtRTlmV2wzWXlNajFHbXJOaGtuN3g5ekUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3MzAwNDk0ODQsImlhdCI6MTczMDA0NTg4NCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNGU2ZWI5NzItYmE0Ny00NDhjLWEyNDgtOGQ1ZjM3ZTNlMGRmIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNTIwNTQxMjktYjVjMS0yM2Y5LWViYTktM2ExNWUwZjIxMDczIn0.q7cysmzB6Q81uU7Du0LDvUIlVR4Yf6mjSFmC-xxCw9ez-yVTXC-4abv5pn3evnNx6WojKg7cUaagumENdwHEFN-rwHPjEMUzp2Y3Bn-RFRrYz6L01ZOfftQ9qjN1kWatyaUU_I3tZdjz-ugRxgy91kR91Q9fcthErLtU6Dg-hmJHpeRksxgwAMWoYVZSuBx1KdhVz317ppckzhszsTVlh2p74i8KqP59h533JHNZ8Z1na8LIOS2RsJcPK_QyJZUSedrbgLjAJkd5WTkwMWnFIL-mHqHJINDRmGmvcS1awCEWTFPTjMj8M_57RdgvkfsrsvgJMHoXlwNBFldPca2N1Q
+token_type: Bearer
+expires_in: 3599
+]]></output>
+          <assertions>
+            <assertion result="Failed">
+              <message><![CDATA[  The actual value did not match the expected value.
+  Expected string length 5 but was 4. Strings differ at index 4.
+  Expected: "35991"
+  But was:  "3599"
+  ---------------^
+]]></message>
+              <stack-trace><![CDATA[   at CasesAggregation.CalculatorTests.resttestcase() in /Users/lianqingdong/RiderProjects/AeIndexerTester/CaseOne/CalculatorTests.cs:line 34
+]]></stack-trace>
+            </assertion>
+          </assertions>
+        </test-case>
+        <test-case id="1-1005" name="Subtract_ShouldReturnDifference_WhenGivenTwoIntegers" fullname="CasesAggregation.CalculatorTests.Subtract_ShouldReturnDifference_WhenGivenTwoIntegers" methodname="Subtract_ShouldReturnDifference_WhenGivenTwoIntegers" classname="CasesAggregation.CalculatorTests" runstate="Runnable" seed="229654045" result="Passed" start-time="2024-10-27T16:18:04.3159010Z" end-time="2024-10-27T16:18:04.3163190Z" duration="0.000417" asserts="1" />
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
