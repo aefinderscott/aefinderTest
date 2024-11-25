@@ -1162,11 +1162,11 @@
           }
         }
       },
-      "Scriban/5.9.0": {
+      "Scriban/5.11.0": {
         "runtime": {
           "lib/net7.0/Scriban.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.9.0.0"
+            "fileVersion": "5.11.0.0"
           }
         }
       },
@@ -2413,7 +2413,7 @@
       },
       "Volo.Abp.TextTemplating.Scriban/8.1.4": {
         "dependencies": {
-          "Scriban": "5.9.0",
+          "Scriban": "5.11.0",
           "Volo.Abp.TextTemplating.Core": "8.1.4"
         },
         "runtime": {
@@ -2551,6 +2551,7 @@
           "NUnit3TestAdapter": "4.2.1",
           "RestSharp": "112.1.0",
           "SSH.NET": "2024.1.0",
+          "Scriban": "5.11.0",
           "Volo.Abp.Caching.StackExchangeRedis": "8.0.5",
           "Volo.Abp.EventBus.RabbitMQ": "8.0.5"
         },
@@ -3259,12 +3260,12 @@
       "path": "restsharp/112.1.0",
       "hashPath": "restsharp.112.1.0.nupkg.sha512"
     },
-    "Scriban/5.9.0": {
+    "Scriban/5.11.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-V725wLd3YKTRua8kTHUwJYTvIouNqyMBzNaNamCLlZPTyeP4gl+WJtqXDnWMe+mTftTGEVYZgbR1pLRmdKjK1g==",
-      "path": "scriban/5.9.0",
-      "hashPath": "scriban.5.9.0.nupkg.sha512"
+      "sha512": "sha512-Lf9pyyUbtW83XYLOR2UALuPpNxPYRy+PfrdcokEjc8wApLxsh51FDytrFAVXEC2yiWy6mwZN/7XF5ZKzBakJLA==",
+      "path": "scriban/5.11.0",
+      "hashPath": "scriban.5.11.0.nupkg.sha512"
     },
     "Secp256k1.Native/0.1.24-alpha": {
       "type": "package",

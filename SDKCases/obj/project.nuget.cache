@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KG7hVPNOqgo=",
+  "dgSpecHash": "1ov82XdfPKE=",
   "success": true,
   "projectFilePath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/SDKCases/SDKCases.csproj",
   "expectedPackageFiles": [
@@ -103,7 +103,7 @@
     "/Users/lianqingdong/.nuget/packages/rabbitmq.client/6.6.0/rabbitmq.client.6.6.0.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/remotion.linq/2.2.0/remotion.linq.2.2.0.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/restsharp/112.1.0/restsharp.112.1.0.nupkg.sha512",
-    "/Users/lianqingdong/.nuget/packages/scriban/5.9.0/scriban.5.9.0.nupkg.sha512",
+    "/Users/lianqingdong/.nuget/packages/scriban/5.11.0/scriban.5.11.0.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/secp256k1.native/0.1.24-alpha/secp256k1.native.0.1.24-alpha.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/secp256k1.net/1.2.0/secp256k1.net.1.2.0.nupkg.sha512",
     "/Users/lianqingdong/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",

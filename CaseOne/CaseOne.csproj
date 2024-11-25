@@ -24,6 +24,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AeIndexerTester\AeIndexerTester.csproj" />
+      <ProjectReference Include="..\DataManager\DataManager.csproj" />
     </ItemGroup>
+
+
+
+
 
 </Project>

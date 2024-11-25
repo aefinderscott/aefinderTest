@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CasesAggregation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a84ac80086048518ffa4bb2c7fc6483fb7d83d45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+304e76c0446019d4963e1df27cafdfd34262c190")]
 [assembly: System.Reflection.AssemblyProductAttribute("CasesAggregation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CasesAggregation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

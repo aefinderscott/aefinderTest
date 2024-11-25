@@ -11,7 +11,496 @@ using Flurl.Http;
 
 public class HttpTools
 {
+    // public static JObject? HttpPostJsonRequestJson(string baseUrl, string path, string contentType, Dictionary<string, object>? headers, object param)
+    // {
+    //     return HttpRequest( baseUrl,  path, "post",  headers, "contentType", param);
+    //     
+    // }
     
+    public static JObject? HttpPostRequestJson(string baseUrl, string path, string contentType, Dictionary<string, object>? headers, object param)
+    {
+        return HttpRequest( baseUrl,  path, "post",  headers, contentType, param);
+        
+    }
+    public static JObject? HttpPostJsonRequestJson(string baseUrl, string path, Dictionary<string, object>? headers, object param)
+    {
+        return HttpRequest( baseUrl,  path, "post",  headers, "application/json", param);
+        
+    }
+    
+    public static JObject? HttpGetRequestJson(string baseUrl, string path, string contentType, Dictionary<string, object>? headers, object param)
+    {
+        return HttpRequest( baseUrl,  path, "get",  headers, contentType, param);
+        
+    }
+    // public static JObject? HttpGetRequestJson(string baseUrl, string path, string contentType, object param)
+    // {
+    //     return HttpRequest( baseUrl,  path, "get",  headers, contentType, param);
+    //     
+    // }
+    
+    public static JObject? HttpGetJsonRequestJson(string baseUrl, string path, object param)
+    {
+        return HttpRequest( baseUrl,  path, "get", "application/json", param);
+    }
+    public static JObject? HttpGetFormRequestJson(string baseUrl, string path, object param)
+    {
+        return HttpRequest( baseUrl,  path, "get", "application/x-www-form-urlencoded", param);
+    }
+    public static JObject? HttpPostJsonRequestJson(string baseUrl, string path, object param)
+    {
+        return HttpRequest( baseUrl,  path, "post", "application/json", param);
+    }
+    public static JObject? HttpPostFormRequestJson(string baseUrl, string path, object param)
+    {
+        return HttpRequest( baseUrl,  path, "post", "application/x-www-form-urlencoded", param);
+    }
+    
+    public static JObject? HttpRequest(string baseUrl, string path, string method, Dictionary<string, object>? headers, object param)
+    {
+        // object Params
+        // Dictionary<string, object> Headers
+        // Dictionary<string, object>? p
+        // 创建 RestClient 并设置基础 URL
+        var client = new RestClient(baseUrl);
+
+        // 创建 RestRequest，指定资源路径和使用 POST 方法
+        var request = new RestRequest(path, Method.Post);
+        if ("get".Equals(method))
+        {
+            request = new RestRequest(path, Method.Get);
+        }
+
+        string contentType = "";
+        foreach (var header in headers)
+        {
+            request.AddHeader(header.Key, header.Value.ToString());
+            if ("Content-Type".ToLower().Equals(header.Key.ToLower()))
+            {
+                contentType = header.Value.ToString();
+            }
+
+        }
+
+        if ("application/x-www-form-urlencoded".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+            
+        }
+        else if ("application/json".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            
+            // 设置请求体为 JSON 格式
+            request.RequestFormat = DataFormat.Json;
+
+            // 序列化为 JSON 并添加到请求体
+            request.AddJsonBody(json);
+            
+        }
+        //待完善
+        else
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+        }
+        ;
+        
+        // 发送请求并得到响应
+        var response = client.Execute(request);
+
+        // 检查响应的内容
+        if (response.IsSuccessful)
+        {
+            Console.WriteLine("Request was successful!");
+            Console.WriteLine(response.Content);
+            
+            
+            var json = JObject.Parse(response.Content);
+
+            // json[""]
+            // 动态访问 JSON 数据
+            // Console.WriteLine($"access_token: {json["access_token"]}");
+            // Console.WriteLine($"token_type: {json["token_type"]}");
+            // Console.WriteLine($"expires_in: {json["expires_in"]}");
+            // Console.WriteLine($"Completed: {json["completed"]}");
+            return json;
+
+        }
+        else
+        {
+            Console.WriteLine("Request failed.");
+            Console.WriteLine(response.Content);
+            return null;
+        }
+    }
+    
+    
+    public static JObject? HttpRequest(string baseUrl, string path, string method, Dictionary<string, object>? headers,  string contentType, object param)
+    {
+        // object Params
+        // Dictionary<string, object> Headers
+        // Dictionary<string, object>? p
+        // 创建 RestClient 并设置基础 URL
+        var client = new RestClient(baseUrl);
+
+        // 创建 RestRequest，指定资源路径和使用 POST 方法
+        var request = new RestRequest(path, Method.Post);
+        if ("get".Equals(method))
+        {
+            request = new RestRequest(path, Method.Get);
+        }
+
+        // string contentType = "";
+        foreach (var header in headers)
+        {
+            request.AddHeader(header.Key, header.Value.ToString());
+            if ("Content-Type".ToLower().Equals(header.Key.ToLower()))
+            {
+                contentType = header.Value.ToString();
+            }
+
+        }
+
+        if ("application/x-www-form-urlencoded".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+            
+        }
+        else if ("application/json".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            
+            // 设置请求体为 JSON 格式
+            request.RequestFormat = DataFormat.Json;
+
+            // 序列化为 JSON 并添加到请求体
+            request.AddJsonBody(json);
+            
+        }
+        //待完善
+        else
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+        }
+        ;
+        
+        // 发送请求并得到响应
+        var response = client.Execute(request);
+
+        // 检查响应的内容
+        if (response.IsSuccessful)
+        {
+            Console.WriteLine("Request was successful!");
+            Console.WriteLine(response.Content);
+            
+            
+            var json = JObject.Parse(response.Content);
+
+            // json[""]
+            // 动态访问 JSON 数据
+            // Console.WriteLine($"access_token: {json["access_token"]}");
+            // Console.WriteLine($"token_type: {json["token_type"]}");
+            // Console.WriteLine($"expires_in: {json["expires_in"]}");
+            // Console.WriteLine($"Completed: {json["completed"]}");
+            return json;
+
+        }
+        else
+        {
+            Console.WriteLine("Request failed.");
+            Console.WriteLine(response.Content);
+            return null;
+        }
+    }
+    
+    public static JObject? HttpRequest(string baseUrl, string path, string method,  string contentType, object param)
+    {
+        // object Params
+        // Dictionary<string, object> Headers
+        // Dictionary<string, object>? p
+        // 创建 RestClient 并设置基础 URL
+        var client = new RestClient(baseUrl);
+
+        // 创建 RestRequest，指定资源路径和使用 POST 方法
+        var request = new RestRequest(path, Method.Post);
+        if ("get".Equals(method))
+        {
+            request = new RestRequest(path, Method.Get);
+        }
+
+        // string contentType = "";
+        // foreach (var header in headers)
+        // {
+        //     request.AddHeader(header.Key, header.Value.ToString());
+        //     if ("Content-Type".ToLower().Equals(header.Key.ToLower()))
+        //     {
+        //         contentType = header.Value.ToString();
+        //     }
+        //
+        // }
+
+        if ("application/x-www-form-urlencoded".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name.ToLower(), property.Value.ToString());
+            }
+            
+        }
+        else if ("application/json".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            
+            // 设置请求体为 JSON 格式
+            request.RequestFormat = DataFormat.Json;
+
+            // 序列化为 JSON 并添加到请求体
+            request.AddJsonBody(json);
+            
+        }
+        //待完善
+        else
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+        }
+        ;
+        
+        // 发送请求并得到响应
+        var response = client.Execute(request);
+
+        // 检查响应的内容
+        if (response.IsSuccessful)
+        {
+            Console.WriteLine("Request was successful!");
+            Console.WriteLine(response.Content);
+            
+            
+            var json = JObject.Parse(response.Content);
+
+            // json[""]
+            // 动态访问 JSON 数据
+            // Console.WriteLine($"access_token: {json["access_token"]}");
+            // Console.WriteLine($"token_type: {json["token_type"]}");
+            // Console.WriteLine($"expires_in: {json["expires_in"]}");
+            // Console.WriteLine($"Completed: {json["completed"]}");
+            return json;
+
+        }
+        else
+        {
+            Console.WriteLine("Request failed.");
+            Console.WriteLine(response.Content);
+            return null;
+        }
+    }
+    
+    public static JObject? GetRequest(string baseUrl, string path, Dictionary<string, object> headers, object param)
+    {
+        // object Params
+        // Dictionary<string, object> Headers
+        // Dictionary<string, object>? p
+        // 创建 RestClient 并设置基础 URL
+        var client = new RestClient(baseUrl);
+
+        // 创建 RestRequest，指定资源路径和使用 POST 方法
+        var request = new RestRequest(path, Method.Get);
+        
+
+        string contentType = "";
+        foreach (var header in headers)
+        {
+            request.AddHeader(header.Key, header.Value.ToString());
+            if ("Content-Type".ToLower().Equals(header.Key.ToLower()))
+            {
+                contentType = header.Value.ToString();
+            }
+
+        }
+
+        if ("application/x-www-form-urlencoded".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+            
+        }
+        else if ("application/json".Equals(contentType.ToLower()))
+        {
+            JObject json = JObject.Parse(param.ToString());
+            
+            // 设置请求体为 JSON 格式
+            request.RequestFormat = DataFormat.Json;
+
+            // 序列化为 JSON 并添加到请求体
+            request.AddJsonBody(json);
+            
+        }
+        //待完善
+        else
+        {
+            JObject json = JObject.Parse(param.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+        }
+        ;
+        
+        // 发送请求并得到响应
+        var response = client.Execute(request);
+
+        // 检查响应的内容
+        if (response.IsSuccessful)
+        {
+            Console.WriteLine("Request was successful!");
+            Console.WriteLine(response.Content);
+            
+            var json = JObject.Parse(response.Content);
+
+            return json;
+
+        }
+        else
+        {
+            Console.WriteLine("Request failed.");
+            Console.WriteLine(response.Content);
+            return null;
+        }
+    }
+    
+    public JObject? RestTest(CaseDetail caseDetail)
+    {
+        // Dictionary<string, object>? p
+        // 创建 RestClient 并设置基础 URL
+        var client = new RestClient(caseDetail.BaseUrl);
+
+        // 创建 RestRequest，指定资源路径和使用 POST 方法
+        var request = new RestRequest(caseDetail.Path, Method.Post);
+        if ("post".Equals(caseDetail.MethodName))
+        {
+            request = new RestRequest(caseDetail.Path, Method.Post);
+        }
+        else
+        {
+            request = new RestRequest(caseDetail.Path, Method.Get);
+        }
+
+
+        string contentType = "";
+        foreach (var VARIABLE in caseDetail.Headers)
+        {
+            request.AddHeader(VARIABLE.Key, VARIABLE.Value.ToString());
+
+        }
+
+        if ("application/x-www-form-urlencoded".Equals(contentType))
+        {
+            JObject json = JObject.Parse(caseDetail.Params.ToString());
+            // 遍历键值对
+            foreach (var property in json.Properties())
+            {
+                Console.WriteLine($"Key: {property.Name}, Value: {property.Value}");
+                request.AddParameter(property.Name, property.Value.ToString());
+            }
+            
+        }
+        else
+        {
+            JObject json = JObject.Parse(caseDetail.Params.ToString());
+            
+            
+            // 设置请求体为 JSON 格式
+            request.RequestFormat = DataFormat.Json;
+
+            // // 创建一个要传递的 JSON 对象
+            // var data = new
+            // {
+            //     // 这里是你的 JSON 参数
+            //     key1 = "value1",
+            //     key2 = "value2"
+            // };
+
+            // 序列化为 JSON 并添加到请求体
+            request.AddJsonBody(json);
+            
+        }
+        // 添加 ContentType 头部为 application/x-www-form-urlencoded
+        // request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        // 添加表单参数
+        // request.AddParameter("username", "admin");
+        // request.AddParameter("password", "1q2W3e*");
+        // request.AddParameter("client_id", "AeFinder_App");
+        // request.AddParameter("grant_type", "password");
+        // request.AddParameter("scope", "AeFinder");
+        
+        // 发送请求并得到响应
+        var response = client.Execute(request);
+
+        // 检查响应的内容
+        if (response.IsSuccessful)
+        {
+            Console.WriteLine("Request was successful!");
+            Console.WriteLine(response.Content);
+            
+            
+            var json = JObject.Parse(response.Content);
+
+            // json[""]
+            // 动态访问 JSON 数据
+            Console.WriteLine($"access_token: {json["access_token"]}");
+            Console.WriteLine($"token_type: {json["token_type"]}");
+            Console.WriteLine($"expires_in: {json["expires_in"]}");
+            // Console.WriteLine($"Completed: {json["completed"]}");
+            return json;
+
+        }
+        else
+        {
+            Console.WriteLine("Request failed.");
+            Console.WriteLine(response.Content);
+            return null;
+        }
+    }
     
     public JObject? RestTest()
     {
@@ -25,18 +514,12 @@ public class HttpTools
         request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 
         // 添加表单参数
-        // --data-urlencode 'grant_type=password' \
-        // --data-urlencode 'scope=AeFinder' \
-        // --data-urlencode 'username=admin' \
-        // --data-urlencode 'password=1q2W3e*' \
-        // --data-urlencode 'client_id=AeFinder_App'
         request.AddParameter("username", "admin");
         request.AddParameter("password", "1q2W3e*");
         request.AddParameter("client_id", "AeFinder_App");
         request.AddParameter("grant_type", "password");
         request.AddParameter("scope", "AeFinder");
         
-
         // 发送请求并得到响应
         var response = client.Execute(request);
 

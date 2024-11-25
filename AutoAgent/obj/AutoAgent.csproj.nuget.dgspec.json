@@ -1,0 +1,199 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/AutoAgent/AutoAgent.csproj": {}
+  },
+  "projects": {
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
+        "projectName": "AeIndexerTester",
+        "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj",
+        "packagesPath": "/Users/lianqingdong/.nuget/packages/",
+        "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/aefinder/api/v3/index.json": {},
+          "https://www.myget.org/F/aelf-project-dev/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AElf.Sdk.CSharp": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AeFinder.Sdk": {
+              "target": "Package",
+              "version": "[1.1.4-rc4, )"
+            },
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Microsoft.AspNetCore.DataProtection.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[112.1.0, )"
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2024.1.0, )"
+            },
+            "Scriban": {
+              "target": "Package",
+              "version": "[5.11.0, )"
+            },
+            "Volo.Abp.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Volo.Abp.EventBus.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/lianqingdong/Desktop/autotest/aefinderTest/AutoAgent/AutoAgent.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AutoAgent/AutoAgent.csproj",
+        "projectName": "AutoAgent",
+        "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AutoAgent/AutoAgent.csproj",
+        "packagesPath": "/Users/lianqingdong/.nuget/packages/",
+        "outputPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AutoAgent/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lianqingdong/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/aefinder/api/v3/index.json": {},
+          "https://www.myget.org/F/aelf-project-dev/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj": {
+                "projectPath": "/Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/AeIndexerTester.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

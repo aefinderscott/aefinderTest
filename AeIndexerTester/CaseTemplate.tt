@@ -1,0 +1,26 @@
+<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+// 自动生成的代码注释
+// 创建时间: <#= DateTime.Now #>
+
+namespace GeneratedNamespace
+{
+    public class ExampleClass
+    {
+        public void PrintMessage()
+        {
+            Console.WriteLine("自动生成的类 - ExampleClass");
+        }
+
+        public List<string> GetItems()
+        {
+            return new List<string>
+            {
+                "Item1", "Item2", "Item3"
+            };
+        }
+    }
+}

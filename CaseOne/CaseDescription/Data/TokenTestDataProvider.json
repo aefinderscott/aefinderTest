@@ -1,0 +1,56 @@
+[
+  [{
+    "StepNo": 1,
+    "Params": {
+      "username": "admin",
+      "password": "1q2W3e*",
+      "client_id": "AeFinder_App",
+      "grant_type": "password",
+      "scope": "AeFinder"
+    },
+    "Asserts": {
+      "$.access_token": "NotNull",
+      "$.token_type": "Bearer"
+    }
+  }, {
+    "StepNo": 2,
+    "Params": {
+      "chainId": "AELF",
+      "startBlockHeight": 7000000,
+      "endBlockHeight": 7000002,
+      "isOnlyConfirmed": false
+    },
+    "Asserts": {
+      "$[0].id": "ec815f4898d49c6a7e6cfd0747f53e69e53e0e7b371167241ee6285957b66340",
+      "$[0].extraProperties.Version": "0",
+      "$[0].transactionIds[1]": "42ed60883588e53c2d11a035acf629c63f13e0a9f78a08a95575fb7b123046ea"
+    }
+  }],
+  [{
+    "StepNo": 1,
+    "Params": {
+      "username": "admin",
+      "password": "1q2W3e*",
+      "client_id": "AeFinder_App",
+      "grant_type": "password",
+      "scope": "AeFinder"
+    },
+    "Asserts": {
+      "$.access_token": "NotNull",
+      "$.token_type": "Bearer"
+    }
+  }, {
+    "StepNo": 2,
+    "Params": {
+      "chainId": "AELF",
+      "startBlockHeight": 7000000,
+      "endBlockHeight": 7000002,
+      "isOnlyConfirmed": false
+    },
+    "Asserts": {
+      "$[0].id": "ec815f4898d49c6a7e6cfd0747f53e69e53e0e7b371167241ee6285957b66340",
+      "$[0].extraProperties.Version": "0",
+      "$[0].transactionIds[1]": "42ed60883588e53c2d11a035acf629c63f13e0a9f78a08a95575fb7b123046ea"
+    }
+  }]
+]

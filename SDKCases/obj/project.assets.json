@@ -1882,7 +1882,7 @@
           }
         }
       },
-      "Scriban/5.9.0": {
+      "Scriban/5.11.0": {
         "type": "package",
         "compile": {
           "lib/net7.0/Scriban.dll": {
@@ -4021,6 +4021,7 @@
           "NUnit3TestAdapter": "4.2.1",
           "RestSharp": "112.1.0",
           "SSH.NET": "2024.1.0",
+          "Scriban": "5.11.0",
           "Volo.Abp.Caching.StackExchangeRedis": "8.0.5",
           "Volo.Abp.EventBus.RabbitMQ": "8.0.5"
         },
@@ -6975,10 +6976,10 @@
         "restsharp.png"
       ]
     },
-    "Scriban/5.9.0": {
-      "sha512": "V725wLd3YKTRua8kTHUwJYTvIouNqyMBzNaNamCLlZPTyeP4gl+WJtqXDnWMe+mTftTGEVYZgbR1pLRmdKjK1g==",
+    "Scriban/5.11.0": {
+      "sha512": "Lf9pyyUbtW83XYLOR2UALuPpNxPYRy+PfrdcokEjc8wApLxsh51FDytrFAVXEC2yiWy6mwZN/7XF5ZKzBakJLA==",
       "type": "package",
-      "path": "scriban/5.9.0",
+      "path": "scriban/5.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6989,9 +6990,10 @@
         "lib/netstandard2.0/Scriban.dll",
         "lib/netstandard2.0/Scriban.xml",
         "readme.md",
-        "scriban.5.9.0.nupkg.sha512",
+        "scriban.5.11.0.nupkg.sha512",
         "scriban.nuspec",
         "scriban.png",
+        "src/Scriban/.editorconfig",
         "src/Scriban/Functions/ArrayFunctions.cs",
         "src/Scriban/Functions/BuiltinFunctions.cs",
         "src/Scriban/Functions/DateTimeFunctions.cs",
@@ -7049,6 +7051,7 @@
         "src/Scriban/Runtime/IScriptOutput.cs",
         "src/Scriban/Runtime/IScriptTransformable.cs",
         "src/Scriban/Runtime/ITemplateLoader.cs",
+        "src/Scriban/Runtime/JsonElementExtensions.cs",
         "src/Scriban/Runtime/MemberFilterDelegate.cs",
         "src/Scriban/Runtime/MemberRenamerDelegate.cs",
         "src/Scriban/Runtime/ScriptArray.cs",

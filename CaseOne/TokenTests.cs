@@ -1,20 +1,18 @@
 using AeIndexerTester;
 using AventStack.ExtentReports;
 
-namespace CasesOne
+namespace CaseOne
 {
     [TestFixture]
     // [Description("法")]
     public class TokenTests : BaseTestSetup
     {
-        private Calculator _calculator;
         private HttpTools _httpTools;
 
         [SetUp]
         public void Setup()
         {
             SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
-            _calculator = new Calculator();
             _httpTools = new HttpTools();
         }
 
@@ -36,31 +34,14 @@ namespace CasesOne
         [Description("测试登录-正向")]
         public void TestLogin001()
         {
-            _httpTools.RestTest();
-            // Arrange
-            int a = 5;
-            int b = 7;
-
-            // Act
-            int result = _calculator.Add(a, b);
-
-            // Assert
-            Assert.AreEqual(12, result);
+            
         }
 
         [Test]
         [Description("测试登录-用户名异常")]
         public void TestLogin002()
         {
-            // Arrange
-            int a = 10;
-            int b = 4;
-
-            // Act
-            int result = _calculator.Subtract(a, b);
-
-            // Assert
-            Assert.AreEqual(6, result);
+            
         }
 
         [TearDown]
@@ -69,7 +50,6 @@ namespace CasesOne
             TearDownAfterEachTest(TestContext.CurrentContext.Test.FullName);
             // base.TearDownAfterEachTest();
             // 清理代码，每个测试方法之后调用
-            _calculator = null;
             _httpTools = null;
             
         }

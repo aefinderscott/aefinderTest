@@ -1,4 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7c842dfd_002Dc687_002D481f_002Da036_002D2411b8387d64/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;ProjectFile&gt;1AD9D502-738E-4AF0-9ED1-E2A6011F93A2/f:TokenTests.cs&lt;/ProjectFile&gt;
+  &lt;Or&gt;
+    &lt;ProjectFile&gt;1AD9D502-738E-4AF0-9ED1-E2A6011F93A2/f:TokenTests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;6FA680D5-239E-45FE-BBE9-A5B287E603F7/f:DataClear.cs&lt;/ProjectFile&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::A87E4F03-9917-474C-963C-11C617870D17::net8.0::DataInit.Tests.Test1&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::GeneratedTests.CalculatorTests.AddTwoNumbers_Test&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.TokenTestTests.test001_Test&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Token2TestTests.test001_Test&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Token2TestTests.test001Test&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Token2TestTests.TestTest00111&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CasesOne.Token2TestTests.TestTest00111&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+  &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

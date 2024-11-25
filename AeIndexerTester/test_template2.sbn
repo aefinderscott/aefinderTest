@@ -1,0 +1,72 @@
+using AeIndexerTester;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+namespace {{ case_for_template_obj.name_space_name }}
+{
+    [TestFixture]
+    public class {{ case_for_template_obj.clazz_name }}Tests : BaseTestSetup
+    {
+        [SetUp]
+        public void Setup()
+        {
+            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
+            //makeBlocks("test001","tDVV",1,1,1);
+        }
+        
+        [Test]
+        [Description( "{{ case_for_template_obj.case_obj.case_detail.description }}")]
+        public void {{ case_for_template_obj.case_obj.case_detail.name }}_Test()
+        {
+            JObject param = new JObject();
+            {{- for step in case_for_template_obj.case_obj.case_detail.steps }}
+            
+            //request
+            param = JObject.Parse("{{step.request.params}}");
+            {{- if (step.request.method_name == "get") }}
+            {{- if (step.response_type == "string") }}
+            string result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                            .ContentType("{{step.request.content_type}}")
+                            .Params(param).Exec(oneCaseDto).ToString();
+            {{- else if step.response_type == "JArray" }}
+            JArray result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                                        .ContentType("{{step.request.content_type}}")
+                                        .Params(param).Exec(oneCaseDto).ToJArray();
+            {{- else }}
+            JObject result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                                                    .ContentType("{{step.request.content_type}}")
+                                                    .Params(param).Exec(oneCaseDto).ToJObject();
+            {{- end }}
+            {{- else if step.request.method_name == "post" }}
+            {{- if (step.response_type == "string") }}
+            string result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                            .ContentType("{{step.request.content_type}}")
+                            .Params(param).Exec(oneCaseDto).ToString();
+            {{- else if step.response_type == "JArray" }}
+            JArray result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                                        .ContentType("{{step.request.content_type}}")
+                                        .Params(param).Exec(oneCaseDto).ToJArray();
+            {{- else }}
+            JObject result{{step.step_no}} = HttpRequest.BaseUrl("{{step.request.base_url}}").Path("{{step.request.path}}")
+                                                    .ContentType("{{step.request.content_type}}")
+                                                    .Params(param).Exec(oneCaseDto).ToJObject();
+            {{- end }}
+            {{- else }}
+            {{- end }}
+            
+            // Assert
+            {{- for asserts in step.asserts }}
+            {{- if asserts.expect_value == "NotNull" }}
+            Assert.IsNotNull(result{{step.step_no}}.SelectToken("{{asserts.assert_path}}"));
+            {{- else if asserts.expect_value== "true" }}
+            Assert.True(Boolean.Parse(result{{step.step_no}}.SelectToken("{{asserts.assert_path}}").ToString()));
+            {{- else if asserts.expect_value == "false" }}
+            Assert.False(Boolean.Parse(result{{step.step_no}}.SelectToken("{{asserts.assert_path}}").ToString()));
+            {{- else }}
+            Assert.AreEqual("{{asserts.expect_value}}", result{{step.step_no}}.SelectToken("{{asserts.assert_path}}").ToString());
+            {{- end }}
+            {{- end }}
+            {{- end }}
+        }
+    }
+}
