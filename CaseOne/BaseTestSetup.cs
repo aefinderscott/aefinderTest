@@ -15,10 +15,21 @@ public class BaseTestSetup
 
 
     protected OneCaseDto oneCaseDto;
-    public void TearDownAfterEachTest(string name)
+    public void TearDownAfterEachTest(Type type)
     {
+        string fullname = TestContext.CurrentContext.Test.FullName;
+        string name = TestContext.CurrentContext.Test.Name;
+        if (fullname.IndexOf("(") > 0)
+        {
+            fullname = fullname.Substring(0, fullname.IndexOf("("));
+            name = fullname.Split(".")[fullname.Split(".").Length - 1];
+        }
         
+        Console.WriteLine("11111" + fullname);
+        Console.WriteLine("11111" + name);
+
         // GlobalExtentReport.Extent
+        // string name = TestContext.CurrentContext.Test.FullName;
         var status = TestContext.CurrentContext.Result.Outcome.Status;
         var stacktrace = TestContext.CurrentContext.Result.StackTrace;
         var errorMessage = TestContext.CurrentContext.Result.Message;
@@ -26,20 +37,71 @@ public class BaseTestSetup
         if (status == TestStatus.Failed)
         {
             // ExtentTest test = GlobalExtentReport.Extent.CreateTest(name);
-            GlobalSetUpFixture.TestReport[name].Log(Status.Fail, "Test failed." + errorMessage);
+            GlobalSetUpFixture.TestReport[fullname].Log(Status.Fail, "Test failed." + errorMessage);
         }
         else
         {
-            GlobalSetUpFixture.TestReport[name].Log(Status.Pass, "Test success.");
+            GlobalSetUpFixture.TestReport[fullname].Log(Status.Pass, "Test success.");
         }
 
         oneCaseDto = null;
     }
     
-    public void SetUpBeforeEachTest(string testName)
+    public void SetUpBeforeEachTest(Type type)
     {
+        // Console.WriteLine("00000");
+        // Console.WriteLine(TestContext.CurrentContext.Test.Name);
+        // Console.WriteLine("00000");
         oneCaseDto = new OneCaseDto();
-        GlobalSetUpFixture.initTest(testName);
+        // GlobalSetUpFixture.initTest(testName);
+        new GlobalSetUpFixture().InitTes(type);
+    }
+    
+    public void SetUpBeforeEachTest11(Type type)
+    {
+        Console.WriteLine("00000");
+        Console.WriteLine(TestContext.CurrentContext.Test.Name);
+        Console.WriteLine("00000");
+        oneCaseDto = new OneCaseDto();
+        
+        MethodInfo methodInfo = type.GetMethod(TestContext.CurrentContext.Test.Name);
+        // type.FullName;
+        Console.WriteLine(type.FullName);
+        Console.WriteLine(methodInfo.Name);
+        
+        
+        var descriptionAttribute = methodInfo?.GetCustomAttribute<DescriptionAttribute>();
+
+        Console.WriteLine("=========" + descriptionAttribute?.Properties.ToString());
+            
+        string description = descriptionAttribute?.Properties.Get("Description").ToString() ?? "No description provided";
+        Console.WriteLine("=========" + description);
+        
+        
+        
+        // if (methodInfo != null)
+        // {
+        //     // Get the Description attribute from the method
+        //     var attributes = methodInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+        //
+        //     if (attributes.Length > 0)
+        //     {
+        //         // Assuming there's only one DescriptionAttribute
+        //         DescriptionAttribute description = (DescriptionAttribute)attributes[0];
+        //         Console.WriteLine("Method Description: " + description.Description);
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("The method does not have a Description attribute.");
+        //     }
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Method not found.");
+        // }
+        
+        
+        // GlobalSetUpFixture.initTest(testName);
         
     }
     

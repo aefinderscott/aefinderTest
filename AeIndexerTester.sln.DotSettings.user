@@ -11,6 +11,9 @@
       &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Token2TestTests.test001Test&lt;/TestId&gt;
       &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.Token2TestTests.TestTest00111&lt;/TestId&gt;
       &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CasesOne.Token2TestTests.TestTest00111&lt;/TestId&gt;
+      &lt;TestId&gt;NUnit3x::1AD9D502-738E-4AF0-9ED1-E2A6011F93A2::net8.0::CaseOne.VersionTest.TestVersion002&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;1AD9D502-738E-4AF0-9ED1-E2A6011F93A2/f:Token2Test.cs&lt;/ProjectFile&gt;
+    &lt;Project Location="/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne" Presentation="&amp;lt;CaseOne&amp;gt;" /&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

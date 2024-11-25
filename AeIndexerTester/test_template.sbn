@@ -15,7 +15,7 @@ namespace {{ case_for_template_obj.name_space_name }}
         [SetUp]
         public void Setup()
         {
-            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
+            SetUpBeforeEachTest(typeof({{ case_for_template_obj.clazz_name }}Tests));
             //makeBlocks("test001","tDVV",1,1,1);
         }
         
@@ -72,6 +72,12 @@ namespace {{ case_for_template_obj.name_space_name }}
             {{- end }}
             {{- end }}
             {{- end }}
+        }
+        
+        [TearDown]
+        public void TearDown()
+        {
+            TearDownAfterEachTest(typeof({{ case_for_template_obj.clazz_name }}Tests));
         }
     }
 }

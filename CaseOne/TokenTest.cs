@@ -15,7 +15,7 @@ namespace CaseOne
         [SetUp]
         public void Setup()
         {
-            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
+            SetUpBeforeEachTest(typeof(TokenTestTests));
             //makeBlocks("test001","tDVV",1,1,1);
         }
         
@@ -43,6 +43,12 @@ namespace CaseOne
             Assert.AreEqual(JObject.Parse(dictionary[2].Asserts.ToString())["$[0].id"].ToString(), result2.SelectToken("$[0].id").ToString());
             Assert.AreEqual(JObject.Parse(dictionary[2].Asserts.ToString())["$[0].extraProperties.Version"].ToString(), result2.SelectToken("$[0].extraProperties.Version").ToString());
             Assert.AreEqual(JObject.Parse(dictionary[2].Asserts.ToString())["$[0].transactionIds[1]"].ToString(), result2.SelectToken("$[0].transactionIds[1]").ToString());
+        }
+        
+        [TearDown]
+        public void TearDown()
+        {
+            TearDownAfterEachTest(typeof(TokenTestTests));
         }
     }
 }

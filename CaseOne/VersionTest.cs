@@ -12,6 +12,7 @@
 // using NUnit.Framework;
 // using NUnit.Framework.Interfaces;
 //
+
 using AeIndexerTester;
 
 namespace CaseOne
@@ -25,56 +26,63 @@ namespace CaseOne
         [SetUp]
         public void Setup()
         {
-            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
+            Type type = typeof(VersionTest);
+
+            // // Get the method info using reflection
+            // MethodInfo methodInfo = type.GetMethod(TestContext.CurrentContext.Test.Name);
+            // // type.FullName;
+            // Console.WriteLine(type.FullName);
+            // Console.WriteLine(methodInfo.Name);
+            SetUpBeforeEachTest(typeof(VersionTest));
             _httpTools = new HttpTools();
         }
 
-        [Test]
-        [Description("version-正向")]
-        public void DemoTest()
-        {
-            var result = _httpTools.RestTest();
+        // [Test]
+        // [Description("version-正向")]
+        // public void DemoTest()
+        // {
+        //     var result = _httpTools.RestTest();
+        //
+        //     // Assert.AreEqual()
+        //     Assert.IsNotNull(result["access_token"]);
+        //     string rs = result["token_type"].ToString();
+        //     Assert.AreEqual("", "",
+        //         ""); //.AreEqual("Bearer1", rs, "The actual value did not match the expected value.");
+        //     // Assert.AreEqual("35991", result["expires_in"].ToString(), "The actual value did not match the expected value.");
+        // }
 
-            // Assert.AreEqual()
-            Assert.IsNotNull(result["access_token"]);
-            string rs = result["token_type"].ToString();
-            Assert.AreEqual("", "",
-                ""); //.AreEqual("Bearer1", rs, "The actual value did not match the expected value.");
-            // Assert.AreEqual("35991", result["expires_in"].ToString(), "The actual value did not match the expected value.");
-        }
-
-        [Test]
-        [Description("version-正向")]
-        public void TestVersion()
-        {
-            var result = _httpTools.RestTest();
-
-            // Assert.AreEqual()
-            Assert.IsNotNull(result["access_token"]);
-            string rs = result["token_type"].ToString();
-            Assert.AreEqual("", "",
-                ""); //.AreEqual("Bearer1", rs, "The actual value did not match the expected value.");
-            // Assert.AreEqual("35991", result["expires_in"].ToString(), "The actual value did not match the expected value.");
-        }
-
-        [Test]
-        [Description("version-不存在")]
-        public void TestVersion001()
-        {
-            
-        }
+        // [Test]
+        // [Description("version-正向")]
+        // public void TestVersion()
+        // {
+        //     var result = _httpTools.RestTest();
+        //
+        //     // Assert.AreEqual()
+        //     Assert.IsNotNull(result["access_token"]);
+        //     string rs = result["token_type"].ToString();
+        //     Assert.AreEqual("", "",
+        //         ""); //.AreEqual("Bearer1", rs, "The actual value did not match the expected value.");
+        //     // Assert.AreEqual("35991", result["expires_in"].ToString(), "The actual value did not match the expected value.");
+        // }
+        //
+        // [Test]
+        // [Description("version-不存在")]
+        // public void TestVersion001()
+        // {
+        //     
+        // }
 
         [Test]
         [Description("version-替换")]
         public void TestVersion002()
         {
-            
+            Assert.AreEqual(1,1);
         }
 
         [TearDown]
         public void TearDown()
         {
-            TearDownAfterEachTest(TestContext.CurrentContext.Test.FullName);
+            TearDownAfterEachTest(typeof(VersionTest));
             // base.TearDownAfterEachTest();
             // 清理代码，每个测试方法之后调用
             _httpTools = null;

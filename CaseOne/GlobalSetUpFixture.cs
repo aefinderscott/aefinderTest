@@ -22,28 +22,56 @@ public class GlobalSetUpFixture
     // {
     //         
     // }
-    public static void initTest(string name)
-    {
-        new GlobalSetUpFixture().InitTes(name);
-    }
+    // public static void initTest(string name)
+    // {
+    //     new GlobalSetUpFixture().InitTes(name);
+    // }
 
-    public void InitTes(string name)
+    public void InitTes(Type type)
     {
-        if (TestReport.ContainsKey(name))
+        // string fullname = TestContext.CurrentContext.Test.FullName;
+        
+        
+        string fullname = TestContext.CurrentContext.Test.FullName;
+        string name = TestContext.CurrentContext.Test.Name;
+        if (fullname.IndexOf("(") > 0)
         {
-            test = TestReport[name];
+            fullname = fullname.Substring(0, fullname.IndexOf("("));
+            name = fullname.Split(".")[fullname.Split(".").Length - 1];
+        }
+        
+        Console.WriteLine("000000" + fullname);
+        Console.WriteLine("000000" + name);
+        
+        if (TestReport.ContainsKey(fullname))
+        {
+            test = TestReport[fullname];
         }
         else
         {
             // string methodName = name.Split(".")[name.Split(".").Length - 1];
-            var method = GetType().GetMethod("name");
-            // 获取方法上的 Description 特性
-            var descriptionAttribute = method?.GetCustomAttribute<DescriptionAttribute>();
-
-            string description = descriptionAttribute?.Properties.Get("Description").ToString() ?? "No description provided";
+            // var method = GetType().GetMethod(name);
+            // // string temname = TestContext.CurrentContext.Test.FullName;
+            // // if (temname.IndexOf("(") > 0)
+            // // {
+            // //     temname = temname.Substring(0, temname.IndexOf("("));
+            // // }
+            // // Console.WriteLine("00000" + temname);
+            // // Console.WriteLine("00000" + temname.Split(".")[temname.Split(".").Length - 1]);
+            // Console.WriteLine("111111111111111111" + TestContext.CurrentContext.Test.Name);
+            // Console.WriteLine("222222222222222222" + TestContext.CurrentContext.Test.FullName);
             
-            test = GlobalSetUpFixture.Extent.CreateTest(name, description);
-            TestReport[name] = test;
+            MethodInfo methodInfo = type.GetMethod(name);
+            // Console.WriteLine(method.Name);
+            // 获取方法上的 Description 特性
+            var descriptionAttribute = methodInfo?.GetCustomAttribute<DescriptionAttribute>();
+
+            Console.WriteLine("=========" + descriptionAttribute?.Properties.ToString());
+            
+            string description = descriptionAttribute?.Properties.Get("Description").ToString() ?? "No description provided";
+            Console.WriteLine("=========" + description);
+            test = GlobalSetUpFixture.Extent.CreateTest(fullname, description);
+            TestReport[fullname] = test;
         }
     }
     

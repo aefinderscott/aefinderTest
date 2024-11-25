@@ -12,7 +12,7 @@ namespace CaseOne
         [SetUp]
         public void Setup()
         {
-            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
+            SetUpBeforeEachTest(typeof(TokenTests));
             _httpTools = new HttpTools();
         }
 
@@ -47,7 +47,7 @@ namespace CaseOne
         [TearDown]
         public void TearDown()
         {
-            TearDownAfterEachTest(TestContext.CurrentContext.Test.FullName);
+            TearDownAfterEachTest(typeof(TokenTests));
             // base.TearDownAfterEachTest();
             // 清理代码，每个测试方法之后调用
             _httpTools = null;

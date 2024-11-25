@@ -10,8 +10,8 @@ namespace CaseOne
         [SetUp]
         public void Setup()
         {
-            SetUpBeforeEachTest(TestContext.CurrentContext.Test.FullName);
-            makeBlocks("test001","tDVV",1,1,1);
+            SetUpBeforeEachTest(typeof(Token2TestTests));
+            //makeBlocks("test001","tDVV",1,1,1);
         }
         
         [Test]
@@ -40,6 +40,12 @@ namespace CaseOne
             Assert.AreEqual("ec815f4898d49c6a7e6cfd0747f53e69e53e0e7b371167241ee6285957b66340", result2.SelectToken("$[0].id").ToString());
             Assert.AreEqual("0", result2.SelectToken("$[0].extraProperties.Version").ToString());
             Assert.AreEqual("42ed60883588e53c2d11a035acf629c63f13e0a9f78a08a95575fb7b123046ea", result2.SelectToken("$[0].transactionIds[1]").ToString());
+        }
+        
+        [TearDown]
+        public void TearDown()
+        {
+            TearDownAfterEachTest(typeof(Token2TestTests));
         }
     }
 }
