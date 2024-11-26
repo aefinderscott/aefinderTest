@@ -21,11 +21,6 @@ namespace AeIndexerTester;
 
 public class CaseMaker
 {
-    // public void makeRequest(string file)
-    // {
-    //     
-    // }
-    
     public static void Main()
     {
         makeCaseCode();
@@ -63,30 +58,30 @@ public class CaseMaker
         string clazzname = "";
         foreach (var configFile in configFiles)
         {
-            Console.WriteLine("指定的目录不存在." + configFile);
             string fileName = configFile.Replace(configFilePath, "");
             clazzname = fileName.Replace(".json", "").Substring(1);
-            string namespacename = "";
-            Console.WriteLine("123指定的目录不存在." + fileName);
-            Console.WriteLine("123指定的目录不存在." + fileName.Replace("/", "."));
+            string namespacename = "CaseOne";
             string[] str = fileName.Replace("/", ".").Split(".");
-            Console.WriteLine("123指定的目录不存在." + str.Length);
             for (int i = 1; i < str.Length - 2; i++)
             {
                 namespacename = namespacename + "." + str[i];
             }
 
-            if ("".Equals(namespacename))
+            // if ("".Equals(namespacename))
+            // {
+            //     namespacename = "CaseOne";
+            // }
+
+            // if (namespacename.StartsWith("."))
+            // {
+            //     namespacename = namespacename.Substring(1);
+            // }
+            if (namespacename.EndsWith("."))
             {
-                namespacename = "CaseOne";
+                namespacename = namespacename.Substring(0, namespacename.Length);
             }
 
-            if (namespacename.StartsWith("."))
-            {
-                namespacename = namespacename.Substring(1);
-            }
-
-            namespacename = "CaseOne";
+            // namespacename = "CaseOne";
 
             caseForTemplateObj.NameSpaceName = namespacename;
             Console.WriteLine("指定的目录不存在.namespacename:" + namespacename);
@@ -103,63 +98,86 @@ public class CaseMaker
                     SetUp = config.SetUp,
                     TearDown = config.TearDown
                 };
-                caseForTemplateObj.CaseObj.CaseDetail = new CaseDetailsForTemplate()
+
+                caseForTemplateObj.CaseObj.SetUp = config.SetUp;
+                caseForTemplateObj.CaseObj.TearDown = config.TearDown;
+                
+                List<CaseDetails> caseDetailsLs = config.Cases;
+                List<CaseDetailsForTemplate> caseDetailsLsForTem = new List<CaseDetailsForTemplate>();
+                foreach (var caseDetails in caseDetailsLs)
                 {
-                    Name = config.CaseDetail.Name,
-                    Description = config.CaseDetail.Description,
-                    DataProvider = config.CaseDetail.DataProvider
-                };
-                List<StepsForTemplate> stlst = new List<StepsForTemplate>();
-                List<Steps> stls = config.CaseDetail.Steps;
-                foreach (var stl in stls)
-                {
-                    var jsonObject = JObject.Parse(stl.Asserts.ToString());
-                    List<AssertObj> assertObjList = new List<AssertObj>();
-                    foreach (var property in jsonObject.Properties())
+                    string dataProviderName = "";
+                    if (null != caseDetails.DataProvider & !"".Equals(caseDetails.DataProvider))
                     {
-                        assertObjList.Add(new AssertObj()
+                        dataProviderName = caseDetails.DataProvider.Replace(".json", "");
+                    }
+                    CaseDetailsForTemplate caseDetailsForTemplate = new CaseDetailsForTemplate()
+                    {
+                        Name = caseDetails.Name,
+                        Description = caseDetails.Description,
+                        DataProvider = caseDetails.DataProvider,
+                        DataProviderMethod = dataProviderName
+                    };
+                    
+                    
+                    List<StepsForTemplate> stlst = new List<StepsForTemplate>();
+                    List<Steps> stls = caseDetails.Steps;
+                    foreach (var stl in stls)
+                    {
+                        var jsonObject = JObject.Parse(stl.Asserts.ToString());
+                        List<AssertObj> assertObjList = new List<AssertObj>();
+                        foreach (var property in jsonObject.Properties())
                         {
-                            AssertPath = property.Name,
-                            ExpectValue = property.Value
+                            assertObjList.Add(new AssertObj()
+                            {
+                                AssertPath = property.Name,
+                                ExpectValue = property.Value
+                            });
+                        }
+                    
+                        string resType = "JObject";
+                        if (null != stl.ResponseType)
+                        {
+                            resType = stl.ResponseType;
+                        }
+
+                        //参数处理，增加json引号
+                        Request re = stl.Request;
+                        string paramstr = re.Params.ToString();
+                        // paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace(" ", "");;
+                        // JObject jo = JObject.Parse(re.Params.ToString());
+                        re.Params = paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace("  ", "");
+                        // re.Params = JsonSerializer.Serialize(re.Params.ToString());
+
+                        stlst.Add(new StepsForTemplate()
+                        {
+                            StepNo = stl.StepNo,
+                            Request = re,
+                            Asserts = assertObjList,
+                            ResponseType = resType
                         });
+
                     }
                     
-                    string resType = "JObject";
-                    if (null != stl.ResponseType)
-                    {
-                        resType = stl.ResponseType;
-                    }
 
-                    //参数处理，增加json引号
-                    Request re = stl.Request;
-                    string paramstr = re.Params.ToString();
-                    // paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace(" ", "");;
-                    // JObject jo = JObject.Parse(re.Params.ToString());
-                    re.Params = paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace("  ", "");
-                    // re.Params = JsonSerializer.Serialize(re.Params.ToString());
-
-                    stlst.Add(new StepsForTemplate()
-                    {
-                        StepNo = stl.StepNo,
-                        Request = re,
-                        Asserts = assertObjList,
-                        ResponseType = resType
-                    });
-
+                    caseDetailsForTemplate.Steps = stlst;
+                    caseDetailsLsForTem.Add(caseDetailsForTemplate);
                 }
 
-                caseForTemplateObj.CaseObj.CaseDetail.Steps = stlst;
-                Console.WriteLine("Database Connection String: " + config.CaseDetail.Name);
-                // Console.teLine("Log File Path: " + appConfig.Logging.LogFilePath);
+                caseForTemplateObj.CaseObj.Cases = caseDetailsLsForTem;
 
-                caseForTemplateObj.ClazzName = clazzname;
-                
-
-                string path = projectDir + "/AeIndexerTester/test_template2.sbn";
-                if (null != caseForTemplateObj.CaseObj.CaseDetail.DataProvider)
+                string clazzfile = clazzname;
+                if (clazzname.IndexOf("/") > 0)
                 {
-                    path = projectDir + "/AeIndexerTester/test_template.sbn";
+                    clazzname = clazzname.Split("/")[clazzname.Split("/").Length - 1];
                 }
+                caseForTemplateObj.ClazzName = clazzname;
+
+                string path = projectDir + "/AeIndexerTester/test_template.sbn";
+                // if (null != caseForTemplateObj.CaseObj.CaseDetail.DataProvider)
+                // {
+                //     path = projectDir + "/AeIndexerTester/test_template.sbn";
+                // }
 
                 // string path = projectDir + "/AeIndexerTester/test_template.sbn";
                 string fileContent = File.ReadAllText(path);
@@ -171,7 +189,16 @@ public class CaseMaker
                 // string result = template.Render(model);
 
                 // 将生成的代码保存到文件中
-                File.WriteAllText(srcFolderPath + caseForTemplateObj.ClazzName + ".cs", result);
+                // 获取文件目录（不包含文件名）
+                string directory = Path.GetDirectoryName(srcFolderPath + clazzfile + ".cs");
+
+                // 检查目录是否存在，如果不存在则创建
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+                
+                File.WriteAllText(srcFolderPath + clazzfile + ".cs", result);
 
                 // 打印生成的代码
                 Console.WriteLine("Generated Test Code:\n");
@@ -219,7 +246,7 @@ public class CaseObj
     
     public object SetUp { get; set; }
     public object TearDown { get; set; }
-    public CaseDetails CaseDetail { get; set; }
+    public List<CaseDetails> Cases { get; set; }
 }
 
 public class CaseObjForTemplate
@@ -230,7 +257,7 @@ public class CaseObjForTemplate
     
     public object SetUp { get; set; }
     public object TearDown { get; set; }
-    public CaseDetailsForTemplate CaseDetail { get; set; }
+    public List<CaseDetailsForTemplate> Cases { get; set; }
 }
 
 public class CaseForTemplateObj
@@ -258,6 +285,7 @@ public class CaseDetailsForTemplate
     public string Description { get; set; }
     public List<StepsForTemplate> Steps { get; set; }
     public string DataProvider { get; set; }
+    public string DataProviderMethod { get; set; }
 }
 
 public class Steps

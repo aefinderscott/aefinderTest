@@ -1,0 +1,55 @@
+[
+  [{
+    "StepNo": 1,
+    "Params": {
+      "username": "admin",
+      "password": "1q2W3e*",
+      "client_id": "AeFinder_App",
+      "grant_type": "password",
+      "scope": "AeFinder"
+    },
+    "Asserts": {
+      "$.access_token": "NotNull",
+      "$.token_type": "Bearer"
+    }
+  }, {
+    "StepNo": 2,
+    "Params": {
+      "chainId": "tDVV",
+      "startBlockHeight": 1,
+      "endBlockHeight": 3,
+      "isOnlyConfirmed": false
+    },
+    "Asserts": {
+      "$[0].id": "NotNull",
+      "$[0].extraProperties.Version": "0",
+      "$[0].transactionIds[1]": "NotNull"
+    }
+  }],[{
+  "StepNo": 1,
+  "Params": {
+    "username": "admin",
+    "password": "1q2W3e*",
+    "client_id": "AeFinder_App",
+    "grant_type": "password",
+    "scope": "AeFinder"
+  },
+  "Asserts": {
+    "$.access_token": "NotNull",
+    "$.token_type": "Bearer"
+  }
+}, {
+  "StepNo": 2,
+  "Params": {
+    "chainId": "tDVV",
+    "startBlockHeight": 1,
+    "endBlockHeight": 3,
+    "isOnlyConfirmed": false
+  },
+  "Asserts": {
+    "$[0].id": "NotNull",
+    "$[0].extraProperties.Version": "0",
+    "$[0].transactionIds[1]": "NotNull"
+  }
+}]
+]

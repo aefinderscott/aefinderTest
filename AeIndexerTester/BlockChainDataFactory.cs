@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AElf.Types;
 using Volo.Abp.EventBus;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 namespace AeIndexerTester;
@@ -24,12 +25,30 @@ public class BlockChainDataFactory
         Console.WriteLine(jsonString);
     }
 
+    int getLastBlockHeight()
+    {
+        JObject jobj = JObject.Parse("{\"query\": {\"match\": {\"chainId\": \"tDVV\"}}}");
+
+        // HttpTools.HttpPostJsonRequestJson("http://192.168.71.14:6555", "/api/datamanager/makeBlocks", json);
+
+        JObject js = HttpRequest.BaseUrl("http://192.168.71.150:9200").ContentType("application/json")
+            .Path("/aefinder.summaryindex/_search").Params(jobj).QuickExec().ToJObject();
+        JArray hits = JArray.Parse(js.SelectToken("$.hits.hits").ToString());
+        if (hits.Count == 0)
+        {
+            return 0;
+        }
+        return int.Parse(js.SelectToken("$.hits.hits[0]._source.latestBlockHeight").ToString());
+        // return 1;
+    }
+
 
     public BlockChainDataEto makeNormalBlocks(string chainId, int blockCount, int transactionCount, int logeventCount)
     {
+        int startHeight = getLastBlockHeight() + 1;
         // long defaultHeight = 1000000000000000;
         List<BlockEto> BlocksList = new List<BlockEto>();
-        for (int i = 1; i < blockCount + 1; i++)
+        for (int i = startHeight; i < blockCount + startHeight; i++)
         {
             // long blockHeight = defaultHeight + i;
             // BlockHash = blockHeight + "cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2";
@@ -39,7 +58,7 @@ public class BlockChainDataFactory
 
         var myObject = new BlockChainDataEto
         {
-            ChainId = "chainId",
+            ChainId = chainId,
             Blocks = BlocksList
         };
 
@@ -93,8 +112,12 @@ public class BlockChainDataFactory
     
     TransactionEto getOneTransaction(long bHeight)
     {
-        
+        string eventname = "aefindertestevent";
         // long defaultHeight = 1000000000000000;
+        // if (bHeight % 5 == 0)
+        // {
+        //     eventname = "IrreversibleBlockFound";
+        // }
         return new TransactionEto()
         {
             TransactionId = (bHeight) + "5d419d9397e8ae30290795340d6285db2794abe61a443966",
@@ -111,7 +134,7 @@ public class BlockChainDataFactory
             },
             LogEvents = new List<LogEventEto>()
             {
-                                    
+                  getOneLogEvent("aefindertestcontractaddress", eventname)                  
             }
         };
     }
@@ -121,8 +144,8 @@ public class BlockChainDataFactory
     {
         return new LogEventEto()
         {
-            ContractAddress = "",
-            EventName = "",
+            ContractAddress = contractAddress,
+            EventName = eventName,
             Index = 1
         };
     }

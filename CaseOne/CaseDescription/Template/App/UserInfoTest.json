@@ -1,0 +1,72 @@
+{
+  "SetUp": {},
+  "TearDown": {},
+  "Cases": [{
+    "Name": "testUserInfo",
+    "Description": "获取用户信息-正向",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/api/users/info",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    },{
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/users/info",
+        "MethodName": "get",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "displayName": "tnet00"
+        }
+      },
+      "Asserts": {
+        "$.userName": "admin"
+      }
+    }]},
+
+    {
+      "Name": "testUserInfoErrorAuth",
+      "Description": "创建组织",
+      "Steps": [{
+        "StepNo": 1,
+        "Request": {
+          "BaseUrl": "http://192.168.71.156:8081",
+          "Path": "/api/users/info",
+          "MethodName": "get",
+          "ContentType": "application/json",
+          "Headers": {
+            "Content-Type": "application/json"
+          },
+          "Params": {
+            "displayName": "tnet00"
+          }
+        },
+        "Asserts": {
+          "$.error": "NotNull"
+        },
+        "ResponseType":"string"
+      }]}
+  
+  ]
+}

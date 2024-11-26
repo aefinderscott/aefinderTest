@@ -1,0 +1,157 @@
+{
+  "SetUp": {},
+  "TearDown": {},
+  "Cases": [{
+    "Name": "testLogeventQuery",
+    "Description": "创建app-正向",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/api/users/info",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId":"AELF",
+          "startBlockHeight":7000000,
+          "endBlockHeight":7000002,
+          "isOnlyConfirmed":false
+        }
+      },
+      "Asserts": {
+        "$.userName": "admin"
+      }
+    }]
+  }, {
+    "Name": "testAppCreateErrorAuth",
+    "Description": "创建app，auth验证",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/users/info",
+        "MethodName": "get",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "appName": "atest01"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull"
+      }}]
+  },{
+    "Name": "testAppInfo",
+    "Description": "app详情-正向",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/api/users/info",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/apps",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "appName": "atest01"
+        }
+      },
+      "Asserts": {
+        "$.userName": "admin"
+      }
+    }]
+  },{
+    "Name": "testAppList",
+    "Description": "app列表-正向",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/api/users/info",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/apps",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "appName": "atest01"
+        }
+      },
+      "Asserts": {
+        "$.userName": "admin"
+      }
+    }]
+  }]
+}

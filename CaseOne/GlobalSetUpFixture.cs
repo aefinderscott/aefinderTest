@@ -1,4 +1,8 @@
 using System.Reflection;
+using AeIndexerTester;
+using DataManager.Controllers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CaseOne;
 
@@ -6,80 +10,105 @@ using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 
+//所有test管控
 [SetUpFixture]
 public class GlobalSetUpFixture
 {
     public static ExtentReports Extent;
     private ExtentHtmlReporter htmlReporter;
-
-    private static ExtentTest test;
-    // 静态成员在应用程序启动时自动创建
-    // private static ExtentReports ext;// = new GlobalExtentReport();
-    
-    public static Dictionary<string, ExtentTest?>? TestReport = new Dictionary<string, ExtentTest?>();
-
-    // addReport(string methodName, string mess)
-    // {
-    //         
-    // }
-    // public static void initTest(string name)
-    // {
-    //     new GlobalSetUpFixture().InitTes(name);
-    // }
-
-    public void InitTes(Type type)
-    {
-        // string fullname = TestContext.CurrentContext.Test.FullName;
-        
-        
-        string fullname = TestContext.CurrentContext.Test.FullName;
-        string name = TestContext.CurrentContext.Test.Name;
-        if (fullname.IndexOf("(") > 0)
-        {
-            fullname = fullname.Substring(0, fullname.IndexOf("("));
-            name = fullname.Split(".")[fullname.Split(".").Length - 1];
-        }
-        
-        Console.WriteLine("000000" + fullname);
-        Console.WriteLine("000000" + name);
-        
-        if (TestReport.ContainsKey(fullname))
-        {
-            test = TestReport[fullname];
-        }
-        else
-        {
-            // string methodName = name.Split(".")[name.Split(".").Length - 1];
-            // var method = GetType().GetMethod(name);
-            // // string temname = TestContext.CurrentContext.Test.FullName;
-            // // if (temname.IndexOf("(") > 0)
-            // // {
-            // //     temname = temname.Substring(0, temname.IndexOf("("));
-            // // }
-            // // Console.WriteLine("00000" + temname);
-            // // Console.WriteLine("00000" + temname.Split(".")[temname.Split(".").Length - 1]);
-            // Console.WriteLine("111111111111111111" + TestContext.CurrentContext.Test.Name);
-            // Console.WriteLine("222222222222222222" + TestContext.CurrentContext.Test.FullName);
-            
-            MethodInfo methodInfo = type.GetMethod(name);
-            // Console.WriteLine(method.Name);
-            // 获取方法上的 Description 特性
-            var descriptionAttribute = methodInfo?.GetCustomAttribute<DescriptionAttribute>();
-
-            Console.WriteLine("=========" + descriptionAttribute?.Properties.ToString());
-            
-            string description = descriptionAttribute?.Properties.Get("Description").ToString() ?? "No description provided";
-            Console.WriteLine("=========" + description);
-            test = GlobalSetUpFixture.Extent.CreateTest(fullname, description);
-            TestReport[fullname] = test;
-        }
-    }
-    
-    
+    //
+    // private static ExtentTest test;
+    // // 静态成员在应用程序启动时自动创建
+    // // private static ExtentReports ext;// = new GlobalExtentReport();
+    //
+    // public static Dictionary<string, ExtentTest?>? TestReport = new Dictionary<string, ExtentTest?>();
+    //
     // 全局初始化：所有测试类运行之前
     //1、定义测试报告 2、环境初始化 3、数据初始化
     [OneTimeSetUp]
     public void GlobalSetup()
+    {
+        Console.WriteLine("-----++++++++++++++");
+        //初始化环境
+        initEnv("test001");
+        
+        //批量初始化数据
+        makeBlocks("test001","tDVV",100,1,1);
+
+        //初始化测试报告
+        initReport();
+
+    }
+
+    // 全局结束：所有测试类运行完毕之后
+    [OneTimeTearDown]
+    public void GlobalTeardown()
+    {
+        // 结束并生成报告
+        Extent.Flush();
+    }
+    
+    // public void InitTest(Type type)
+    // {
+    //     string fullname = TestContext.CurrentContext.Test.FullName;
+    //     string name = TestContext.CurrentContext.Test.Name;
+    //     if (fullname.IndexOf("(") > 0)
+    //     {
+    //         fullname = fullname.Substring(0, fullname.IndexOf("("));
+    //         name = fullname.Split(".")[fullname.Split(".").Length - 1];
+    //     }
+    //     
+    //     if (TestReport.ContainsKey(fullname))
+    //     {
+    //         test = TestReport[fullname];
+    //     }
+    //     else
+    //     {
+    //         MethodInfo methodInfo = type.GetMethod(name);
+    //         // Console.WriteLine(method.Name);
+    //         // 获取方法上的 Description 特性
+    //         var descriptionAttribute = methodInfo?.GetCustomAttribute<DescriptionAttribute>();
+    //         
+    //         string description = descriptionAttribute?.Properties.Get("Description").ToString() ?? "No description provided";
+    //         test = GlobalSetUpFixture.Extent.CreateTest(fullname, description);
+    //         TestReport[fullname] = test;
+    //     }
+    // }
+    
+    public void makeBlocks(string envName, string chainid, int blockCount, int transactionCount, int logeventCount)
+    {
+        BlockDto BlockDto = new BlockDto()
+        {
+            EnvName = envName,
+            Chainid = chainid,
+            BlockCount = blockCount,
+            TransactionCount = transactionCount,
+            LogeventCount = logeventCount
+        };
+        
+        string json = JsonConvert.SerializeObject(BlockDto);
+        // json =
+        //     "{\"envName\":\"test001\",\"chainid\":\"tDVV\",\"blockCount\":10,\"transactionCount\":2,\"logeventCount\":3}";
+        JObject jobj = JObject.Parse(json);
+
+        // HttpTools.HttpPostJsonRequestJson("http://192.168.71.14:6555", "/api/datamanager/makeBlocks", json);
+
+        HttpRequest.BaseUrl("http://192.168.71.14:6555").ContentType("application/json")
+            .Path("/api/datamanager/makeBlocks").Params(jobj).QuickExec();
+        Thread.Sleep(5000);
+    }
+    
+    public void initEnv(string envName)
+    {
+        JObject jobj = JObject.Parse("{\"envName\":\"test001\"}");
+        // HttpRequest.BaseUrl("http://192.168.71.14:6555").ContentType("application/json")
+        //     .Path("/api/envmanager/init").Params(jobj).QuickExec();
+        HttpRequest.BaseUrl("http://192.168.71.14:6555").Path("/api/envmanager/init?envName=test001").HttpMethod("get").ContentType("application/x-www-form-urlencoded").Params("{\"envName\":\"test001\"}")
+            .QuickExec();
+        Thread.Sleep(5000);
+    }
+    
+    public void initReport()
     {
         // 创建 ExtentHtmlReporter 并配置
         // string reportPath = "/Users/lianqingdong/Desktop/Code/report/NUnitTestReport.html";
@@ -98,13 +127,5 @@ public class GlobalSetUpFixture
         Extent.AddSystemInfo("Environment", "QA");
         Extent.AddSystemInfo("User", "Scott");
         // ext = new ExtentReports();
-    }
-
-    // 全局结束：所有测试类运行完毕之后
-    [OneTimeTearDown]
-    public void GlobalTeardown()
-    {
-        // 结束并生成报告
-        Extent.Flush();
     }
 }

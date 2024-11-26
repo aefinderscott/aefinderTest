@@ -1,0 +1,82 @@
+{
+  "SetUp": {},
+  "TearDown": {},
+  "Cases": [{
+    "Name": "testTokenWithErrorName",
+    "Description": "测试获取token-不存在的user",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin1",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    }]},{
+    "Name": "testTokenWithErrorPwd",
+    "Description": "测试获取token-错误的password",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin1",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.error": "NotNull",
+        "$.error_description": "NotNull"
+      }
+    }]},{
+    "Name": "testToken",
+    "Description": "测试获取token-正向",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin1",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }]}
+  
+  ]
+}

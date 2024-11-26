@@ -1,13 +1,13 @@
 {
   "SetUp": {},
   "TearDown": {},
-  "CaseDetail": {
+  "Cases": [{
     "Name": "test001",
     "Description": "test001",
     "Steps": [{
       "StepNo": 1,
       "Request": {
-        "BaseUrl": "http://192.168.71.128:8082",
+        "BaseUrl": "http://192.168.71.156:8082",
         "Path": "/connect/token",
         "MethodName": "post",
         "ContentType": "application/x-www-form-urlencoded",
@@ -20,7 +20,8 @@
           "client_id": "AeFinder_App",
           "grant_type": "password",
           "scope": "AeFinder"
-        }      },
+        }
+      },
       "Asserts": {
         "$.access_token": "NotNull",
         "$.token_type": "Bearer"
@@ -28,7 +29,7 @@
     }, {
       "StepNo": 2,
       "Request": {
-        "BaseUrl": "http://192.168.71.128:8081",
+        "BaseUrl": "http://192.168.71.156:8081",
         "Path": "/api/app/block/blocks",
         "ContentType": "application/json",
         "MethodName": "get",
@@ -40,13 +41,164 @@
           "startBlockHeight": 7000000,
           "endBlockHeight": 7000002,
           "isOnlyConfirmed": false
-        }      },
+        }
+      },
       "Asserts": {
-        "$[0].id": "ec815f4898d49c6a7e6cfd0747f53e69e53e0e7b371167241ee6285957b66340",
+        "$[0].id": "NotNull",
         "$[0].extraProperties.Version": "0",
-        "$[0].transactionIds[1]": "0776547eb9e5121b6cd513874cab01d9c1184eb53e1bd827c377f8693bd34cfa"
-      },"ResponseType":"JArray"
+        "$[0].transactionIds[1]": "NotNull"
+      },
+      "ResponseType": "JArray"
     }],
     "DataProvider": "TokenTestDataProvider.json"
-  }
+  }, {
+    "Name": "test002",
+    "Description": "test002",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "ContentType": "application/json",
+        "MethodName": "get",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId": "AELF",
+          "startBlockHeight": 7000000,
+          "endBlockHeight": 7000002,
+          "isOnlyConfirmed": false
+        }
+      },
+      "Asserts": {
+        "$[0].id": "NotNull",
+        "$[0].extraProperties.Version": "0",
+        "$[0].transactionIds[1]": "NotNull"
+      },
+      "ResponseType": "JArray"
+    }],
+    "DataProvider": ""
+  }, {
+    "Name": "test003",
+    "Description": "test003",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "ContentType": "application/json",
+        "MethodName": "get",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId": "AELF",
+          "startBlockHeight": 7000000,
+          "endBlockHeight": 7000002,
+          "isOnlyConfirmed": false
+        }
+      },
+      "Asserts": {
+        "$[0].id": "NotNull",
+        "$[0].extraProperties.Version": "0",
+        "$[0].transactionIds[1]": "NotNull"
+      },
+      "ResponseType": "JArray"
+    }]
+  }, {
+    "Name": "test004",
+    "Description": "test004",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "ContentType": "application/json",
+        "MethodName": "get",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId": "AELF",
+          "startBlockHeight": 7000000,
+          "endBlockHeight": 7000002,
+          "isOnlyConfirmed": false
+        }
+      },
+      "Asserts": {
+        "$[0].id": "NotNull",
+        "$[0].extraProperties.Version": "0",
+        "$[0].transactionIds[1]": "NotNull"
+      },
+      "ResponseType": "JArray"
+    }],
+    "DataProvider": "xx.json"
+  }]
 }

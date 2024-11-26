@@ -77,162 +77,162 @@ public class ProducerAuto
 
         List<string> configFiles = new List<string>();
         // 检查目录是否存在
-        if (Directory.Exists(configFilePath))
-        {
-            // 调用递归函数遍历所有文件
-            TraverseDirectory(configFilePath, configFiles);
-        }
-        else
-        {
-            Console.WriteLine("指定的目录不存在.");
-        }
+        // if (Directory.Exists(configFilePath))
+        // {
+        //     // 调用递归函数遍历所有文件
+        //     TraverseDirectory(configFilePath, configFiles);
+        // }
+        // else
+        // {
+        //     Console.WriteLine("指定的目录不存在.");
+        // }
 
-        string clazzname = "";
-        foreach (var configFile in configFiles)
-        {
-            Console.WriteLine("指定的目录不存在." + configFile);
-            string fileName = configFile.Replace(configFilePath, "");
-            clazzname = fileName.Replace(".json","").Substring(1);
-            string namespacename = "";
-            Console.WriteLine("123指定的目录不存在." + fileName);
-            Console.WriteLine("123指定的目录不存在." + fileName.Replace("/", "."));
-            string[] str = fileName.Replace("/", ".").Split(".");
-            Console.WriteLine("123指定的目录不存在." + str.Length);
-            for (int i = 1; i < str.Length - 2; i++)
-            {
-                namespacename = namespacename + "." + str[i];
-            }
-
-            if ("".Equals(namespacename))
-            {
-                namespacename = "CaseOne";
-            }
-
-            if (namespacename.StartsWith("."))
-            {
-                namespacename = namespacename.Substring(1);
-            }
-            namespacename = "CaseOne";
-
-            caseForTemplateObj.NameSpaceName = namespacename;
-            Console.WriteLine("指定的目录不存在.namespacename:" + namespacename);
-            try
-            {
-                // 读取 JSON 文件内容
-                string? jsonString = File.ReadAllText(configFile);
-                // List<CaseObj> config = JsonConvert.DeserializeObject<List<CaseObj>>(jsonString);
-                // // 将 JS
-                CaseObj config = JsonConvert.DeserializeObject<CaseObj>(jsonString);
-                
-                
-               
-                
-                    
-                    
-                    
-                caseForTemplateObj.CaseObj = new CaseObjForTemplate()
-                {
-                    SetUp = config.SetUp,
-                    TearDown = config.TearDown
-                };
-                caseForTemplateObj.CaseObj.CaseDetail = new CaseDetailsForTemplate()
-                {
-                    Name = config.CaseDetail.Name,
-                    Description = config.CaseDetail.Description,
-                    DataProvider = config.CaseDetail.DataProvider
-                };
-                List<StepsForTemplate> stlst = new List<StepsForTemplate>();
-                List<Steps> stls  = config.CaseDetail.Steps;
-                foreach (var stl in stls)
-                {
-                    
-                    
-                    var jsonObject = JObject.Parse( stl.Asserts.ToString());
-                    List<AssertObj> assertObjList = new List<AssertObj>();
-                    foreach (var property in jsonObject.Properties())
-                    {
-                        assertObjList.Add(new AssertObj()
-                        {
-                            AssertPath = property.Name,
-                            ExpectValue = property.Value
-                        });
-                    }
-
-
-                    string resType = "JObject";
-                    if (null != stl.ResponseType)
-                    {
-                        resType = stl.ResponseType;
-                    }
-                        
-                        
-                    //参数处理，增加json引号
-                    Request re = stl.Request;
-                    string paramstr = re.Params.ToString();
-                    // paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace(" ", "");;
-                    // JObject jo = JObject.Parse(re.Params.ToString());
-                    re.Params = paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace("  ", "");
-                    // re.Params = JsonSerializer.Serialize(re.Params.ToString());
-                    
-                    
-                    stlst.Add(new StepsForTemplate()
-                    {
-                        StepNo = stl.StepNo,
-                        Request = re,
-                        Asserts = assertObjList,
-                        ResponseType = resType
-                    });
-
-                }
-
-                caseForTemplateObj.CaseObj.CaseDetail.Steps = stlst;
-                Console.WriteLine("Database Connection String: " + config.CaseDetail.Name);
-                // Console.teLine("Log File Path: " + appConfig.Logging.LogFilePath);
-                
-                caseForTemplateObj.ClazzName = clazzname;
-        
-                // Console.WriteLine(caseForTemplateObj.CaseObj.CaseDetail.Steps[0].Request.Params.ToString());
-                // string tmp1122 = "123";
-                // if ("123".Equals(tmp1122))
-                // {
-                //     return;
-                // }
-
-
-        string path = projectDir + "/AeIndexerTester/test_template2.sbn";
-        if (null != caseForTemplateObj.CaseObj.CaseDetail.DataProvider)
-        {
-            path = projectDir + "/AeIndexerTester/test_template.sbn";
-        }
-        
-        // string path = projectDir + "/AeIndexerTester/test_template.sbn";
-        string fileContent = File.ReadAllText(path);
-        // 创建模板
-        var template = Template.Parse(fileContent);
-        
-        var result = template.Render(new {  case_for_template_obj = caseForTemplateObj});
-        // 渲染模板并生成测试代码
-        // string result = template.Render(model);
-
-        // 将生成的代码保存到文件中
-        File.WriteAllText(srcFolderPath + caseForTemplateObj.ClazzName + ".cs", result);
-
-        // 打印生成的代码
-        Console.WriteLine("Generated Test Code:\n");
-        Console.WriteLine(result);
-                
-                
-                
+        // string clazzname = "";
+        // foreach (var configFile in configFiles)
+        // {
+        //     Console.WriteLine("指定的目录不存在." + configFile);
+        //     string fileName = configFile.Replace(configFilePath, "");
+        //     clazzname = fileName.Replace(".json","").Substring(1);
+        //     string namespacename = "";
+        //     Console.WriteLine("123指定的目录不存在." + fileName);
+        //     Console.WriteLine("123指定的目录不存在." + fileName.Replace("/", "."));
+        //     string[] str = fileName.Replace("/", ".").Split(".");
+        //     Console.WriteLine("123指定的目录不存在." + str.Length);
+        //     for (int i = 1; i < str.Length - 2; i++)
+        //     {
+        //         namespacename = namespacename + "." + str[i];
+        //     }
+        //
+        //     if ("".Equals(namespacename))
+        //     {
+        //         namespacename = "CaseOne";
+        //     }
+        //
+        //     if (namespacename.StartsWith("."))
+        //     {
+        //         namespacename = namespacename.Substring(1);
+        //     }
+        //     namespacename = "CaseOne";
+        //
+        //     caseForTemplateObj.NameSpaceName = namespacename;
+        //     Console.WriteLine("指定的目录不存在.namespacename:" + namespacename);
+        //     try
+        //     {
+        //         // 读取 JSON 文件内容
+        //         string? jsonString = File.ReadAllText(configFile);
+        //         // List<CaseObj> config = JsonConvert.DeserializeObject<List<CaseObj>>(jsonString);
+        //         // // 将 JS
+        //         CaseObj config = JsonConvert.DeserializeObject<CaseObj>(jsonString);
+        //         
+        //         
+        //        
+        //         
+        //             
+        //             
+        //             
+        //         caseForTemplateObj.CaseObj = new CaseObjForTemplate()
+        //         {
+        //             SetUp = config.SetUp,
+        //             TearDown = config.TearDown
+        //         };
+        //         caseForTemplateObj.CaseObj.CaseDetail = new CaseDetailsForTemplate()
+        //         {
+        //             Name = config.CaseDetail.Name,
+        //             Description = config.CaseDetail.Description,
+        //             DataProvider = config.CaseDetail.DataProvider
+        //         };
+        //         List<StepsForTemplate> stlst = new List<StepsForTemplate>();
+        //         List<Steps> stls  = config.CaseDetail.Steps;
+        //         foreach (var stl in stls)
+        //         {
+        //             
+        //             
+        //             var jsonObject = JObject.Parse( stl.Asserts.ToString());
+        //             List<AssertObj> assertObjList = new List<AssertObj>();
+        //             foreach (var property in jsonObject.Properties())
+        //             {
+        //                 assertObjList.Add(new AssertObj()
+        //                 {
+        //                     AssertPath = property.Name,
+        //                     ExpectValue = property.Value
+        //                 });
+        //             }
+        //
+        //
+        //             string resType = "JObject";
+        //             if (null != stl.ResponseType)
+        //             {
+        //                 resType = stl.ResponseType;
+        //             }
+        //                 
+        //                 
+        //             //参数处理，增加json引号
+        //             Request re = stl.Request;
+        //             string paramstr = re.Params.ToString();
+        //             // paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace(" ", "");;
+        //             // JObject jo = JObject.Parse(re.Params.ToString());
+        //             re.Params = paramstr.Replace("\"", "\\\"").Replace("\r\n", "").Replace("\n", "").Replace("  ", "");
+        //             // re.Params = JsonSerializer.Serialize(re.Params.ToString());
+        //             
+        //             
+        //             stlst.Add(new StepsForTemplate()
+        //             {
+        //                 StepNo = stl.StepNo,
+        //                 Request = re,
+        //                 Asserts = assertObjList,
+        //                 ResponseType = resType
+        //             });
+        //
+        //         }
+        //
+        //         caseForTemplateObj.CaseObj.CaseDetail.Steps = stlst;
+        //         Console.WriteLine("Database Connection String: " + config.CaseDetail.Name);
+        //         // Console.teLine("Log File Path: " + appConfig.Logging.LogFilePath);
+        //         
+        //         caseForTemplateObj.ClazzName = clazzname;
+        //
+        //         // Console.WriteLine(caseForTemplateObj.CaseObj.CaseDetail.Steps[0].Request.Params.ToString());
+        //         // string tmp1122 = "123";
+        //         // if ("123".Equals(tmp1122))
+        //         // {
+        //         //     return;
+        //         // }
+        //
+        //
+        // string path = projectDir + "/AeIndexerTester/test_template2.sbn";
+        // if (null != caseForTemplateObj.CaseObj.CaseDetail.DataProvider)
+        // {
+        //     path = projectDir + "/AeIndexerTester/test_template.sbn";
+        // }
+        //
+        // // string path = projectDir + "/AeIndexerTester/test_template.sbn";
+        // string fileContent = File.ReadAllText(path);
+        // // 创建模板
+        // var template = Template.Parse(fileContent);
+        //
+        // var result = template.Render(new {  case_for_template_obj = caseForTemplateObj});
+        // // 渲染模板并生成测试代码
+        // // string result = template.Render(model);
+        //
+        // // 将生成的代码保存到文件中
+        // File.WriteAllText(srcFolderPath + caseForTemplateObj.ClazzName + ".cs", result);
+        //
+        // // 打印生成的代码
+        // Console.WriteLine("Generated Test Code:\n");
+        // Console.WriteLine(result);
                 
                 
                 
                 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("读取配置文件时出错: " + ex.Message);
-            }
-        }
+                
+                
+                
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine("读取配置文件时出错: " + ex.Message);
+            // }
+        // }
 
         
     
