@@ -45,7 +45,31 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AElf.CSharp.Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AElf.Client": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "AElf.Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AElf.Cryptography": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AElf.Kernel.Types": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "AElf.Sdk.CSharp": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AElf.Types": {
               "target": "Package",
               "version": "[1.6.0, )"
             },

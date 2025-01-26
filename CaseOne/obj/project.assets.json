@@ -69,6 +69,53 @@
           "lib/net8.0/AeFinder.Sdk.dll": {}
         }
       },
+      "AElf.Client/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "AElf.Client.Protobuf": "1.3.0",
+          "AElf.Cryptography": "1.6.0-beta.1",
+          "AElf.Types": "1.6.0-beta.1",
+          "Nethereum.KeyStore": "4.5.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net6.0/AElf.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AElf.Client.dll": {}
+        }
+      },
+      "AElf.Client.Protobuf/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "AElf.Types": "1.6.0-beta.1",
+          "Google.Api.CommonProtos": "2.5.0",
+          "Google.Protobuf": "3.19.4",
+          "Grpc.Net.Client": "2.46.0",
+          "System.Net.Http.Json": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AElf.Client.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AElf.Client.Protobuf.dll": {}
+        }
+      },
+      "AElf.Core/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "System.Threading.Tasks.Dataflow": "4.11.1",
+          "Volo.Abp.Core": "5.2.2"
+        },
+        "compile": {
+          "lib/net6.0/AElf.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AElf.Core.dll": {}
+        }
+      },
       "AElf.Cryptography/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -137,6 +184,18 @@
         },
         "runtime": {
           "lib/net6.0/AElf.Kernel.SmartContract.Shared.dll": {}
+        }
+      },
+      "AElf.Kernel.Types/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "AElf.Types": "1.6.0"
+        },
+        "compile": {
+          "lib/net6.0/AElf.Kernel.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AElf.Kernel.Types.dll": {}
         }
       },
       "AElf.Sdk.CSharp/1.6.0": {
@@ -280,6 +339,22 @@
           }
         }
       },
+      "Google.Api.CommonProtos/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "[3.18.0, 4.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Google.Protobuf/3.19.4": {
         "type": "package",
         "compile": {
@@ -321,6 +396,55 @@
         "runtime": {
           "lib/net6.0/GraphQLParser.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.46.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.46.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.46.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.46.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.46.1"
+        },
+        "compile": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -2481,6 +2605,32 @@
           }
         }
       },
+      "Nethereum.Hex/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "[11.0.2, 14.0.0)"
+        },
+        "compile": {
+          "lib/net5.0/Nethereum.Hex.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Nethereum.Hex.dll": {}
+        }
+      },
+      "Nethereum.KeyStore/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Nethereum.Hex": "4.5.0",
+          "Newtonsoft.Json": "[11.0.2, 14.0.0)",
+          "Portable.BouncyCastle": "[1.8.2, 2.0.0)"
+        },
+        "compile": {
+          "lib/net5.0/Nethereum.KeyStore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Nethereum.KeyStore.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -3727,6 +3877,25 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "System.Net.Http.Json/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
       "System.Net.NameResolution/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4609,6 +4778,19 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Dataflow/4.11.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll": {
             "related": ".xml"
           }
         }
@@ -6167,7 +6349,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AElf.CSharp.Core": "1.6.0",
+          "AElf.Client": "1.3.0",
+          "AElf.Core": "1.6.0",
+          "AElf.Cryptography": "1.6.0",
+          "AElf.Kernel.Types": "1.6.0",
           "AElf.Sdk.CSharp": "1.6.0",
+          "AElf.Types": "1.6.0",
           "AeFinder.Sdk": "1.1.4-rc4",
           "Flurl.Http": "3.3.0",
           "Microsoft.AspNetCore.DataProtection.StackExchangeRedis": "8.0.5",
@@ -6242,6 +6430,45 @@
         "lib/net8.0/AeFinder.Sdk.dll"
       ]
     },
+    "AElf.Client/1.3.0": {
+      "sha512": "O4TRHY+vHJA+FAKPdGvFvxlGaJPbEYR+mga6x5BPlTCyu0DvWMNMXxUAKFM/2ldfA5poFA3P7L0gJHAr+0OgbQ==",
+      "type": "package",
+      "path": "aelf.client/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aelf.client.1.3.0.nupkg.sha512",
+        "aelf.client.nuspec",
+        "lib/net6.0/AElf.Client.dll",
+        "lib/netstandard2.1/AElf.Client.dll"
+      ]
+    },
+    "AElf.Client.Protobuf/1.3.0": {
+      "sha512": "XIShlAibZJMBCZV4ettxvsFLnEDZ61QL4cGV6ny/L8Mtu0O5NBh6F5zXHy3ie8CpaS56q8tqPZKPpRJ6E7USBA==",
+      "type": "package",
+      "path": "aelf.client.protobuf/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aelf.client.protobuf.1.3.0.nupkg.sha512",
+        "aelf.client.protobuf.nuspec",
+        "lib/net6.0/AElf.Client.Protobuf.dll",
+        "lib/netstandard2.1/AElf.Client.Protobuf.dll"
+      ]
+    },
+    "AElf.Core/1.6.0": {
+      "sha512": "ClRJqbTZ6gr3iEn7Uc0ZvSBMckY1cQjORrmcP1FV7NGt0EsMsHMg9g7dwhNfkIJ3X1NSO15+LlT3VeTw5WTkng==",
+      "type": "package",
+      "path": "aelf.core/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "aelf.core.1.6.0.nupkg.sha512",
+        "aelf.core.nuspec",
+        "lib/net6.0/AElf.Core.dll"
+      ]
+    },
     "AElf.Cryptography/1.6.0": {
       "sha512": "6hxElmj3LzSbadH6rz3/OG1oz35f+leSdJqnF8yrI0X4Kn/WT0YSGhXQ5Dqm+DDd+sCK6JH6je17m2bsA6oOjw==",
       "type": "package",
@@ -6302,6 +6529,19 @@
         "aelf.kernel.smartcontract.shared.1.6.0.nupkg.sha512",
         "aelf.kernel.smartcontract.shared.nuspec",
         "lib/net6.0/AElf.Kernel.SmartContract.Shared.dll"
+      ]
+    },
+    "AElf.Kernel.Types/1.6.0": {
+      "sha512": "018/ccUf9zZmBScBZeR51hEeTB/8trAKRBlOoY7qbQRLpkfLCl3QVqOqmRiRVQPPrBKago3jcxYbQ2vJP19ZCg==",
+      "type": "package",
+      "path": "aelf.kernel.types/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "aelf.kernel.types.1.6.0.nupkg.sha512",
+        "aelf.kernel.types.nuspec",
+        "lib/net6.0/AElf.Kernel.Types.dll"
       ]
     },
     "AElf.Sdk.CSharp/1.6.0": {
@@ -6515,6 +6755,25 @@
         "lib/netstandard2.0/Flurl.Http.xml"
       ]
     },
+    "Google.Api.CommonProtos/2.5.0": {
+      "sha512": "E3XQotIEGsk3s6nux/oQKtAqUTZ6RK56gSxDwf16OV2QmWMlFXeITajW+Pi2COT+dqChIuPp2z3otvEnPosaqg==",
+      "type": "package",
+      "path": "google.api.commonprotos/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.api.commonprotos.2.5.0.nupkg.sha512",
+        "google.api.commonprotos.nuspec",
+        "lib/net461/Google.Api.CommonProtos.dll",
+        "lib/net461/Google.Api.CommonProtos.pdb",
+        "lib/net461/Google.Api.CommonProtos.xml",
+        "lib/netstandard2.0/Google.Api.CommonProtos.dll",
+        "lib/netstandard2.0/Google.Api.CommonProtos.pdb",
+        "lib/netstandard2.0/Google.Api.CommonProtos.xml"
+      ]
+    },
     "Google.Protobuf/3.19.4": {
       "sha512": "fd07/ykL4O4FhqrZIELm5lmiyOHfdPg9+o+hWr6tcfRdS7tHXnImg/2wtogLzlW2eEmr0J7j6ZrZvaWOLiJbxQ==",
       "type": "package",
@@ -6574,6 +6833,79 @@
         "lib/netstandard2.1/GraphQLParser.dll",
         "lib/netstandard2.1/GraphQLParser.xml",
         "logo.64x64.png"
+      ]
+    },
+    "Grpc.Core.Api/2.46.1": {
+      "sha512": "3rm4VJLP6MHWXoQnF9kYvO57Rj7gBtAlsu5Y4XtMTrsy4hSolRKOychh0KzJkaOTTtJ5dg0i3QlslLR5SX0Seg==",
+      "type": "package",
+      "path": "grpc.core.api/2.46.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.core.api.2.46.1.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net45/Grpc.Core.Api.dll",
+        "lib/net45/Grpc.Core.Api.pdb",
+        "lib/net45/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.46.0": {
+      "sha512": "iHx39bGsvtxVgaMkmVlxyNtjZETq9N8vxUA8Kc7dT2WBz+SXvBSOu0yPZxlcnFIOM5JyOuM/Dszg9GFGANrDPQ==",
+      "type": "package",
+      "path": "grpc.net.client/2.46.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.46.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net5.0/Grpc.Net.Client.dll",
+        "lib/net5.0/Grpc.Net.Client.pdb",
+        "lib/net5.0/Grpc.Net.Client.xml",
+        "lib/net6.0/Grpc.Net.Client.dll",
+        "lib/net6.0/Grpc.Net.Client.pdb",
+        "lib/net6.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.46.0": {
+      "sha512": "RjVHthmxrD7pK7kVIiIiSfGEkf1wxVy5nKyqDMKJAwy8vn6YZ/XOZLHZKil0s7VDkrO+HNqd6uC9LiIhL7o0ow==",
+      "type": "package",
+      "path": "grpc.net.common/2.46.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.46.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net5.0/Grpc.Net.Common.dll",
+        "lib/net5.0/Grpc.Net.Common.pdb",
+        "lib/net5.0/Grpc.Net.Common.xml",
+        "lib/net6.0/Grpc.Net.Common.dll",
+        "lib/net6.0/Grpc.Net.Common.pdb",
+        "lib/net6.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.xml",
+        "packageIcon.png"
       ]
     },
     "IdentityModel/4.4.0": {
@@ -9271,6 +9603,46 @@
         "nest.7.17.5.nupkg.sha512",
         "nest.nuspec",
         "nuget-icon.png"
+      ]
+    },
+    "Nethereum.Hex/4.5.0": {
+      "sha512": "+ia0tGHiH/Iw72ZOw/fdZGnLojkNs13DT4YGxYpfr+OXZF3QkmLpNZuMjtuaVb71vWrAbL8wve+K7A/Ulblj4g==",
+      "type": "package",
+      "path": "nethereum.hex/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "images/logo64x64.png",
+        "lib/net451/Nethereum.Hex.dll",
+        "lib/net461/Nethereum.Hex.dll",
+        "lib/net5.0/Nethereum.Hex.dll",
+        "lib/netcoreapp2.1/Nethereum.Hex.dll",
+        "lib/netcoreapp3.1/Nethereum.Hex.dll",
+        "lib/netstandard1.1/Nethereum.Hex.dll",
+        "lib/netstandard2.0/Nethereum.Hex.dll",
+        "nethereum.hex.4.5.0.nupkg.sha512",
+        "nethereum.hex.nuspec"
+      ]
+    },
+    "Nethereum.KeyStore/4.5.0": {
+      "sha512": "CgXHZwcW/Pt19B7ijVT11ZBbqCmZcPvbuqD99HLx3OwLdxNHpzdKxMShKpQRxsjZZgSw3wW01uZ26gezi8JyCA==",
+      "type": "package",
+      "path": "nethereum.keystore/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "images/logo64x64.png",
+        "lib/net451/Nethereum.KeyStore.dll",
+        "lib/net461/Nethereum.KeyStore.dll",
+        "lib/net5.0/Nethereum.KeyStore.dll",
+        "lib/netcoreapp2.1/Nethereum.KeyStore.dll",
+        "lib/netcoreapp3.1/Nethereum.KeyStore.dll",
+        "lib/netstandard1.1/Nethereum.KeyStore.dll",
+        "lib/netstandard2.0/Nethereum.KeyStore.dll",
+        "nethereum.keystore.4.5.0.nupkg.sha512",
+        "nethereum.keystore.nuspec"
       ]
     },
     "NETStandard.Library/2.0.0": {
@@ -12110,6 +12482,31 @@
         "version.txt"
       ]
     },
+    "System.Net.Http.Json/6.0.0": {
+      "sha512": "GbIV4y344kGOKjshAKCIDCMUTTW/hyUC42wV0Y5SXEdIbaKBIHBUxZ2MOe4/ZiV2svUAGfQ0c8LGtUExpOI8tg==",
+      "type": "package",
+      "path": "system.net.http.json/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Net.Http.Json.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Net.Http.Json.dll",
+        "lib/net461/System.Net.Http.Json.xml",
+        "lib/net5.0/System.Net.Http.Json.dll",
+        "lib/net5.0/System.Net.Http.Json.xml",
+        "lib/net6.0/System.Net.Http.Json.dll",
+        "lib/net6.0/System.Net.Http.Json.xml",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.xml",
+        "system.net.http.json.6.0.0.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Net.NameResolution/4.3.0": {
       "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
       "type": "package",
@@ -14397,6 +14794,32 @@
         "ref/xamarinwatchos10/_._",
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
+      ]
+    },
+    "System.Threading.Tasks.Dataflow/4.11.1": {
+      "sha512": "umDBSKTQMoYAbts6w49N33ctAjHhcfJkcva8xoDog01st35N+Ly/w+TB2vUcghxSw5vUYkpaCl/PI7tVw3R0Jw==",
+      "type": "package",
+      "path": "system.threading.tasks.dataflow/4.11.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Threading.Tasks.Dataflow.dll",
+        "lib/net461/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard1.0/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard1.1/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard1.1/System.Threading.Tasks.Dataflow.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Dataflow.xml",
+        "lib/portable-net45+win8+wpa81/System.Threading.Tasks.Dataflow.dll",
+        "lib/portable-net45+win8+wpa81/System.Threading.Tasks.Dataflow.xml",
+        "system.threading.tasks.dataflow.4.11.1.nupkg.sha512",
+        "system.threading.tasks.dataflow.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Threading.Tasks.Extensions/4.5.1": {

@@ -8,7 +8,7 @@
       "StepNo": 1,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8082",
-        "Path": "/api/users/info",
+        "Path": "/connect/token",
         "MethodName": "post",
         "ContentType": "application/x-www-form-urlencoded",
         "Headers": {
@@ -23,23 +23,23 @@
         }
       },
       "Asserts": {
-        "$.error": "NotNull",
-        "$.error_description": "NotNull"
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
       }
     }, {
       "StepNo": 2,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8081",
-        "Path": "/api/app/block/blocks",
+        "Path": "/api/app/block/transactions",
         "MethodName": "post",
         "ContentType": "application/json",
         "Headers": {
           "Content-Type": "application/json"
         },
         "Params": {
-          "chainId":"AELF",
-          "startBlockHeight":7000000,
-          "endBlockHeight":7000002,
+          "chainId":"tDVV",
+          "startBlockHeight":1,
+          "endBlockHeight":5,
           "isOnlyConfirmed":false
         }
       },
