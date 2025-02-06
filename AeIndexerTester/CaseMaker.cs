@@ -23,6 +23,12 @@ public class CaseMaker
 {
     public static void Main()
     {
+        
+        // JArray paramk = JArray.Parse("[]");
+        //
+        // Console.WriteLine(paramk.SelectToken("$"));
+        // // Assert.AreEqual(paramk.Count, 0);
+        // // Assert.IsEmpty(paramk.SelectToken("$"));
         makeCaseCode();
     }
 

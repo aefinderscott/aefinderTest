@@ -49,12 +49,12 @@ namespace CaseOne.App
             
             //request
             param = JObject.Parse("{\"displayName\": \"tnet00\"}");
-            string result1 = HttpRequest.BaseUrl("http://192.168.71.156:8081").Path("/api/users/info")
-                            .ContentType("application/json")
-                            .Params(param).Exec(oneCaseDto).ToString();
+            JObject result1 = HttpRequest.BaseUrl("http://192.168.71.156:8081").Path("/api/users/info")
+                                                    .ContentType("application/json")
+                                                    .Params(param).Exec(oneCaseDto).ToJObject();
             
             // Assert
-            // Assert.IsNotNull(result1.SelectToken("$.error"));
+            Assert.IsNotNull(result1.SelectToken("$.error"));
         }
         
         [TearDown]

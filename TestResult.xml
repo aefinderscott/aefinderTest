@@ -1,4 +1,1517 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run start-time="2024-11-25 16:48:59Z">
+<test-run id="0" runstate="Runnable" testcasecount="40" result="Failed" total="40" passed="19" failed="21" warnings="0" inconclusive="0" skipped="0" asserts="69" engine-version="3.18.3.0" clr-version="8.0.7" start-time="2025-02-06 14:25:06Z" end-time="2025-02-06 14:25:48Z" duration="41.854018">
   <command-line><![CDATA[/Users/lianqingdong/Downloads/NUnit.Console-3.18.3/bin/net8.0/nunit3-console.dll CaseOne/bin/Debug/net8.0/CaseOne.dll]]></command-line>
+  <test-suite type="Assembly" id="1-1053" name="CaseOne.dll" fullname="/Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/bin/Debug/net8.0/CaseOne.dll" runstate="Runnable" testcasecount="40" result="Failed" site="Child" start-time="2025-02-06T14:25:07.0676320Z" end-time="2025-02-06T14:25:48.8146840Z" duration="41.749346" total="40" passed="19" failed="21" warnings="0" inconclusive="0" skipped="0" asserts="69">
+    <environment framework-version="3.14.0.0" clr-version="8.0.7" os-version="Darwin 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:46 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6020" platform="Unix" cwd="/Users/lianqingdong/Desktop/autotest/aefinderTest" machine-name="aelfdeMacBook-Pro" user="lianqingdong" user-domain="aelfdeMacBook-Pro" culture="zh-CN" uiculture="zh-CN" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="/Users/lianqingdong/Desktop/autotest/aefinderTest" />
+      <setting name="NumberOfTestWorkers" value="10" />
+    </settings>
+    <properties>
+      <property name="_PID" value="37944" />
+      <property name="_APPDOMAIN" value="nunit3-console" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="SetUpFixture" id="1-1000" name="CaseOne" fullname="CaseOne.GlobalSetUpFixture" classname="CaseOne.GlobalSetUpFixture" runstate="Runnable" testcasecount="40" result="Failed" site="Child" start-time="2025-02-06T14:25:07.0703430Z" end-time="2025-02-06T14:25:48.8146610Z" duration="41.746676" total="40" passed="19" failed="21" warnings="0" inconclusive="0" skipped="0" asserts="69">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <output><![CDATA[Key: envName, Value: test001
+curl "http://192.168.71.14:6555/api/envmanager/init?envName=test001&envName=test001" -X GET -G --data-urlencode "envName=test001"
+Request was successful!
+"Start!test001"
+000999111
+100
+RequestBody
+=============
+200
+curl "http://192.168.71.14:6555/api/datamanager/makeBlocks" -X POST -H "Content-Type: application/json" -d '{"EnvName":"test001","Chainid":"tDVV","BlockCount":100,"TransactionCount":1,"LogeventCount":1}'
+Request was successful!
+"Block Created: 100 1, Age: 1"
+]]></output>
+      <test-suite type="TestSuite" id="1-1057" name="Api" fullname="CaseOne.Api" runstate="Runnable" testcasecount="21" result="Failed" site="Child" start-time="2025-02-06T14:25:27.8650030Z" end-time="2025-02-06T14:25:43.2425410Z" duration="15.378405" total="21" passed="15" failed="6" warnings="0" inconclusive="0" skipped="0" asserts="60">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1-1029" name="BlockTestTests" fullname="CaseOne.Api.BlockTestTests" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2025-02-06T14:25:27.8654790Z" end-time="2025-02-06T14:25:33.9283910Z" duration="6.063255" total="7" passed="5" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="20">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1030" name="testBlockQuery_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQuery_Test" methodname="testBlockQuery_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="1031880240" result="Passed" start-time="2025-02-06T14:25:27.8657930Z" end-time="2025-02-06T14:25:30.5879190Z" duration="2.722369" asserts="4">
+            <properties>
+              <property name="Description" value="block查询-正向" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzAsImlhdCI6MTczODg1MTkzMCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiN2EyZDYyOGQtMGMxZi00NjQ2LWEyNTctM2VmNDA5YzBiM2VlIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDdmYjIwY2MtMzI2OS1lOTNhLWUwMjMtM2ExN2VkZDNhOTA2In0.Il7syOajW4Ad2UnV00MQeuk5jtsisS-Nmv1gCCBiyvBbcTrbOGgEw9x6m1eCo2id8Mb-ehy40YWrtDwR5LfcHGpLSDds00C3DR5tDYQuPdTvHuibpHKSWOCkby35YYnmFd7dY0fTxYiHouIyAKPlVFH3KoHemK7dcnZHyl4gCqnBfx47JmaL9OwSR8mWlDR8vt2WwaEWEyf3AdXk59C9pmqEq6exRLyD_nZefwSduTw7T9dF68a6uL2j6hLZndh2HVnW8A6zyTzLg0-Mw1l7RMcqmNYCCaS9-49dCtBwDJTQ0uBJv-CCdLdoHPjbFLc3MoryWeuvnw9uIn9FKh_QHA",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzAsImlhdCI6MTczODg1MTkzMCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiN2EyZDYyOGQtMGMxZi00NjQ2LWEyNTctM2VmNDA5YzBiM2VlIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDdmYjIwY2MtMzI2OS1lOTNhLWUwMjMtM2ExN2VkZDNhOTA2In0.Il7syOajW4Ad2UnV00MQeuk5jtsisS-Nmv1gCCBiyvBbcTrbOGgEw9x6m1eCo2id8Mb-ehy40YWrtDwR5LfcHGpLSDds00C3DR5tDYQuPdTvHuibpHKSWOCkby35YYnmFd7dY0fTxYiHouIyAKPlVFH3KoHemK7dcnZHyl4gCqnBfx47JmaL9OwSR8mWlDR8vt2WwaEWEyf3AdXk59C9pmqEq6exRLyD_nZefwSduTw7T9dF68a6uL2j6hLZndh2HVnW8A6zyTzLg0-Mw1l7RMcqmNYCCaS9-49dCtBwDJTQ0uBJv-CCdLdoHPjbFLc3MoryWeuvnw9uIn9FKh_QHA" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"id":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","blockTime":"2025-02-06T14:25:23.6145365+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145473+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145542+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145605+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145689+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1}]
+]]></output>
+          </test-case>
+          <test-case id="1-1031" name="testBlockQueryConfirm_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQueryConfirm_Test" methodname="testBlockQueryConfirm_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="627145327" result="Passed" start-time="2025-02-06T14:25:30.5900340Z" end-time="2025-02-06T14:25:31.2372980Z" duration="0.647304" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-confirm" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzEsImlhdCI6MTczODg1MTkzMSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMDc4M2M2YzctNTlhOC00N2FlLTkyNWYtNzA2MmE2NDA1ZDcyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOTcwNjIxYzktM2RmYi05NDhkLTgzOGQtM2ExN2VkZDNhZWI4In0.hjcFygZR6k2tK0z40XBQ5IHz1XOXdTI01pyz_Wsi7-iz4e0kPDZEVHpFe2V9egEMOmMWwyBlkFl9nzUf5t4W2hfvHsWTR1fqx8jrcDiFWvN89qixk5x1Z5CF5J3Z9vUoOyyIlZMIrQNUHR0QiIDRVTFsSywSWSrJvVA_uFoi1P3KBQPciUVV0js_rzUecSzqPgCJrNTixL582erIlTOYGhKm2Q-coOh49QV2Cd9hGIXy0GunArBvpHp-hmHUwkZEqWc8YP6EjYYf63r0DJIxD1t5H0fdoqJAt5z69fyd6NDp-bu4xZub8ZodkNanhLPqbb0hv-ncnILFDVfAKg8n2g",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzEsImlhdCI6MTczODg1MTkzMSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMDc4M2M2YzctNTlhOC00N2FlLTkyNWYtNzA2MmE2NDA1ZDcyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOTcwNjIxYzktM2RmYi05NDhkLTgzOGQtM2ExN2VkZDNhZWI4In0.hjcFygZR6k2tK0z40XBQ5IHz1XOXdTI01pyz_Wsi7-iz4e0kPDZEVHpFe2V9egEMOmMWwyBlkFl9nzUf5t4W2hfvHsWTR1fqx8jrcDiFWvN89qixk5x1Z5CF5J3Z9vUoOyyIlZMIrQNUHR0QiIDRVTFsSywSWSrJvVA_uFoi1P3KBQPciUVV0js_rzUecSzqPgCJrNTixL582erIlTOYGhKm2Q-coOh49QV2Cd9hGIXy0GunArBvpHp-hmHUwkZEqWc8YP6EjYYf63r0DJIxD1t5H0fdoqJAt5z69fyd6NDp-bu4xZub8ZodkNanhLPqbb0hv-ncnILFDVfAKg8n2g" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":true}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1034" name="testBlockQueryNoEnd_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQueryNoEnd_Test" methodname="testBlockQueryNoEnd_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="151533052" result="Failed" label="Error" start-time="2025-02-06T14:25:31.2375020Z" end-time="2025-02-06T14:25:31.8098770Z" duration="0.572408" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-NoEnd" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.BlockTestTests.testBlockQueryNoEnd_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/BlockTest.cs:line 141
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzIsImlhdCI6MTczODg1MTkzMiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNmVjMWRhYTAtZjExMi00ZDY1LTllNWUtMTFkNjdlYTkyNGRhIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOThkY2RhZjQtMDljMi0wZDFjLWQyYzEtM2ExN2VkZDNiMTAyIn0.XxWPgHbv2rRQ-E_yfIbY8QLnM0I2qWnxN-FJmD6hCuWqtz5VI_hUWQJSSjzPvXCiBVLBDT0Lw36wn6FH19CeP5iybhklIE2u_tHu0falaZ_XvYrd20Hh0qay1UU9eS4J9PmVyhdfbKGVOLcDZN5m-L7jWaBLpJFcauHhjoxV8iGtjNXvW2D9I87p32mdeZmVj08z4vHh7jij-UIZBCEQvDRb1LoqlnSaSa8EmcB38ZWunTiuk-JqQnK7FULQR-5S4OAeniaLQWe2u_sbc_ThGb7cO0XihvGkD1jXNXlfdI_yxTFCZXLGU2mQ0RYaWQEl3wBfKUc0vwzt0f_tl0G8rg",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzIsImlhdCI6MTczODg1MTkzMiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNmVjMWRhYTAtZjExMi00ZDY1LTllNWUtMTFkNjdlYTkyNGRhIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOThkY2RhZjQtMDljMi0wZDFjLWQyYzEtM2ExN2VkZDNiMTAyIn0.XxWPgHbv2rRQ-E_yfIbY8QLnM0I2qWnxN-FJmD6hCuWqtz5VI_hUWQJSSjzPvXCiBVLBDT0Lw36wn6FH19CeP5iybhklIE2u_tHu0falaZ_XvYrd20Hh0qay1UU9eS4J9PmVyhdfbKGVOLcDZN5m-L7jWaBLpJFcauHhjoxV8iGtjNXvW2D9I87p32mdeZmVj08z4vHh7jij-UIZBCEQvDRb1LoqlnSaSa8EmcB38ZWunTiuk-JqQnK7FULQR-5S4OAeniaLQWe2u_sbc_ThGb7cO0XihvGkD1jXNXlfdI_yxTFCZXLGU2mQ0RYaWQEl3wBfKUc0vwzt0f_tl0G8rg" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1033" name="testBlockQueryNoStart_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQueryNoStart_Test" methodname="testBlockQueryNoStart_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="1819688264" result="Failed" label="Error" start-time="2025-02-06T14:25:31.8103320Z" end-time="2025-02-06T14:25:32.3508270Z" duration="0.540527" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-startBlockHeight" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.BlockTestTests.testBlockQueryNoStart_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/BlockTest.cs:line 115
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzIsImlhdCI6MTczODg1MTkzMiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZjYzYjRkYTItNmE1ZC00MzAzLTkwOGUtZWM0ODQyMDcwYzY0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODYzODE2ZWMtZjBmOC0wNTczLThmNGMtM2ExN2VkZDNiMzJjIn0.mh88uuthSxiOgrWYdLwgj9dv3Y3wYwX3nBOlG9VEeL5jNAt5FfiWOltTkEIXJ3xIQTcwUpWYVbv0hqtm0BpXB1x1yoh3dN2WXDL_UeTp0TxZmNAy7MHjGaKS-pvkCGJhStfG3T5mmx4tQY0MgS7dFwTFA4p9MreGSW8WaoJKYbQbtAPIhJW4UBt0x7EzSKivL5V-I9ykmcHvV-GGyaAiIf-GwYX0u6Yl1KNzL2tHN6yDSq6fO4rpWvI-jHLxcqLFgjnLl9TAXVLOAPalf9Cy7Ab1yYCiwxCQZcTVzRYN_LsFd1UtP-k1kWrVRNHYkgq9nfEgRa922Xx98PrC6oW5vw",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzIsImlhdCI6MTczODg1MTkzMiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZjYzYjRkYTItNmE1ZC00MzAzLTkwOGUtZWM0ODQyMDcwYzY0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiODYzODE2ZWMtZjBmOC0wNTczLThmNGMtM2ExN2VkZDNiMzJjIn0.mh88uuthSxiOgrWYdLwgj9dv3Y3wYwX3nBOlG9VEeL5jNAt5FfiWOltTkEIXJ3xIQTcwUpWYVbv0hqtm0BpXB1x1yoh3dN2WXDL_UeTp0TxZmNAy7MHjGaKS-pvkCGJhStfG3T5mmx4tQY0MgS7dFwTFA4p9MreGSW8WaoJKYbQbtAPIhJW4UBt0x7EzSKivL5V-I9ykmcHvV-GGyaAiIf-GwYX0u6Yl1KNzL2tHN6yDSq6fO4rpWvI-jHLxcqLFgjnLl9TAXVLOAPalf9Cy7Ab1yYCiwxCQZcTVzRYN_LsFd1UtP-k1kWrVRNHYkgq9nfEgRa922Xx98PrC6oW5vw" -H "Content-Type: application/json" -d '{"chainId":"tDVV","endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"id":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","blockTime":"2025-02-06T14:25:23.6145365+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145473+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145542+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145605+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1},{"id":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145689+00:00","signerPubkey":"","miner":"iPCEaan1FspGfnZUr4WHAjGZe2YNyF3cBAS4ADV3FjbvQyQr7","signature":"","confirmed":false,"extraProperties":{},"transactionIds":["50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966"],"logEventCount":1}]
+]]></output>
+          </test-case>
+          <test-case id="1-1032" name="testBlockQuerySgtE_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQuerySgtE_Test" methodname="testBlockQuerySgtE_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="7047638" result="Passed" start-time="2025-02-06T14:25:32.3534430Z" end-time="2025-02-06T14:25:32.8695060Z" duration="0.516092" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-start&gt;end" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzMsImlhdCI6MTczODg1MTkzMywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMmY1ZTBkMjctMmFiMS00NGJiLTlmMzItYmIxYjg5ZDZkODUyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNWM3ODUzYWItOTRmZC1lNWFjLTI1NmYtM2ExN2VkZDNiNTQyIn0.Zsg1qsANwjyc2JhffEdtNjSmdo0dt64rFUAIys8m7y5n2qMHqxrA_AgNgQT-5GDND8tsQRfuG9aTEEd2R5_8AdtRKZR38BJr1ovBmaFRkvuR5HIDnpci-f94KivrJiUaJPRfmSsOXi08kMomz2k_y5VhqlpXUdM4nkqOmJoXFlQeinLKxVx64fQVCDM8SFrEM5bYSW8q4K3_2V9T9tm1gjekzHf0qNiqGjs9w8z2JbR-nDIibL9ExG7THLoKl5YDXE8b8MYU561v1TmcCbCZS6XHQtxyKMp51VD5y5eM3lt3EbPgGUSd-1-2QnTgfEjdCBBygvmv2AR5FDFvfhUUXA",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzMsImlhdCI6MTczODg1MTkzMywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMmY1ZTBkMjctMmFiMS00NGJiLTlmMzItYmIxYjg5ZDZkODUyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNWM3ODUzYWItOTRmZC1lNWFjLTI1NmYtM2ExN2VkZDNiNTQyIn0.Zsg1qsANwjyc2JhffEdtNjSmdo0dt64rFUAIys8m7y5n2qMHqxrA_AgNgQT-5GDND8tsQRfuG9aTEEd2R5_8AdtRKZR38BJr1ovBmaFRkvuR5HIDnpci-f94KivrJiUaJPRfmSsOXi08kMomz2k_y5VhqlpXUdM4nkqOmJoXFlQeinLKxVx64fQVCDM8SFrEM5bYSW8q4K3_2V9T9tm1gjekzHf0qNiqGjs9w8z2JbR-nDIibL9ExG7THLoKl5YDXE8b8MYU561v1TmcCbCZS6XHQtxyKMp51VD5y5eM3lt3EbPgGUSd-1-2QnTgfEjdCBBygvmv2AR5FDFvfhUUXA" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":11,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1036" name="testBlockQueryStartNotExist_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQueryStartNotExist_Test" methodname="testBlockQueryStartNotExist_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="724491721" result="Passed" start-time="2025-02-06T14:25:32.8708430Z" end-time="2025-02-06T14:25:33.3961350Z" duration="0.525325" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-StartNotExist" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzQsImlhdCI6MTczODg1MTkzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMGY0Njc4OGQtOTMwMi00M2JlLWI5M2EtYjVhYzYwZWMxNmM1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNTBjZWJmYTEtNjgyZi04ZmNhLWQ2MTYtM2ExN2VkZDNiNzQ5In0.j2ZTDj1J25jGwxQHf4saE6mkkko1-5xQZTwjrA6jLDZSJ8kCw4OZtuSzwNQ3AU2jI9-Ljdw87Bi-IR7Mfj6mA6ha2Pmexe0w4HTBCU9m2GwOPcOrTH3dVYLwqSF5nMnRCkzGPHJ1BXj85X7hG0mCnx1KHEf4Hdrq8KeT74_P3T_133papDx7rD6vBhVdgq8l8MM7Qd-9lSZJzA13CqLyPS4H43kapqHqMjLK7GyeOH8Dqn8Fii1SAJ6s1hK2uvTk6MAfznTFbFhf9g5z5gwTE8bqcgycIxbyOCt5DbnpsL6VYLUFqJDoKJWmEoFVbez2vQOh94eWgDJ7r46kkl45SQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzQsImlhdCI6MTczODg1MTkzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMGY0Njc4OGQtOTMwMi00M2JlLWI5M2EtYjVhYzYwZWMxNmM1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNTBjZWJmYTEtNjgyZi04ZmNhLWQ2MTYtM2ExN2VkZDNiNzQ5In0.j2ZTDj1J25jGwxQHf4saE6mkkko1-5xQZTwjrA6jLDZSJ8kCw4OZtuSzwNQ3AU2jI9-Ljdw87Bi-IR7Mfj6mA6ha2Pmexe0w4HTBCU9m2GwOPcOrTH3dVYLwqSF5nMnRCkzGPHJ1BXj85X7hG0mCnx1KHEf4Hdrq8KeT74_P3T_133papDx7rD6vBhVdgq8l8MM7Qd-9lSZJzA13CqLyPS4H43kapqHqMjLK7GyeOH8Dqn8Fii1SAJ6s1hK2uvTk6MAfznTFbFhf9g5z5gwTE8bqcgycIxbyOCt5DbnpsL6VYLUFqJDoKJWmEoFVbez2vQOh94eWgDJ7r46kkl45SQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":100000,"endBlockHeight":500000000,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1035" name="testBlockQueryWrongChainId_Test" fullname="CaseOne.Api.BlockTestTests.testBlockQueryWrongChainId_Test" methodname="testBlockQueryWrongChainId_Test" classname="CaseOne.Api.BlockTestTests" runstate="Runnable" seed="557284952" result="Passed" start-time="2025-02-06T14:25:33.3962880Z" end-time="2025-02-06T14:25:33.9274930Z" duration="0.531235" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-WrongChainId" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzQsImlhdCI6MTczODg1MTkzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNjgyMzUyYmUtMmMxZS00YjE0LWFlNTEtMzIwYzZmZjY0ZDczIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNzA2ZDk4OWMtZDIwZS0xMzQ0LTI0MjYtM2ExN2VkZDNiOTVhIn0.sliIbbXKFqndH6uNwCA2TyStV3d02Lo_MsxfZNegU09kGP93-LpGk3DVCk1Hx7GlNevYhDgzwrcwX07yeJNSLESubu-vG83eMrixCcwIpjxaVCqtkr-E34hZy_UwZQsOwY1-10toTc4V7vTrqXXUHO4io1EfRndW9AUnTocyhy_owq1ksI6-PYjdLgiVSc62ZJFyHN9Y5yl911KvhsqfQOvxoWWtdsS9flm4LFNFSQBnc2IjrrHVVJ3OQxL8ou9FzvmwT794fv546nGUWvo9rkb9-ZOtDXrK2WGcngBp4lFPvXM18jSYueS_UuC3TVvNKRwEE_HUV3fSvJ28Be6DXQ",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzQsImlhdCI6MTczODg1MTkzNCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNjgyMzUyYmUtMmMxZS00YjE0LWFlNTEtMzIwYzZmZjY0ZDczIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNzA2ZDk4OWMtZDIwZS0xMzQ0LTI0MjYtM2ExN2VkZDNiOTVhIn0.sliIbbXKFqndH6uNwCA2TyStV3d02Lo_MsxfZNegU09kGP93-LpGk3DVCk1Hx7GlNevYhDgzwrcwX07yeJNSLESubu-vG83eMrixCcwIpjxaVCqtkr-E34hZy_UwZQsOwY1-10toTc4V7vTrqXXUHO4io1EfRndW9AUnTocyhy_owq1ksI6-PYjdLgiVSc62ZJFyHN9Y5yl911KvhsqfQOvxoWWtdsS9flm4LFNFSQBnc2IjrrHVVJ3OQxL8ou9FzvmwT794fv546nGUWvo9rkb9-ZOtDXrK2WGcngBp4lFPvXM18jSYueS_UuC3TVvNKRwEE_HUV3fSvJ28Be6DXQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV1","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1037" name="LogeventTestTests" fullname="CaseOne.Api.LogeventTestTests" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2025-02-06T14:25:33.9294740Z" end-time="2025-02-06T14:25:38.1936180Z" duration="4.264384" total="7" passed="5" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="20">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1038" name="testLogeventsQuery_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQuery_Test" methodname="testLogeventsQuery_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="1423300675" result="Passed" start-time="2025-02-06T14:25:33.9296290Z" end-time="2025-02-06T14:25:34.4711370Z" duration="0.541542" asserts="4">
+            <properties>
+              <property name="Description" value="block查询-正向" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzUsImlhdCI6MTczODg1MTkzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNWY5YTJmMjUtOGM2My00OGM3LThjMmItZGRkMzZhYjk0YjQ0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiYTVhMjg5ZGUtNTI3Ni1jZjdlLWRkNzMtM2ExN2VkZDNiYjY2In0.JTpnJ2HcescsKErCTsUyKfKkMcQWRotmaExaKxm0tLzstPPlkwdFZlHCHWSQn0dfFzWy0s8O1p5UeSchFE-WrTYLyit-2BARyYwFMXA94gRfslOoeqrle8ntOa67FEd_L2nLhVcn-8Y2zDPwgj7HAU5TKVovlHUHJT_7SsQB3G4W0EgN3L3O9AmHa5rlrsOP0u6mXmhQhBpJ_9Q7chf_D76gmxKfOXbrGfzQ5FYXhzIrxeGbg4t97frqhY0rqmp5Pl4ykrJnqaDSb6_jo6qgPbRVuYIPxvmRjGvs0TxlkDxnGMNsV_P3QjtcD7FwDHR6pwTfi_qO5u-jCK4G7Ebqbg",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzUsImlhdCI6MTczODg1MTkzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNWY5YTJmMjUtOGM2My00OGM3LThjMmItZGRkMzZhYjk0YjQ0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiYTVhMjg5ZGUtNTI3Ni1jZjdlLWRkNzMtM2ExN2VkZDNiYjY2In0.JTpnJ2HcescsKErCTsUyKfKkMcQWRotmaExaKxm0tLzstPPlkwdFZlHCHWSQn0dfFzWy0s8O1p5UeSchFE-WrTYLyit-2BARyYwFMXA94gRfslOoeqrle8ntOa67FEd_L2nLhVcn-8Y2zDPwgj7HAU5TKVovlHUHJT_7SsQB3G4W0EgN3L3O9AmHa5rlrsOP0u6mXmhQhBpJ_9Q7chf_D76gmxKfOXbrGfzQ5FYXhzIrxeGbg4t97frqhY0rqmp5Pl4ykrJnqaDSb6_jo6qgPbRVuYIPxvmRjGvs0TxlkDxnGMNsV_P3QjtcD7FwDHR6pwTfi_qO5u-jCK4G7Ebqbg" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145365+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145473+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145542+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145605+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145689+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]
+]]></output>
+          </test-case>
+          <test-case id="1-1039" name="testLogeventsQueryConfirm_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQueryConfirm_Test" methodname="testLogeventsQueryConfirm_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="106596358" result="Passed" start-time="2025-02-06T14:25:34.4725500Z" end-time="2025-02-06T14:25:34.9856990Z" duration="0.513185" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-confirm" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzUsImlhdCI6MTczODg1MTkzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOGVmZDNjOTYtOTVmOC00MzYxLWE0MGMtMTQzNGIxYWU2NTAzIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOWExZGE3ZGYtN2E4NS1kNmY4LWNjNjItM2ExN2VkZDNiZDhlIn0.rrfiI-M-jSYWrIbypa2w5b9TIq78fd7HztRlwh6epm6lUW7zVSvlHDa140egUnaowYGcPHSZbsOJ4EI-BTJfGXPZPc817Gc8NqjFzECbWZ4nRB6kqSUeY4r_0tM-U1CP1rio-s2R7U-jkkU80WTrCwXi5ZWlcRpRGlh2pTLAZc282nROF4-FCuUFsdBEuWtQbmVWL4IDF9Zp5YTgFJcC7DENarIxhzEZrT02KbrTIirpsENXSRLI_e_uGnhBm-jTvHZ8puCC9GwtomYtDofmoA_l4NM0ywKCdKrKodsYHf36DWwB8_3x_zyZ7oEYv9ZTXzxzPC39JLLP87_dwuFsBg",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzUsImlhdCI6MTczODg1MTkzNSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOGVmZDNjOTYtOTVmOC00MzYxLWE0MGMtMTQzNGIxYWU2NTAzIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOWExZGE3ZGYtN2E4NS1kNmY4LWNjNjItM2ExN2VkZDNiZDhlIn0.rrfiI-M-jSYWrIbypa2w5b9TIq78fd7HztRlwh6epm6lUW7zVSvlHDa140egUnaowYGcPHSZbsOJ4EI-BTJfGXPZPc817Gc8NqjFzECbWZ4nRB6kqSUeY4r_0tM-U1CP1rio-s2R7U-jkkU80WTrCwXi5ZWlcRpRGlh2pTLAZc282nROF4-FCuUFsdBEuWtQbmVWL4IDF9Zp5YTgFJcC7DENarIxhzEZrT02KbrTIirpsENXSRLI_e_uGnhBm-jTvHZ8puCC9GwtomYtDofmoA_l4NM0ywKCdKrKodsYHf36DWwB8_3x_zyZ7oEYv9ZTXzxzPC39JLLP87_dwuFsBg" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":true}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1042" name="testLogeventsQueryNoEnd_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQueryNoEnd_Test" methodname="testLogeventsQueryNoEnd_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="364901409" result="Failed" label="Error" start-time="2025-02-06T14:25:34.9860300Z" end-time="2025-02-06T14:25:35.4877600Z" duration="0.501759" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-NoEnd" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.LogeventTestTests.testLogeventsQueryNoEnd_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/LogeventTest.cs:line 141
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzYsImlhdCI6MTczODg1MTkzNiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODFlOWY4YWItODE5OC00NzNmLWFmYjAtZTRkZmFiZjExZmNiIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMTgxYTY1MTEtMGZiNS01YWM0LTUyNDQtM2ExN2VkZDNiZjgwIn0.dIADp1L47oo81YQcVXBfu7cN3IXBluDMUPVF9HOKQwEdcWyvzWvSL8uBsiZjR07uxqzgJxINKAkx8yjGJYs3ChVLMCNk7Qmhhl9_RQlHxFzoecjQ2d19CUOWd1RGZUpWiEhRuhfGfl7Lh4qJcs3WTdFsiyKAT5W7PGcXA_PR9sRB6uhk-P7VKMFQFnq_4QIxPIjB-F8JNR2UN0jx3IYf5UA-aY4o9MI521dsoGhjZzhUivj2-MI_qbbUZOk16T_8nL0WbLPwVPj9unGE2-My1OnZ3V9n6gfwLBGOKFz_djMlDz20Dvo4OxkVeWYK-27troqBmJiYOrjGNeP9o3CqvQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzYsImlhdCI6MTczODg1MTkzNiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODFlOWY4YWItODE5OC00NzNmLWFmYjAtZTRkZmFiZjExZmNiIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMTgxYTY1MTEtMGZiNS01YWM0LTUyNDQtM2ExN2VkZDNiZjgwIn0.dIADp1L47oo81YQcVXBfu7cN3IXBluDMUPVF9HOKQwEdcWyvzWvSL8uBsiZjR07uxqzgJxINKAkx8yjGJYs3ChVLMCNk7Qmhhl9_RQlHxFzoecjQ2d19CUOWd1RGZUpWiEhRuhfGfl7Lh4qJcs3WTdFsiyKAT5W7PGcXA_PR9sRB6uhk-P7VKMFQFnq_4QIxPIjB-F8JNR2UN0jx3IYf5UA-aY4o9MI521dsoGhjZzhUivj2-MI_qbbUZOk16T_8nL0WbLPwVPj9unGE2-My1OnZ3V9n6gfwLBGOKFz_djMlDz20Dvo4OxkVeWYK-27troqBmJiYOrjGNeP9o3CqvQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1041" name="testLogeventsQueryNoStart_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQueryNoStart_Test" methodname="testLogeventsQueryNoStart_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="1657553983" result="Failed" label="Error" start-time="2025-02-06T14:25:35.4878740Z" end-time="2025-02-06T14:25:36.0033510Z" duration="0.515508" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-startBlockHeight" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.LogeventTestTests.testLogeventsQueryNoStart_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/LogeventTest.cs:line 115
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzYsImlhdCI6MTczODg1MTkzNiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOTMyM2YwMjktZjBlMC00ZmE1LTlkYzMtYmI3NTE5YmViNGI2Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZjgyYmVhZTUtYmQ0ZS0zMGIzLWNkZDctM2ExN2VkZDNjMTc2In0.DV-jbjYB9pDIJQcnzWYJ1Yb0yCXRNKc5fOxd2eDdosN2MqhxPW-A6p23OYVHsLTmoVESXB0jWU_8t0vV7xexXPpp7SwUVwpgRr1bqenIMkmDHV170Q02CZGCqV_2nvVxoL44oOkILJQkQICqt9l0oyLTwkxYOEja75uqLLacagU6mZNkhm-wkONX5V2sLdNJLk984Cl4fxpJyTwqusoGlbqZP-CnuQB7ZzhHafhtikiTud2fj1JJw8dbqSEQ-IUoqMJLuGL7T4-e41axqUIOJ9djP-z-OmyahhysuJ901-1eRe701b14MdZd7fRhlNlfNFylNm0DBJ2SRxDsbrS0KA",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzYsImlhdCI6MTczODg1MTkzNiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiOTMyM2YwMjktZjBlMC00ZmE1LTlkYzMtYmI3NTE5YmViNGI2Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZjgyYmVhZTUtYmQ0ZS0zMGIzLWNkZDctM2ExN2VkZDNjMTc2In0.DV-jbjYB9pDIJQcnzWYJ1Yb0yCXRNKc5fOxd2eDdosN2MqhxPW-A6p23OYVHsLTmoVESXB0jWU_8t0vV7xexXPpp7SwUVwpgRr1bqenIMkmDHV170Q02CZGCqV_2nvVxoL44oOkILJQkQICqt9l0oyLTwkxYOEja75uqLLacagU6mZNkhm-wkONX5V2sLdNJLk984Cl4fxpJyTwqusoGlbqZP-CnuQB7ZzhHafhtikiTud2fj1JJw8dbqSEQ-IUoqMJLuGL7T4-e41axqUIOJ9djP-z-OmyahhysuJ901-1eRe701b14MdZd7fRhlNlfNFylNm0DBJ2SRxDsbrS0KA" -H "Content-Type: application/json" -d '{"chainId":"tDVV","endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145365+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145473+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145542+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145605+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}},{"chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145689+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]
+]]></output>
+          </test-case>
+          <test-case id="1-1044" name="testLogeventsQueryNotExist_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQueryNotExist_Test" methodname="testLogeventsQueryNotExist_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="911552175" result="Passed" start-time="2025-02-06T14:25:36.0035050Z" end-time="2025-02-06T14:25:36.5270180Z" duration="0.523545" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-StartNotExist" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzcsImlhdCI6MTczODg1MTkzNywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMmUzZjYzYTEtYmU2Yy00MWVmLWI0ZjYtMjUwOTZiNTA1OGQzIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZWVlNzUyYjItNTdhOS0wMDY3LTI1YzktM2ExN2VkZDNjMzdmIn0.QseDqM0cC9dI5eFuTGYU6qpw-cO1U6DXmX-W7o0JrtwJeQWXSqDAOUc0qpI_IQ3SoxXLtZlhMV5QwN7ruxT8jP0gRFZHheIbPqF4eWIVHRxkOjgsExTaVvW1uWY9cq0YnB3tQ4YEaO3SEFIKEOzYO8b5S7SAku7heEz65w0LQu4eCf7nczLZi2FpKbHBtJRvLKei81w87UQy7eWc77qYaYacdulckTw77bYRQUZh7gh_ogAhQPVXa2RaFSJITZ0FH1v3bJQXXo4jngH6O77WjP52O2CI2GxhS6uLVAfvRPvmg71brV18Mpe-A7FlDiOMZ1n2YB_JSZ310brPpbvSoQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzcsImlhdCI6MTczODg1MTkzNywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMmUzZjYzYTEtYmU2Yy00MWVmLWI0ZjYtMjUwOTZiNTA1OGQzIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZWVlNzUyYjItNTdhOS0wMDY3LTI1YzktM2ExN2VkZDNjMzdmIn0.QseDqM0cC9dI5eFuTGYU6qpw-cO1U6DXmX-W7o0JrtwJeQWXSqDAOUc0qpI_IQ3SoxXLtZlhMV5QwN7ruxT8jP0gRFZHheIbPqF4eWIVHRxkOjgsExTaVvW1uWY9cq0YnB3tQ4YEaO3SEFIKEOzYO8b5S7SAku7heEz65w0LQu4eCf7nczLZi2FpKbHBtJRvLKei81w87UQy7eWc77qYaYacdulckTw77bYRQUZh7gh_ogAhQPVXa2RaFSJITZ0FH1v3bJQXXo4jngH6O77WjP52O2CI2GxhS6uLVAfvRPvmg71brV18Mpe-A7FlDiOMZ1n2YB_JSZ310brPpbvSoQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":100000,"endBlockHeight":500000000,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1040" name="testLogeventsQuerySgtE_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQuerySgtE_Test" methodname="testLogeventsQuerySgtE_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="1920463767" result="Passed" start-time="2025-02-06T14:25:36.5271710Z" end-time="2025-02-06T14:25:37.6911830Z" duration="1.164078" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-start&gt;end" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzcsImlhdCI6MTczODg1MTkzNywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjBiMjMyMmMtMDhiYy00YzcxLTk5ZjAtZmNmYjZlNzdmN2Y5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMWFlODVjZTgtNDgwMi02N2U5LTM2ZjYtM2ExN2VkZDNjNWI0In0.2umutseJZNhkz5A7_g9rXgGs5W4xh9smkjjIyixhd2p74MOqzvDfEwtzZh8aFAtOU7gWW14fRsoDbHMSXhdePHC2q7hr7FNzo-sfycTps7OyJkrHwjcmXqqJ1HN6MH5MW-rf1EzKDlJ9muUzLrTTZSDWthP_GOyXSBcOms1bbvFyifuCIxgjXj080nGwsymILgkeFTqlAzWv6LGUDn8xvXZTNzUgDIY-0f5qR_B2BaL2-VBJJ4-8BGUNEDkLi1t75JU_f_csSWS9ReVjfy249vEGts-tz0-dvghsCOWEkdtofa_BocNSDsWf36XVqiX9_eyVRJ8S3Bu-v18zSresnQ",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzcsImlhdCI6MTczODg1MTkzNywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjBiMjMyMmMtMDhiYy00YzcxLTk5ZjAtZmNmYjZlNzdmN2Y5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMWFlODVjZTgtNDgwMi02N2U5LTM2ZjYtM2ExN2VkZDNjNWI0In0.2umutseJZNhkz5A7_g9rXgGs5W4xh9smkjjIyixhd2p74MOqzvDfEwtzZh8aFAtOU7gWW14fRsoDbHMSXhdePHC2q7hr7FNzo-sfycTps7OyJkrHwjcmXqqJ1HN6MH5MW-rf1EzKDlJ9muUzLrTTZSDWthP_GOyXSBcOms1bbvFyifuCIxgjXj080nGwsymILgkeFTqlAzWv6LGUDn8xvXZTNzUgDIY-0f5qR_B2BaL2-VBJJ4-8BGUNEDkLi1t75JU_f_csSWS9ReVjfy249vEGts-tz0-dvghsCOWEkdtofa_BocNSDsWf36XVqiX9_eyVRJ8S3Bu-v18zSresnQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":11,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1043" name="testLogeventsQueryWrongChainId_Test" fullname="CaseOne.Api.LogeventTestTests.testLogeventsQueryWrongChainId_Test" methodname="testLogeventsQueryWrongChainId_Test" classname="CaseOne.Api.LogeventTestTests" runstate="Runnable" seed="1158535734" result="Passed" start-time="2025-02-06T14:25:37.6914200Z" end-time="2025-02-06T14:25:38.1932810Z" duration="0.501891" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-WrongChainId" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzgsImlhdCI6MTczODg1MTkzOCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNDYzY2IzODEtZTQ0Ny00MGQyLTg5ZjUtNWZlZjM5MGQzODVkIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZTIzNWFjNWEtZmJiMS05OWI1LTE2ZjgtM2ExN2VkZDNjYTEzIn0.JdBPMuiIS133F13TVP07UeGdyE7kIPbbKoJsBac-0D8Xe5PZwSJlzlA6cHl1Xe9bVHBqQSloyb3TKpdrHhRWCCynAFylq0567jGKs7-BizbG7_uYX9aaTDiDLq627J1PLCBEz2xa8-zMVJV_CgB9xj4hLkYt3Q_S49jpN56BUSr09z8GZJHCRH-sjdBdpDIaYRsQH-BiMfWJPHtEbkjrChXWdgKUlD96f34oYAvid8mvwuBNNM293mGEBK7txElEnATi-bxR3NKY1kuJ3tuhiJY2FIHA8rmz0M0tHkUV0ynbaDEGYgElHRaePHV1xg6OG6lfqk9pMRQhlhsLzovm2Q",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/logevents" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzgsImlhdCI6MTczODg1MTkzOCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNDYzY2IzODEtZTQ0Ny00MGQyLTg5ZjUtNWZlZjM5MGQzODVkIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZTIzNWFjNWEtZmJiMS05OWI1LTE2ZjgtM2ExN2VkZDNjYTEzIn0.JdBPMuiIS133F13TVP07UeGdyE7kIPbbKoJsBac-0D8Xe5PZwSJlzlA6cHl1Xe9bVHBqQSloyb3TKpdrHhRWCCynAFylq0567jGKs7-BizbG7_uYX9aaTDiDLq627J1PLCBEz2xa8-zMVJV_CgB9xj4hLkYt3Q_S49jpN56BUSr09z8GZJHCRH-sjdBdpDIaYRsQH-BiMfWJPHtEbkjrChXWdgKUlD96f34oYAvid8mvwuBNNM293mGEBK7txElEnATi-bxR3NKY1kuJ3tuhiJY2FIHA8rmz0M0tHkUV0ynbaDEGYgElHRaePHV1xg6OG6lfqk9pMRQhlhsLzovm2Q" -H "Content-Type: application/json" -d '{"chainId":"tDVV1","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1045" name="TransactionTestTests" fullname="CaseOne.Api.TransactionTestTests" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2025-02-06T14:25:38.1938420Z" end-time="2025-02-06T14:25:43.2424080Z" duration="5.048851" total="7" passed="5" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="20">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1046" name="testTransactionsQuery_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQuery_Test" methodname="testTransactionsQuery_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="1521736602" result="Passed" start-time="2025-02-06T14:25:38.1945590Z" end-time="2025-02-06T14:25:38.7481380Z" duration="0.553612" asserts="4">
+            <properties>
+              <property name="Description" value="block查询-正向" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzksImlhdCI6MTczODg1MTkzOSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODk4YmVmYjYtM2YxNi00YzM3LTljNzctMjMzMmY4MDY3NTU0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDhkMjQ0ZjQtM2EzOS1iZTdjLWIzZGMtM2ExN2VkZDNjYzA2In0.1qoC82zRwUSSvoxq1s7deIuki0n8bGU7NNSnnpgVU_XR74psEVLedoEn0-rVZS21SPxDe6hjXoddmxMclhliXYZzFDDf8OvVwnlK6Jy0Gb-jlCd6bX41TBP4oJfTAZqPRfQmrtYA-mdo-F4lAtwBog4xtjHjmQlbsnuoSMseP58Vwk-j5FJH2cNqulbTY27DuetPsag0-0oZXYm4S8QqviU_iPmgQ9rErZcal_oFkmQ2RkG-aYZlIJs5f8ykPlyRS4EItVsx2fIsReiLTcXRw-9nJuDgSB3BGQ_OI1S7hclQsh56AStZicnNnAGZPopz9FxZOErlepbAl_ZNEyRg4g",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzksImlhdCI6MTczODg1MTkzOSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiODk4YmVmYjYtM2YxNi00YzM3LTljNzctMjMzMmY4MDY3NTU0Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDhkMjQ0ZjQtM2EzOS1iZTdjLWIzZGMtM2ExN2VkZDNjYzA2In0.1qoC82zRwUSSvoxq1s7deIuki0n8bGU7NNSnnpgVU_XR74psEVLedoEn0-rVZS21SPxDe6hjXoddmxMclhliXYZzFDDf8OvVwnlK6Jy0Gb-jlCd6bX41TBP4oJfTAZqPRfQmrtYA-mdo-F4lAtwBog4xtjHjmQlbsnuoSMseP58Vwk-j5FJH2cNqulbTY27DuetPsag0-0oZXYm4S8QqviU_iPmgQ9rErZcal_oFkmQ2RkG-aYZlIJs5f8ykPlyRS4EItVsx2fIsReiLTcXRw-9nJuDgSB3BGQ_OI1S7hclQsh56AStZicnNnAGZPopz9FxZOErlepbAl_ZNEyRg4g" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","blockTime":"2025-02-06T14:25:23.6145365+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145365+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145473+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145473+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145542+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145542+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145605+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145605+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145689+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145689+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]}]
+]]></output>
+          </test-case>
+          <test-case id="1-1047" name="testTransactionsQueryConfirm_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQueryConfirm_Test" methodname="testTransactionsQueryConfirm_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="1912136707" result="Passed" start-time="2025-02-06T14:25:38.7491940Z" end-time="2025-02-06T14:25:39.2911150Z" duration="0.541951" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-confirm" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzksImlhdCI6MTczODg1MTkzOSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMTIxMGQ1ZTEtNDdmMS00Y2U4LTk5ZjEtYjY3NTg5YTAxYjAyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMTBmNmM5ZTAtNDE0OC0zNTEwLWE3NTItM2ExN2VkZDNjZTJjIn0.nXHdZDiQD9QBzLdLWA3ynKg2-ECOvgmhLug0q4Uj5TORW22T3Zc3aC2uTgfy7AgzcEuBG-LpwS9mO3A7-9aw30GO2KTRT6XeUCJWWox49HGnwqfCFkDxaqUxI4JWuk5dHc0uY_89dILO0x8zrH-dbytLgpcXjeNz-xWh1tPfVSV1OhcUIzBWr6b7Nt1h8H1KLwX6T64s2Yyjus-vHvcS58hTfyffIq1HKm5a5fX3v0Je3D2JOVc9ZI4H6imeq--eNBiBmIXEDfxVPZfQBhMGpKRQ1hwwcrl6YxcAaO30xoz9yLkNt97S4ub3Tlnp3XH0EruPsm5uZlVYnZByqAQSWw",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1MzksImlhdCI6MTczODg1MTkzOSwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMTIxMGQ1ZTEtNDdmMS00Y2U4LTk5ZjEtYjY3NTg5YTAxYjAyIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMTBmNmM5ZTAtNDE0OC0zNTEwLWE3NTItM2ExN2VkZDNjZTJjIn0.nXHdZDiQD9QBzLdLWA3ynKg2-ECOvgmhLug0q4Uj5TORW22T3Zc3aC2uTgfy7AgzcEuBG-LpwS9mO3A7-9aw30GO2KTRT6XeUCJWWox49HGnwqfCFkDxaqUxI4JWuk5dHc0uY_89dILO0x8zrH-dbytLgpcXjeNz-xWh1tPfVSV1OhcUIzBWr6b7Nt1h8H1KLwX6T64s2Yyjus-vHvcS58hTfyffIq1HKm5a5fX3v0Je3D2JOVc9ZI4H6imeq--eNBiBmIXEDfxVPZfQBhMGpKRQ1hwwcrl6YxcAaO30xoz9yLkNt97S4ub3Tlnp3XH0EruPsm5uZlVYnZByqAQSWw" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":true}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1050" name="testTransactionsQueryNoEnd_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQueryNoEnd_Test" methodname="testTransactionsQueryNoEnd_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="418312048" result="Failed" label="Error" start-time="2025-02-06T14:25:39.2945700Z" end-time="2025-02-06T14:25:39.8199010Z" duration="0.525360" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-NoEnd" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.TransactionTestTests.testTransactionsQueryNoEnd_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/TransactionTest.cs:line 141
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDAsImlhdCI6MTczODg1MTk0MCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjc4Y2E2MjEtYzQyZi00YmRlLThiMWEtNThmMmUxMDUyZDM1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZmVjM2ZiYzUtM2JiMy1kOGVhLTkwYjYtM2ExN2VkZDNkMDUzIn0.yc5BslykGvFoViiClEocbpyoTgF2Mb0TeVA6DBreIT6jNn1L3MpPJNbYbvhF0r0ORZvodTyOY46y1YwShInpBFcb2XkyvPyO5X7kGhLwwSRLVa6XhWKo7X_HPERHuh7ThualZt5xDHlhbtVoaF-Nl5nXoC_BC2ytkjkxJ_kCuZ3kmnPLRehFzsS4NBgGoJL0iCXcIn92rZXP6XfZgtKq8EhUPTcyYCnv_fXX07miH5AjBZILaNI1EpFLx-X-Ny3IvwVXW9yRiduCTQG75AiwJvud3azzitsAINkfu65CwKwUDktbTirN0L5G3CauyjsEf8WHxtJM1MlVnpe-0ylpew",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDAsImlhdCI6MTczODg1MTk0MCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjc4Y2E2MjEtYzQyZi00YmRlLThiMWEtNThmMmUxMDUyZDM1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZmVjM2ZiYzUtM2JiMy1kOGVhLTkwYjYtM2ExN2VkZDNkMDUzIn0.yc5BslykGvFoViiClEocbpyoTgF2Mb0TeVA6DBreIT6jNn1L3MpPJNbYbvhF0r0ORZvodTyOY46y1YwShInpBFcb2XkyvPyO5X7kGhLwwSRLVa6XhWKo7X_HPERHuh7ThualZt5xDHlhbtVoaF-Nl5nXoC_BC2ytkjkxJ_kCuZ3kmnPLRehFzsS4NBgGoJL0iCXcIn92rZXP6XfZgtKq8EhUPTcyYCnv_fXX07miH5AjBZILaNI1EpFLx-X-Ny3IvwVXW9yRiduCTQG75AiwJvud3azzitsAINkfu65CwKwUDktbTirN0L5G3CauyjsEf8WHxtJM1MlVnpe-0ylpew" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":1,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1049" name="testTransactionsQueryNoStart_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQueryNoStart_Test" methodname="testTransactionsQueryNoStart_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="1640631969" result="Failed" label="Error" start-time="2025-02-06T14:25:39.8199760Z" end-time="2025-02-06T14:25:41.7065020Z" duration="1.886633" asserts="2">
+            <properties>
+              <property name="Description" value="block查询-startBlockHeight" />
+            </properties>
+            <failure>
+              <message><![CDATA[Newtonsoft.Json.JsonReaderException : Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.]]></message>
+              <stack-trace><![CDATA[   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at AeIndexerTester.HttpRequest.ToJObject() in /Users/lianqingdong/Desktop/autotest/aefinderTest/AeIndexerTester/HttpRequest.cs:line 473
+   at CaseOne.Api.TransactionTestTests.testTransactionsQueryNoStart_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Api/TransactionTest.cs:line 115
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDAsImlhdCI6MTczODg1MTk0MCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNWU5NzgxZmYtYTc0My00YzY0LWFlNjgtN2Q1YTQ2NTA4Yjg5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZTA4YWE0MGEtODFhOS0wNWI2LTQyMWUtM2ExN2VkZDNkMjY4In0.CHjTYi0hftRuY9f1vJd1EcToGjXLC_P8kvN3V45nHnxTti-bkq5SWZ8lFBqN5ddhwiGRcCL9qiu-fs7AxC0h0NTcNARF52QWmUHE0qtSq93GQ02BnAKAKCNF44oNLOroSpwklxErGXJiO-m_2u-UyOtWk2AvG8BAKTFJ1BQ6JuYHbaIa0LSCArgwga4emPHBdluzEyHcvi_3ZNccU-4yNIZGb2l_EVwAdUZb8X0-8xNOb5L8-YpXyTwc8w50uSVI388l0WLVnxtVRfPstrMJqKuQLGF7kED5w8qGzE7BDCjhFH_sf9sJcWCljphvfukYXpoZS3hCeWCDXaN256_MoA",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDAsImlhdCI6MTczODg1MTk0MCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiNWU5NzgxZmYtYTc0My00YzY0LWFlNjgtN2Q1YTQ2NTA4Yjg5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiZTA4YWE0MGEtODFhOS0wNWI2LTQyMWUtM2ExN2VkZDNkMjY4In0.CHjTYi0hftRuY9f1vJd1EcToGjXLC_P8kvN3V45nHnxTti-bkq5SWZ8lFBqN5ddhwiGRcCL9qiu-fs7AxC0h0NTcNARF52QWmUHE0qtSq93GQ02BnAKAKCNF44oNLOroSpwklxErGXJiO-m_2u-UyOtWk2AvG8BAKTFJ1BQ6JuYHbaIa0LSCArgwga4emPHBdluzEyHcvi_3ZNccU-4yNIZGb2l_EVwAdUZb8X0-8xNOb5L8-YpXyTwc8w50uSVI388l0WLVnxtVRfPstrMJqKuQLGF7kED5w8qGzE7BDCjhFH_sf9sJcWCljphvfukYXpoZS3hCeWCDXaN256_MoA" -H "Content-Type: application/json" -d '{"chainId":"tDVV","endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[{"transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","blockTime":"2025-02-06T14:25:23.6145365+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":1,"previousBlockHash":"0000000000000000000000000000000000000000000000000000000000000000","transactionId":"10000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145365+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145473+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":2,"previousBlockHash":"1000000000000001cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"20000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145473+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145542+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":3,"previousBlockHash":"1000000000000002cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"30000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145542+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145605+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":4,"previousBlockHash":"1000000000000003cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"40000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145605+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]},{"transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","chainId":"tDVV","from":"aefinderautotestfrom","to":"JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockTime":"2025-02-06T14:25:23.6145689+00:00","methodName":"aefinderautotestmethod","params":"","signature":"","index":1,"status":3,"confirmed":false,"extraProperties":{},"logEvents":[{"chainId":"tDVV","blockHash":"1000000000000005cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","blockHeight":5,"previousBlockHash":"1000000000000004cb6089ca4a8192e6770ce4468a482c1002ffa76ccbfacfd2","transactionId":"50000000000000005d419d9397e8ae30290795340d6285db2794abe61a443966","blockTime":"2025-02-06T14:25:23.6145689+00:00","contractAddress":"aefindertestcontractaddress","eventName":"aefindertestevent","index":1,"confirmed":false,"extraProperties":{}}]}]
+]]></output>
+          </test-case>
+          <test-case id="1-1048" name="testTransactionsQuerySgtE_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQuerySgtE_Test" methodname="testTransactionsQuerySgtE_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="114599411" result="Passed" start-time="2025-02-06T14:25:41.7065610Z" end-time="2025-02-06T14:25:42.2136190Z" duration="0.507088" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-start&gt;end" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDIsImlhdCI6MTczODg1MTk0MiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiN2JkNGNmOWEtMGI3OS00NmNhLWIyZDYtMTQyYjEzMGUxZTRiIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMmI4Y2RmOGUtOTNlMi01ZDc5LTI3YTAtM2ExN2VkZDNkOWM1In0.VybiAGj_m691dY9GGRnDmMPUX8ucYUuY0FrbtXAm6axQJ6BDywVrXN9dzGZWZsweQhwzE3rsPmSrTlC4dRrimzpeWp-A8ahaaniA2XGsUvEmpCNdtxTwRUU1Oz-gzNqI0E4R2rCTkUR01qDW3WwY3dki2DK556-Q4wf9JE4ouBIHN6zoftT98VnSv0TVl5m8y3bSQXS4i6QaIOG-Ng_6tT081H6m3s5zWc9vIN_M1JUXJeGY4Ro_ymagyTO7jJIFmOOQUc50h3uoqifS3t0UqbKkxC9L3u64OVbRKzbMFdZ1iYRgh-_cV29aZM-hT2RWe8Iyn9yFO1hb16G1yfYRdw",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDIsImlhdCI6MTczODg1MTk0MiwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiN2JkNGNmOWEtMGI3OS00NmNhLWIyZDYtMTQyYjEzMGUxZTRiIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMmI4Y2RmOGUtOTNlMi01ZDc5LTI3YTAtM2ExN2VkZDNkOWM1In0.VybiAGj_m691dY9GGRnDmMPUX8ucYUuY0FrbtXAm6axQJ6BDywVrXN9dzGZWZsweQhwzE3rsPmSrTlC4dRrimzpeWp-A8ahaaniA2XGsUvEmpCNdtxTwRUU1Oz-gzNqI0E4R2rCTkUR01qDW3WwY3dki2DK556-Q4wf9JE4ouBIHN6zoftT98VnSv0TVl5m8y3bSQXS4i6QaIOG-Ng_6tT081H6m3s5zWc9vIN_M1JUXJeGY4Ro_ymagyTO7jJIFmOOQUc50h3uoqifS3t0UqbKkxC9L3u64OVbRKzbMFdZ1iYRgh-_cV29aZM-hT2RWe8Iyn9yFO1hb16G1yfYRdw" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":11,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1052" name="testTransactionsQueryStartNotExist_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQueryStartNotExist_Test" methodname="testTransactionsQueryStartNotExist_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="660665286" result="Passed" start-time="2025-02-06T14:25:42.2150180Z" end-time="2025-02-06T14:25:42.7191960Z" duration="0.504208" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-StartNotExist" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDMsImlhdCI6MTczODg1MTk0MywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYzM2MGZkZmItNWYyZC00YmE2LWJmZjctYTkxNDExZWYyYmNlIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMDMzYjA5ODQtYWQ5Ny0xYTdkLTM1MjktM2ExN2VkZDNkYmM4In0.dz3YG9ybXCGS0hD_8Smgr3laSfHChgEHW5dQbmI0TN1zazPNjQEqWS2haJ2LHIOj0QdBCvokhWW71oVpwby-LLhoOmLxUzaey5DBC2-YOt-i1FZnrikfKuvYiXNHO4n2enHS6x61IQlwNBKa0vF14SDfBfqQ8iE1cp0imymUgqj4Z8FuGVL0rBLCN8VmI5Py3yxFKaBppuGnblD2rEMPbX0FZkw8QYPffd7g1r0l_e5aQX7LnctIDUDDOMZ3RCMRY2r7isRQR-fgJmybljNl37O86zBT526mGokmCymPyYKwH1z0iaQ5ulYB_4Y-1slAgymhJUs9arOgc2r7Yi7HMQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDMsImlhdCI6MTczODg1MTk0MywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYzM2MGZkZmItNWYyZC00YmE2LWJmZjctYTkxNDExZWYyYmNlIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMDMzYjA5ODQtYWQ5Ny0xYTdkLTM1MjktM2ExN2VkZDNkYmM4In0.dz3YG9ybXCGS0hD_8Smgr3laSfHChgEHW5dQbmI0TN1zazPNjQEqWS2haJ2LHIOj0QdBCvokhWW71oVpwby-LLhoOmLxUzaey5DBC2-YOt-i1FZnrikfKuvYiXNHO4n2enHS6x61IQlwNBKa0vF14SDfBfqQ8iE1cp0imymUgqj4Z8FuGVL0rBLCN8VmI5Py3yxFKaBppuGnblD2rEMPbX0FZkw8QYPffd7g1r0l_e5aQX7LnctIDUDDOMZ3RCMRY2r7isRQR-fgJmybljNl37O86zBT526mGokmCymPyYKwH1z0iaQ5ulYB_4Y-1slAgymhJUs9arOgc2r7Yi7HMQ" -H "Content-Type: application/json" -d '{"chainId":"tDVV","startBlockHeight":100000,"endBlockHeight":500000000,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+          <test-case id="1-1051" name="testTransactionsQueryWrongChainId_Test" fullname="CaseOne.Api.TransactionTestTests.testTransactionsQueryWrongChainId_Test" methodname="testTransactionsQueryWrongChainId_Test" classname="CaseOne.Api.TransactionTestTests" runstate="Runnable" seed="1961877187" result="Passed" start-time="2025-02-06T14:25:42.7193190Z" end-time="2025-02-06T14:25:43.2417840Z" duration="0.522495" asserts="3">
+            <properties>
+              <property name="Description" value="block查询-WrongChainId" />
+            </properties>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDMsImlhdCI6MTczODg1MTk0MywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZTMzYzEzOGEtYTE0Yi00Mzc5LTlmZjktZTUwZTcwNTY1ZDQ1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNGEzNTI3N2QtMTI4ZC1mN2ViLTM1YTQtM2ExN2VkZDNkZGJkIn0.sBdTsU5L1bTHkG8kIHEIBctTr-WubINdbUv8BsyIbis8r3KSBorW0XSZ_M707TZu6cPdFa8fxbzgwzaMgC4eWcEPsOBgiFVb55afml63cHjF6mjpWkgrRChxFAZ2uc8K_29b4zqOdInCRNFCngeqDSxLJ6s-G6n4V06NpBn7gO7RDbhoqwKIJCo2ITW1V5V5qroL4tQK-a8pUOcIzxbJnOsU_206numqtpvNFXhsS6P9zofqxVS6SqEPFFPtoebSTDnbkC0jgsnVO3GrSQd8uO4mYokk2m0KA2mrReL7aNn96Lxa1dCiGbjVnKUApu7wVPwAYMF8ofHV_tYilIci3g",
+  "token_type": "Bearer",
+  "expires_in": 3599
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/transactions" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDMsImlhdCI6MTczODg1MTk0MywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZTMzYzEzOGEtYTE0Yi00Mzc5LTlmZjktZTUwZTcwNTY1ZDQ1Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNGEzNTI3N2QtMTI4ZC1mN2ViLTM1YTQtM2ExN2VkZDNkZGJkIn0.sBdTsU5L1bTHkG8kIHEIBctTr-WubINdbUv8BsyIbis8r3KSBorW0XSZ_M707TZu6cPdFa8fxbzgwzaMgC4eWcEPsOBgiFVb55afml63cHjF6mjpWkgrRChxFAZ2uc8K_29b4zqOdInCRNFCngeqDSxLJ6s-G6n4V06NpBn7gO7RDbhoqwKIJCo2ITW1V5V5qroL4tQK-a8pUOcIzxbJnOsU_206numqtpvNFXhsS6P9zofqxVS6SqEPFFPtoebSTDnbkC0jgsnVO3GrSQd8uO4mYokk2m0KA2mrReL7aNn96Lxa1dCiGbjVnKUApu7wVPwAYMF8ofHV_tYilIci3g" -H "Content-Type: application/json" -d '{"chainId":"tDVV1","startBlockHeight":1,"endBlockHeight":5,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestSuite" id="1-1056" name="App" fullname="CaseOne.App" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2025-02-06T14:25:27.8653640Z" end-time="2025-02-06T14:25:45.2026440Z" duration="17.338260" total="8" passed="0" failed="8" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1-1018" name="AppTestTests" fullname="CaseOne.App.AppTestTests" classname="CaseOne.App.AppTestTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2025-02-06T14:25:43.2436330Z" end-time="2025-02-06T14:25:44.4010120Z" duration="1.157443" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1019" name="testAppCreate_Test" fullname="CaseOne.App.AppTestTests.testAppCreate_Test" methodname="testAppCreate_Test" classname="CaseOne.App.AppTestTests" runstate="Runnable" seed="2140187267" result="Failed" label="Error" start-time="2025-02-06T14:25:43.2440070Z" end-time="2025-02-06T14:25:43.7217080Z" duration="0.477728" asserts="0">
+            <properties>
+              <property name="Description" value="创建app-正向" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.AppTestTests.testAppCreate_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/AppTest.cs:line 26
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/api/users/info" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code InternalServerError
+
+
+]]></output>
+          </test-case>
+          <test-case id="1-1020" name="testAppCreateErrorAuth_Test" fullname="CaseOne.App.AppTestTests.testAppCreateErrorAuth_Test" methodname="testAppCreateErrorAuth_Test" classname="CaseOne.App.AppTestTests" runstate="Runnable" seed="142113830" result="Failed" label="Error" start-time="2025-02-06T14:25:43.7218020Z" end-time="2025-02-06T14:25:43.8760300Z" duration="0.154238" asserts="0">
+            <properties>
+              <property name="Description" value="创建app，auth验证" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.AppTestTests.testAppCreateErrorAuth_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/AppTest.cs:line 52
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[000999111
+100
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/users/info" -X POST -H "Content-Type: application/json" -d '{"appName":"atest01"}'
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code MethodNotAllowed
+
+
+]]></output>
+          </test-case>
+          <test-case id="1-1021" name="testAppInfo_Test" fullname="CaseOne.App.AppTestTests.testAppInfo_Test" methodname="testAppInfo_Test" classname="CaseOne.App.AppTestTests" runstate="Runnable" seed="1984669750" result="Failed" label="Error" start-time="2025-02-06T14:25:43.8762940Z" end-time="2025-02-06T14:25:44.1489440Z" duration="0.272666" asserts="0">
+            <properties>
+              <property name="Description" value="app详情-正向" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.AppTestTests.testAppInfo_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/AppTest.cs:line 68
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/api/users/info" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code InternalServerError
+
+
+]]></output>
+          </test-case>
+          <test-case id="1-1022" name="testAppList_Test" fullname="CaseOne.App.AppTestTests.testAppList_Test" methodname="testAppList_Test" classname="CaseOne.App.AppTestTests" runstate="Runnable" seed="226085515" result="Failed" label="Error" start-time="2025-02-06T14:25:44.1490440Z" end-time="2025-02-06T14:25:44.4008470Z" duration="0.251820" asserts="0">
+            <properties>
+              <property name="Description" value="app列表-正向" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.AppTestTests.testAppList_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/AppTest.cs:line 94
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/api/users/info" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code InternalServerError
+
+
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1023" name="OrganizationsTestTests" fullname="CaseOne.App.OrganizationsTestTests" classname="CaseOne.App.OrganizationsTestTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2025-02-06T14:25:44.4011150Z" end-time="2025-02-06T14:25:44.7712740Z" duration="0.370181" total="2" passed="0" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1025" name="testOrganizationsErrorAuth_Test" fullname="CaseOne.App.OrganizationsTestTests.testOrganizationsErrorAuth_Test" methodname="testOrganizationsErrorAuth_Test" classname="CaseOne.App.OrganizationsTestTests" runstate="Runnable" seed="341807689" result="Failed" label="Error" start-time="2025-02-06T14:25:44.4014600Z" end-time="2025-02-06T14:25:44.5652530Z" duration="0.163803" asserts="0">
+            <properties>
+              <property name="Description" value="创建组织" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.OrganizationsTestTests.testOrganizationsErrorAuth_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/OrganizationsTest.cs:line 52
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[000999111
+100
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/organizations" -X POST -H "Content-Type: application/json" -d '{"displayName":"tnet00"}'
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code NotFound
+
+
+]]></output>
+          </test-case>
+          <test-case id="1-1024" name="testOrganizationsExistName_Test" fullname="CaseOne.App.OrganizationsTestTests.testOrganizationsExistName_Test" methodname="testOrganizationsExistName_Test" classname="CaseOne.App.OrganizationsTestTests" runstate="Runnable" seed="359472553" result="Failed" label="Error" start-time="2025-02-06T14:25:44.5653490Z" end-time="2025-02-06T14:25:44.7711750Z" duration="0.205837" asserts="0">
+            <properties>
+              <property name="Description" value="创建组织-组织已存在" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.OrganizationsTestTests.testOrganizationsExistName_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/OrganizationsTest.cs:line 26
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin1
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin1" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code BadRequest
+
+{
+  "error": "invalid_grant",
+  "error_description": "Invalid username or password!",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2024"
+}
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1-1026" name="UserInfoTestTests" fullname="CaseOne.App.UserInfoTestTests" classname="CaseOne.App.UserInfoTestTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2025-02-06T14:25:44.7713440Z" end-time="2025-02-06T14:25:45.2019320Z" duration="0.430613" total="2" passed="0" failed="2" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1027" name="testUserInfo_Test" fullname="CaseOne.App.UserInfoTestTests.testUserInfo_Test" methodname="testUserInfo_Test" classname="CaseOne.App.UserInfoTestTests" runstate="Runnable" seed="1947538651" result="Failed" label="Error" start-time="2025-02-06T14:25:44.7716400Z" end-time="2025-02-06T14:25:45.0284730Z" duration="0.256848" asserts="0">
+            <properties>
+              <property name="Description" value="获取用户信息-正向" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.UserInfoTestTests.testUserInfo_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/UserInfoTest.cs:line 26
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/api/users/info" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code InternalServerError
+
+
+]]></output>
+          </test-case>
+          <test-case id="1-1028" name="testUserInfoErrorAuth_Test" fullname="CaseOne.App.UserInfoTestTests.testUserInfoErrorAuth_Test" methodname="testUserInfoErrorAuth_Test" classname="CaseOne.App.UserInfoTestTests" runstate="Runnable" seed="1271244765" result="Failed" label="Error" start-time="2025-02-06T14:25:45.0285670Z" end-time="2025-02-06T14:25:45.2011720Z" duration="0.172615" asserts="0">
+            <properties>
+              <property name="Description" value="创建组织" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.App.UserInfoTestTests.testUserInfoErrorAuth_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/App/UserInfoTest.cs:line 52
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[000999111
+100
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/users/info" -X POST -H "Content-Type: application/json" -d '{"displayName":"tnet00"}'
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code MethodNotAllowed
+
+
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestSuite" id="1-1055" name="Auth" fullname="CaseOne.Auth" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2025-02-06T14:25:27.8654140Z" end-time="2025-02-06T14:25:45.9033310Z" duration="18.038936" total="3" passed="0" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1-1014" name="TokenTestTests" fullname="CaseOne.Auth.TokenTestTests" classname="CaseOne.Auth.TokenTestTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2025-02-06T14:25:45.2031560Z" end-time="2025-02-06T14:25:45.9033120Z" duration="0.700196" total="3" passed="0" failed="3" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1017" name="testToken_Test" fullname="CaseOne.Auth.TokenTestTests.testToken_Test" methodname="testToken_Test" classname="CaseOne.Auth.TokenTestTests" runstate="Runnable" seed="1727934763" result="Failed" label="Error" start-time="2025-02-06T14:25:45.2035120Z" end-time="2025-02-06T14:25:45.4028760Z" duration="0.199376" asserts="0">
+            <properties>
+              <property name="Description" value="测试获取token-正向" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.Auth.TokenTestTests.testToken_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Auth/TokenTest.cs:line 60
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin1
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin1" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code BadRequest
+
+{
+  "error": "invalid_grant",
+  "error_description": "Invalid username or password!",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2024"
+}
+]]></output>
+          </test-case>
+          <test-case id="1-1015" name="testTokenWithErrorName_Test" fullname="CaseOne.Auth.TokenTestTests.testTokenWithErrorName_Test" methodname="testTokenWithErrorName_Test" classname="CaseOne.Auth.TokenTestTests" runstate="Runnable" seed="291548329" result="Failed" label="Error" start-time="2025-02-06T14:25:45.4029260Z" end-time="2025-02-06T14:25:45.6547430Z" duration="0.251833" asserts="0">
+            <properties>
+              <property name="Description" value="测试获取token-不存在的user" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.Auth.TokenTestTests.testTokenWithErrorName_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Auth/TokenTest.cs:line 26
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin1
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin1" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code BadRequest
+
+{
+  "error": "invalid_grant",
+  "error_description": "Invalid username or password!",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2024"
+}
+]]></output>
+          </test-case>
+          <test-case id="1-1016" name="testTokenWithErrorPwd_Test" fullname="CaseOne.Auth.TokenTestTests.testTokenWithErrorPwd_Test" methodname="testTokenWithErrorPwd_Test" classname="CaseOne.Auth.TokenTestTests" runstate="Runnable" seed="30349108" result="Failed" label="Error" start-time="2025-02-06T14:25:45.6551500Z" end-time="2025-02-06T14:25:45.9031780Z" duration="0.248043" asserts="0">
+            <properties>
+              <property name="Description" value="测试获取token-错误的password" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+              <stack-trace><![CDATA[   at CaseOne.Auth.TokenTestTests.testTokenWithErrorPwd_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/Auth/TokenTest.cs:line 43
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)]]></stack-trace>
+            </failure>
+            <output><![CDATA[Key: username, Value: admin1
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin1" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request failed.
+System.Net.Http.HttpRequestException: Request failed with status code BadRequest
+
+{
+  "error": "invalid_grant",
+  "error_description": "Invalid username or password!",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2024"
+}
+]]></output>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1008" name="TokenTests" fullname="CaseOne.TokenTests" classname="CaseOne.TokenTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2025-02-06T14:25:45.9034040Z" end-time="2025-02-06T14:25:46.3196410Z" duration="0.416260" total="3" passed="3" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+        <test-case id="1-1009" name="TestConnectToken" fullname="CaseOne.TokenTests.TestConnectToken" methodname="TestConnectToken" classname="CaseOne.TokenTests" runstate="Runnable" seed="553432239" result="Passed" start-time="2025-02-06T14:25:45.9045950Z" end-time="2025-02-06T14:25:46.3184250Z" duration="0.413854" asserts="2">
+          <properties>
+            <property name="Description" value="测试获取token" />
+          </properties>
+          <output><![CDATA[Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkM1NUZFMDc5RTBFREY2Nzg0MzRGQzFGRTcyQThFRDIwOUZDQjZEMjIiLCJ4NXQiOiJ4Vl9nZWVEdDluaERUOEgtY3FqdElKX0xiU0kiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDcsImlhdCI6MTczODg1MTk0NywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjdiODJhYmQtYmI5NS00NzBkLWExYTMtMmUyMjViODZjMzNhIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOGIwNTQzNGUtNWU3MC00OTRhLTNiNWMtM2ExN2VkZDNlYTVmIn0.HDvCzCWH3apj9Xa82s8IG-b0DjngxvbxDNp_ldWLchQCogUZRiRS1qrV1UDJ04Xa4CfSqS76RV8Nvjg0NDhwCWlYpa5tuSE21xQQUh61C3akfISh5q0gOD3Rv4tCRuT05zyYV4eiX5oSDgOmXJTlllAwMk8eDI3gpAYbdlYdT4byhfvN6yKgOcv9suIEvuMf5Ihlzh0BuhVS0I3f16akyVyJG-iiUrDjKxcPDuJz-4mPL0Adi8Utlv7PdQugCr8uGRiK5tq19Z-kEAyQPuT3xBhlFJaeoMk7_M7qvvH5ncMcXmExNpTs5L4C3ykLc776VxePrSiDRzorMtl_Ez4lLQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6IkM1NUZFMDc5RTBFREY2Nzg0MzRGQzFGRTcyQThFRDIwOUZDQjZEMjIiLCJ4NXQiOiJ4Vl9nZWVEdDluaERUOEgtY3FqdElKX0xiU0kiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xMjg6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDcsImlhdCI6MTczODg1MTk0NywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiYjdiODJhYmQtYmI5NS00NzBkLWExYTMtMmUyMjViODZjMzNhIiwic3ViIjoiZTQxZTg1ZWEtNTI3ZC0wNWZlLTA0YWYtM2ExMmUwNWNhZDZmIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiOGIwNTQzNGUtNWU3MC00OTRhLTNiNWMtM2ExN2VkZDNlYTVmIn0.HDvCzCWH3apj9Xa82s8IG-b0DjngxvbxDNp_ldWLchQCogUZRiRS1qrV1UDJ04Xa4CfSqS76RV8Nvjg0NDhwCWlYpa5tuSE21xQQUh61C3akfISh5q0gOD3Rv4tCRuT05zyYV4eiX5oSDgOmXJTlllAwMk8eDI3gpAYbdlYdT4byhfvN6yKgOcv9suIEvuMf5Ihlzh0BuhVS0I3f16akyVyJG-iiUrDjKxcPDuJz-4mPL0Adi8Utlv7PdQugCr8uGRiK5tq19Z-kEAyQPuT3xBhlFJaeoMk7_M7qvvH5ncMcXmExNpTs5L4C3ykLc776VxePrSiDRzorMtl_Ez4lLQ
+token_type: Bearer
+expires_in: 3600
+]]></output>
+        </test-case>
+        <test-case id="1-1010" name="TestLogin001" fullname="CaseOne.TokenTests.TestLogin001" methodname="TestLogin001" classname="CaseOne.TokenTests" runstate="Runnable" seed="1602125228" result="Passed" start-time="2025-02-06T14:25:46.3185300Z" end-time="2025-02-06T14:25:46.3193140Z" duration="0.000784" asserts="0">
+          <properties>
+            <property name="Description" value="测试登录-正向" />
+          </properties>
+        </test-case>
+        <test-case id="1-1011" name="TestLogin002" fullname="CaseOne.TokenTests.TestLogin002" methodname="TestLogin002" classname="CaseOne.TokenTests" runstate="Runnable" seed="1109668564" result="Passed" start-time="2025-02-06T14:25:46.3193600Z" end-time="2025-02-06T14:25:46.3195750Z" duration="0.000215" asserts="0">
+          <properties>
+            <property name="Description" value="测试登录-用户名异常" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1001" name="TokenTestTests" fullname="CaseOne.TokenTestTests" classname="CaseOne.TokenTestTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2025-02-06T14:25:46.3197220Z" end-time="2025-02-06T14:25:47.4262260Z" duration="1.106566" total="4" passed="0" failed="4" warnings="0" inconclusive="0" skipped="0" asserts="6">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="ParameterizedMethod" id="1-1003" name="test001_Test" fullname="CaseOne.TokenTestTests.test001_Test" classname="CaseOne.TokenTestTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2025-02-06T14:25:46.3199070Z" end-time="2025-02-06T14:25:46.3216220Z" duration="0.001715" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Description" value="test001" />
+          </properties>
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1002" name="test001_Test()" fullname="CaseOne.TokenTestTests.test001_Test()" methodname="test001_Test" classname="CaseOne.TokenTestTests" runstate="NotRunnable" seed="339526757" result="Failed" label="Invalid" start-time="2025-02-06T14:25:46.3210880Z" end-time="2025-02-06T14:25:46.3215770Z" duration="0.000489" asserts="0">
+            <properties>
+              <property name="Description" value="test001" />
+              <property name="_SKIPREASON" value="System.IO.DirectoryNotFoundException : Could not find a part of the path '/Users/CaseOne/CaseDescription/Data/TokenTestDataProvider.json'." />
+              <property name="_PROVIDERSTACKTRACE" value="   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)&#xA;   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)&#xA;   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)&#xA;   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)&#xA;   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)&#xA;   at System.IO.File.ReadAllText(String path, Encoding encoding)&#xA;   at CaseOne.BaseTestSetup.GetDataProvider(String datafile)+MoveNext() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/BaseTestSetup.cs:line 95&#xA;   at NUnit.Framework.TestCaseSourceAttribute.GetTestCasesFor(IMethodInfo method)" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path '/Users/CaseOne/CaseDescription/Data/TokenTestDataProvider.json'.]]></message>
+              <stack-trace><![CDATA[   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64& fileLength, UnixFileMode& filePermissions, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at CaseOne.BaseTestSetup.GetDataProvider(String datafile)+MoveNext() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/BaseTestSetup.cs:line 95
+   at NUnit.Framework.TestCaseSourceAttribute.GetTestCasesFor(IMethodInfo method)]]></stack-trace>
+            </failure>
+          </test-case>
+        </test-suite>
+        <test-case id="1-1004" name="test002_Test" fullname="CaseOne.TokenTestTests.test002_Test" methodname="test002_Test" classname="CaseOne.TokenTestTests" runstate="Runnable" seed="830406850" result="Failed" start-time="2025-02-06T14:25:46.3216400Z" end-time="2025-02-06T14:25:46.9170410Z" duration="0.595435" asserts="3">
+          <properties>
+            <property name="Description" value="test002" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+            <stack-trace><![CDATA[   at CaseOne.TokenTestTests.test002_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/TokenTest.cs:line 75
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDcsImlhdCI6MTczODg1MTk0NywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMjFiYTg2ZGEtZjg3ZS00ODI5LWI1MDktN2ZkMDRjNDdjNjk5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDU2MzUyMjItYzI3Yi1jNGM2LThhYTktM2ExN2VkZDNlYmQyIn0.I2h8mYSjKWpY1jT3aSCBTV0ZqztS_v83RSaC7RMENlORmdlhwcAiXJNTXe2173IHovj9KR71d5QLqrtf2tf4OHyRfsK3_kDhLe4hxjVc7klhDzWY1uKb3dqaY9vc5cvKLZd1R2DdBjPre-6FwWvIuDS7pRaP_LPoeIgsyw10DJdxRGH1lkEeGqdRC5LTCTsnJ4_PVWcktF7LDMrhyLo9ueR-JGbBZH7aWFJBWVsRCQusH3YAVxgQ6k9YMlKWEkg3jCVzUitnaq_2PNL0f-lM3SwpZ-GL3qsF_Qt0hGHe0Hgd-jhdAlaTeby198qM8vq-OWmL7Fo5Z0Dqry9HXoctoA",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDcsImlhdCI6MTczODg1MTk0NywiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiMjFiYTg2ZGEtZjg3ZS00ODI5LWI1MDktN2ZkMDRjNDdjNjk5Iiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiNDU2MzUyMjItYzI3Yi1jNGM2LThhYTktM2ExN2VkZDNlYmQyIn0.I2h8mYSjKWpY1jT3aSCBTV0ZqztS_v83RSaC7RMENlORmdlhwcAiXJNTXe2173IHovj9KR71d5QLqrtf2tf4OHyRfsK3_kDhLe4hxjVc7klhDzWY1uKb3dqaY9vc5cvKLZd1R2DdBjPre-6FwWvIuDS7pRaP_LPoeIgsyw10DJdxRGH1lkEeGqdRC5LTCTsnJ4_PVWcktF7LDMrhyLo9ueR-JGbBZH7aWFJBWVsRCQusH3YAVxgQ6k9YMlKWEkg3jCVzUitnaq_2PNL0f-lM3SwpZ-GL3qsF_Qt0hGHe0Hgd-jhdAlaTeby198qM8vq-OWmL7Fo5Z0Dqry9HXoctoA" -H "Content-Type: application/json" -d '{"chainId":"AELF","startBlockHeight":7000000,"endBlockHeight":7000002,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          <assertions>
+            <assertion result="Failed">
+              <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+              <stack-trace><![CDATA[   at CaseOne.TokenTestTests.test002_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/TokenTest.cs:line 75
+]]></stack-trace>
+            </assertion>
+          </assertions>
+        </test-case>
+        <test-case id="1-1005" name="test003_Test" fullname="CaseOne.TokenTestTests.test003_Test" methodname="test003_Test" classname="CaseOne.TokenTestTests" runstate="Runnable" seed="265179327" result="Failed" start-time="2025-02-06T14:25:46.9171810Z" end-time="2025-02-06T14:25:47.4258860Z" duration="0.508734" asserts="3">
+          <properties>
+            <property name="Description" value="test003" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+            <stack-trace><![CDATA[   at CaseOne.TokenTestTests.test003_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/TokenTest.cs:line 103
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Key: username, Value: admin
+Key: password, Value: 1q2W3e*
+Key: client_id, Value: AeFinder_App
+Key: grant_type, Value: password
+Key: scope, Value: AeFinder
+100
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+GetOrPost
+100
+100
+100
+100
+100
+=============
+curl "http://192.168.71.156:8082/connect/token" -X POST --data-urlencode "username=admin" --data-urlencode "password=1q2W3e*" --data-urlencode "client_id=AeFinder_App" --data-urlencode "grant_type=password" --data-urlencode "scope=AeFinder"
+Request was successful!
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDgsImlhdCI6MTczODg1MTk0OCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZTY1NjJhZTUtOTgxMS00NTk0LThhM2YtZWZiYzkxYTA3ZmNhIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMjE2MmJiZjYtNzQ0Mi1jM2Y2LWQ1OWYtM2ExN2VkZDNlZTI5In0.vv8uPItfhNbzXyhiihY3C65SKz-GsrtGXtEPIkSeMWRhpHWDIW_wB9ZIvfyMF0W-G5g1_vzyruydsnLgRVqKy2lLO-YRZxA1hDSqRcDkfFp7aL6p_vMHU0kCIxU-T6tfT03ksNdx_GC5wQdyCbuh1vCKHGYZVS5Yc9j0oyODQv2XoXmvbWNyDl8lNtAI-tBXbCNscaX7lKBWtUUl_JmhNORrkNcE5jSghNXtJ6as6lzhB4O3HViOd2wuSTkeL-EnEGkJhYfxZO-bJDN0csa2WxazwNl0GuoJg6qedgpblT9s04Ll2RvBhPhCikPy2DRZPlQp_DH33wNgiySUyNrJQQ",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+000999111
+100
+HttpHeader
+RequestBody
+=============
+200
+curl "http://192.168.71.156:8081/api/app/block/blocks" -X POST -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkE3OTlGMjFGNTUyQjFEOUMzQTZDRjI1MDAyN0YwQTBBREZEOTQ5NzEiLCJ4NXQiOiJwNW55SDFVckhadzZiUEpRQW44S0N0X1pTWEUiLCJ0eXAiOiJhdCtqd3QifQ.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC43MS4xNTY6ODA4Mi8iLCJleHAiOjE3Mzg4NTU1NDgsImlhdCI6MTczODg1MTk0OCwiYXVkIjoiQWVGaW5kZXIiLCJzY29wZSI6IkFlRmluZGVyIiwianRpIjoiZTY1NjJhZTUtOTgxMS00NTk0LThhM2YtZWZiYzkxYTA3ZmNhIiwic3ViIjoiZDZiMTVlZjUtZjNjMC1jM2JiLTdhYzAtM2ExM2VjNGQ4NjUwIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIiwiZ2l2ZW5fbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhYnAuaW8iLCJlbWFpbF92ZXJpZmllZCI6IkZhbHNlIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJvaV9wcnN0IjoiQWVGaW5kZXJfQXBwIiwiY2xpZW50X2lkIjoiQWVGaW5kZXJfQXBwIiwib2lfdGtuX2lkIjoiMjE2MmJiZjYtNzQ0Mi1jM2Y2LWQ1OWYtM2ExN2VkZDNlZTI5In0.vv8uPItfhNbzXyhiihY3C65SKz-GsrtGXtEPIkSeMWRhpHWDIW_wB9ZIvfyMF0W-G5g1_vzyruydsnLgRVqKy2lLO-YRZxA1hDSqRcDkfFp7aL6p_vMHU0kCIxU-T6tfT03ksNdx_GC5wQdyCbuh1vCKHGYZVS5Yc9j0oyODQv2XoXmvbWNyDl8lNtAI-tBXbCNscaX7lKBWtUUl_JmhNORrkNcE5jSghNXtJ6as6lzhB4O3HViOd2wuSTkeL-EnEGkJhYfxZO-bJDN0csa2WxazwNl0GuoJg6qedgpblT9s04Ll2RvBhPhCikPy2DRZPlQp_DH33wNgiySUyNrJQQ" -H "Content-Type: application/json" -d '{"chainId":"AELF","startBlockHeight":7000000,"endBlockHeight":7000002,"isOnlyConfirmed":false}'
+Request was successful!
+[]
+]]></output>
+          <assertions>
+            <assertion result="Failed">
+              <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+              <stack-trace><![CDATA[   at CaseOne.TokenTestTests.test003_Test() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/TokenTest.cs:line 103
+]]></stack-trace>
+            </assertion>
+          </assertions>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1-1007" name="test004_Test" fullname="CaseOne.TokenTestTests.test004_Test" classname="CaseOne.TokenTestTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2025-02-06T14:25:47.4260020Z" end-time="2025-02-06T14:25:47.4261430Z" duration="0.000141" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+          <properties>
+            <property name="Description" value="test004" />
+          </properties>
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1-1006" name="test004_Test()" fullname="CaseOne.TokenTestTests.test004_Test()" methodname="test004_Test" classname="CaseOne.TokenTestTests" runstate="NotRunnable" seed="461432360" result="Failed" label="Invalid" start-time="2025-02-06T14:25:47.4260860Z" end-time="2025-02-06T14:25:47.4261000Z" duration="0.000015" asserts="0">
+            <properties>
+              <property name="Description" value="test004" />
+              <property name="_SKIPREASON" value="System.IO.DirectoryNotFoundException : Could not find a part of the path '/Users/CaseOne/CaseDescription/Data/xx.json'." />
+              <property name="_PROVIDERSTACKTRACE" value="   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)&#xA;   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)&#xA;   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)&#xA;   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)&#xA;   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)&#xA;   at System.IO.File.ReadAllText(String path, Encoding encoding)&#xA;   at CaseOne.BaseTestSetup.GetDataProvider(String datafile)+MoveNext() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/BaseTestSetup.cs:line 95&#xA;   at NUnit.Framework.TestCaseSourceAttribute.GetTestCasesFor(IMethodInfo method)" />
+            </properties>
+            <failure>
+              <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path '/Users/CaseOne/CaseDescription/Data/xx.json'.]]></message>
+              <stack-trace><![CDATA[   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64& fileLength, UnixFileMode& filePermissions, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at CaseOne.BaseTestSetup.GetDataProvider(String datafile)+MoveNext() in /Users/lianqingdong/Desktop/autotest/aefinderTest/CaseOne/BaseTestSetup.cs:line 95
+   at NUnit.Framework.TestCaseSourceAttribute.GetTestCasesFor(IMethodInfo method)]]></stack-trace>
+            </failure>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1012" name="VersionTest" fullname="CaseOne.VersionTest" classname="CaseOne.VersionTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2025-02-06T14:25:47.4263470Z" end-time="2025-02-06T14:25:47.4338090Z" duration="0.007462" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <test-case id="1-1013" name="TestVersion002" fullname="CaseOne.VersionTest.TestVersion002" methodname="TestVersion002" classname="CaseOne.VersionTest" runstate="Runnable" seed="26092146" result="Passed" start-time="2025-02-06T14:25:47.4266970Z" end-time="2025-02-06T14:25:47.4337310Z" duration="0.007035" asserts="1">
+          <properties>
+            <property name="Description" value="version-替换" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
 </test-run>

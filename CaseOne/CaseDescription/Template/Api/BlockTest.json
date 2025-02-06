@@ -3,7 +3,7 @@
   "TearDown": {},
   "Cases": [{
     "Name": "testBlockQuery",
-    "Description": "创建app-正向",
+    "Description": "block查询-正向",
     "Steps": [{
       "StepNo": 1,
       "Request": {
@@ -44,37 +44,19 @@
         }
       },
       "Asserts": {
-        "$.userName": "admin"
-      }
+        "$[0].id": "NotNull",
+        "$[0].chainId": "tDVV"
+      },
+      "ResponseType": "JArray"
     }]
   }, {
-    "Name": "testBlockQueryFilterConfirm",
-    "Description": "创建app，auth验证",
-    "Steps": [{
-      "StepNo": 1,
-      "Request": {
-        "BaseUrl": "http://192.168.71.156:8081",
-        "Path": "/api/users/info",
-        "MethodName": "get",
-        "ContentType": "application/json",
-        "Headers": {
-          "Content-Type": "application/json"
-        },
-        "Params": {
-          "appName": "atest01"
-        }
-      },
-      "Asserts": {
-        "$.error": "NotNull"
-      }}]
-  },{
-    "Name": "testAppInfo",
-    "Description": "app详情-正向",
+    "Name": "testBlockQueryConfirm",
+    "Description": "block查询-confirm",
     "Steps": [{
       "StepNo": 1,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8082",
-        "Path": "/api/users/info",
+        "Path": "/connect/token",
         "MethodName": "post",
         "ContentType": "application/x-www-form-urlencoded",
         "Headers": {
@@ -89,35 +71,131 @@
         }
       },
       "Asserts": {
-        "$.error": "NotNull",
-        "$.error_description": "NotNull"
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
       }
     }, {
       "StepNo": 2,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8081",
-        "Path": "/api/apps",
+        "Path": "/api/app/block/blocks",
         "MethodName": "post",
         "ContentType": "application/json",
         "Headers": {
           "Content-Type": "application/json"
         },
         "Params": {
-          "appName": "atest01"
+          "chainId":"tDVV",
+          "startBlockHeight":1,
+          "endBlockHeight":5,
+          "isOnlyConfirmed":true
         }
       },
       "Asserts": {
-        "$.userName": "admin"
+        "$": "[]"
+      },
+      "ResponseType": "JArray"
+    }]
+  },{
+    "Name": "testBlockQuerySgtE",
+    "Description": "block查询-start>end",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId":"tDVV",
+          "startBlockHeight":11,
+          "endBlockHeight":5,
+          "isOnlyConfirmed":false
+        }
+      },
+      "Asserts": {
+        "$": "[]"
+      },
+      "ResponseType": "JArray"
+    }]
+  },{
+    "Name": "testBlockQueryNoStart",
+    "Description": "block查询-startBlockHeight",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId":"tDVV",
+          "endBlockHeight":5,
+          "isOnlyConfirmed":false
+        }
+      },
+      "Asserts": {
+        "$.error.message": "NotNull"
       }
     }]
   },{
-    "Name": "testAppList",
-    "Description": "app列表-正向",
+    "Name": "testBlockQueryNoEnd",
+    "Description": "block查询-NoEnd",
     "Steps": [{
       "StepNo": 1,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8082",
-        "Path": "/api/users/info",
+        "Path": "/connect/token",
         "MethodName": "post",
         "ContentType": "application/x-www-form-urlencoded",
         "Headers": {
@@ -132,26 +210,123 @@
         }
       },
       "Asserts": {
-        "$.error": "NotNull",
-        "$.error_description": "NotNull"
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
       }
     }, {
       "StepNo": 2,
       "Request": {
         "BaseUrl": "http://192.168.71.156:8081",
-        "Path": "/api/apps",
+        "Path": "/api/app/block/blocks",
         "MethodName": "post",
         "ContentType": "application/json",
         "Headers": {
           "Content-Type": "application/json"
         },
         "Params": {
-          "appName": "atest01"
+          "chainId":"tDVV",
+          "startBlockHeight":1,
+          "isOnlyConfirmed":false
         }
       },
       "Asserts": {
-        "$.userName": "admin"
+        "$[0].transactionId": "NotNull",
+        "$[0].chainId": "tDVV"
       }
+    }]
+  },{
+    "Name": "testBlockQueryWrongChainId",
+    "Description": "block查询-WrongChainId",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId":"tDVV1",
+          "startBlockHeight":1,
+          "endBlockHeight":5,
+          "isOnlyConfirmed":false
+        }
+      },
+      "Asserts": {
+        "$": "[]"
+      },
+      "ResponseType": "JArray"
+    }]
+  },{
+    "Name": "testBlockQueryStartNotExist",
+    "Description": "block查询-StartNotExist",
+    "Steps": [{
+      "StepNo": 1,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8082",
+        "Path": "/connect/token",
+        "MethodName": "post",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "Params": {
+          "username": "admin",
+          "password": "1q2W3e*",
+          "client_id": "AeFinder_App",
+          "grant_type": "password",
+          "scope": "AeFinder"
+        }
+      },
+      "Asserts": {
+        "$.access_token": "NotNull",
+        "$.token_type": "Bearer"
+      }
+    }, {
+      "StepNo": 2,
+      "Request": {
+        "BaseUrl": "http://192.168.71.156:8081",
+        "Path": "/api/app/block/blocks",
+        "MethodName": "post",
+        "ContentType": "application/json",
+        "Headers": {
+          "Content-Type": "application/json"
+        },
+        "Params": {
+          "chainId":"tDVV",
+          "startBlockHeight":100000,
+          "endBlockHeight":500000000,
+          "isOnlyConfirmed":false
+        }
+      },
+      "Asserts": {
+        "$": "[]"
+      },
+      "ResponseType": "JArray"
     }]
   }]
 }

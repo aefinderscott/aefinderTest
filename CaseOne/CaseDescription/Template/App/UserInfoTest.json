@@ -64,8 +64,7 @@
         },
         "Asserts": {
           "$.error": "NotNull"
-        },
-        "ResponseType":"string"
+        }
       }]}
   
   ]
